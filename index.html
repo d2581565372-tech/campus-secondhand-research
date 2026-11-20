@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>校园二手闲置 App · 前期调研笔记</title>
+<style>
+:root{
+  --paper:#F4F1EA;
+  --paper-2:#FBF9F4;
+  --ink:#141414;
+  --muted:#6C6A64;
+  --line:rgba(20,20,20,.16);
+  --lime:#D8F65A;
+  --blue:#2B4BFF;
+  --pink:#FFC7DA;
+  --mint:#BFEFD2;
+  --butter:#FFE79B;
+  --sky:#C9E6FF;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  --sans:"Inter","Helvetica Neue",Arial,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);color:var(--ink);font-family:var(--sans);
+  -webkit-font-smoothing:antialiased;line-height:1.6;
+  background-image:radial-gradient(rgba(20,20,20,.055) 1px,transparent 1px);
+  background-size:22px 22px;
+}
+a{color:inherit}
+::selection{background:var(--lime)}
+
+/* 顶部进度条 */
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:var(--ink);z-index:60;transition:width .1s linear}
+
+/* 右侧页导航 */
+.nav{position:fixed;right:18px;top:50%;transform:translateY(-50%);z-index:60;display:flex;flex-direction:column;gap:10px}
+.nav a{
+  display:flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--mono);
+  font-size:.6rem;letter-spacing:.14em;color:var(--muted);
+}
+.nav a i{width:9px;height:9px;border:1.5px solid var(--ink);border-radius:50%;background:transparent;transition:.25s}
+.nav a span{opacity:0;transform:translateX(4px);transition:.25s;background:var(--paper);padding:2px 6px}
+.nav a:hover span,.nav a.on span{opacity:1;transform:none}
+.nav a.on i{background:var(--ink)}
+
+/* 页面容器 */
+.sheet{
+  position:relative;min-height:100svh;display:flex;flex-direction:column;
+  padding:clamp(22px,3.4vw,46px) clamp(18px,4vw,60px) clamp(46px,7vw,86px);
+  border-bottom:1px dashed rgba(20,20,20,.22);scroll-margin-top:0;
+}
+.sheet-in{width:100%;max-width:1260px;margin:0 auto;position:relative;z-index:2}
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  font-family:var(--mono);font-size:.63rem;letter-spacing:.16em;text-transform:uppercase;
+  color:var(--muted);margin-bottom:clamp(26px,4vw,52px);
+}
+.brand{display:flex;align-items:center;gap:10px;color:var(--ink);font-weight:700}
+.mark{width:26px;height:26px;background:var(--ink);color:#fff;display:grid;place-items:center;
+  font-size:.68rem;font-weight:900;letter-spacing:0}
+.pnum{white-space:nowrap}
+.pnum b{color:var(--ink)}
+
+.kicker{font-family:var(--mono);font-size:.66rem;letter-spacing:.24em;color:var(--muted);text-transform:uppercase}
+h1{font-size:clamp(2.05rem,4.1vw,3.6rem);line-height:1.06;letter-spacing:-.035em;font-weight:900;margin-top:12px}
+h1 em{font-style:normal;position:relative;white-space:nowrap;background:linear-gradient(transparent 60%,var(--lime) 60%)}
+h2{font-size:clamp(1.15rem,1.9vw,1.5rem);letter-spacing:-.02em;font-weight:900;line-height:1.3}
+h3{font-size:.98rem;letter-spacing:-.01em;font-weight:800}
+.lede{margin-top:16px;max-width:34em;font-size:clamp(.86rem,1.15vw,.97rem);color:#43423E}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
+.chips span{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;border:1px solid var(--line);
+  background:rgba(255,255,255,.55);border-radius:999px;padding:4px 10px;color:#3C3B37}
+
+/* ============ PAGE 1 ============ */
+.hero{display:grid;grid-template-columns:1.02fr .98fr;gap:clamp(24px,4.4vw,60px);align-items:start}
+.qpanel{border-top:2px solid var(--ink);padding-top:16px}
+.qpanel .kicker{margin-bottom:14px;display:block}
+.qlist{list-style:none;display:flex;flex-direction:column}
+.qlist li{display:grid;grid-template-columns:auto 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.qlist li:last-child{border-bottom:0}
+.qlist .qno{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;color:var(--muted);padding-top:4px}
+.qlist p{font-size:clamp(.86rem,1.1vw,.95rem);font-weight:600;line-height:1.55}
+.qlist small{display:block;font-weight:500;color:var(--muted);font-size:.74rem;margin-top:3px}
+
+.timeline{margin-top:22px;display:flex;flex-wrap:wrap;gap:8px 0;border:1px solid var(--line);
+  background:rgba(255,255,255,.5);border-radius:14px;padding:14px 16px}
+.timeline .step{display:flex;align-items:center;gap:8px;font-size:.7rem;font-weight:700;padding-right:10px}
+.timeline .step i{font-style:normal;font-family:var(--mono);font-size:.58rem;width:20px;height:20px;border-radius:50%;
+  background:var(--ink);color:#fff;display:grid;place-items:center;flex:none}
+.timeline .arrow{color:#B9B6AD;margin:0 6px;font-size:.7rem}
+.timeline .step:last-child .arrow{display:none}
+
+.sec-head{display:flex;align-items:baseline;gap:14px;margin:clamp(38px,5vw,62px) 0 16px;flex-wrap:wrap}
+.sec-head .num{font-family:var(--mono);font-size:.66rem;letter-spacing:.18em;color:var(--muted)}
+.sec-head h2{flex:1;min-width:230px}
+.sec-head .note{font-size:.72rem;color:var(--muted)}
+
+.matrix-wrap{overflow-x:auto;border:1px solid var(--ink);border-radius:16px;background:var(--paper-2)}
+table{border-collapse:collapse;width:100%;min-width:820px}
+th,td{border-bottom:1px solid var(--line);border-right:1px solid var(--line);padding:12px 14px;vertical-align:top;text-align:left}
+tr:last-child td{border-bottom:0}
+th:last-child,td:last-child{border-right:0}
+thead th{background:#EFEBE1;font-size:.76rem;font-weight:900;letter-spacing:.02em}
+thead th .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px}
+thead th small{display:block;font-family:var(--mono);font-size:.56rem;font-weight:500;letter-spacing:.12em;color:var(--muted);margin-top:3px}
+tbody th{width:96px;font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#4A4944;background:#F8F5EE;font-weight:700;white-space:nowrap}
+td{font-size:.78rem;line-height:1.65;color:#3B3A36}
+td.weak{color:#7A5148}
+td.learn{background:rgba(216,246,90,.22)}
+
+.takeaways{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.tk{position:relative;background:#fff;border:1px solid var(--ink);border-radius:14px;padding:16px 16px 15px;
+  box-shadow:4px 4px 0 rgba(20,20,20,.9);transition:transform .25s ease,box-shadow .25s ease}
+.tk:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 rgba(20,20,20,.9)}
+.tk .bar{position:absolute;left:16px;right:16px;top:0;height:4px;border-radius:0 0 3px 3px}
+.tk:nth-child(1) .bar{background:var(--lime)}
+.tk:nth-child(2) .bar{background:var(--pink)}
+.tk:nth-child(3) .bar{background:var(--sky)}
+.tk h3{margin-top:8px;font-size:.86rem}
+.tk p{font-size:.76rem;color:#4B4A45;margin-top:6px;line-height:1.7}
+
+/* ============ PAGE 2 ============ */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3.4vw,44px);align-items:start}
+.three{display:grid;grid-template-columns:1.04fr .9fr 1fr;gap:clamp(14px,2vw,22px);align-items:start}
+.panel{background:#fff;border:1px solid var(--ink);border-radius:16px;padding:18px 18px 20px;
+  box-shadow:5px 5px 0 rgba(20,20,20,.9)}
+.panel.flat{box-shadow:none;background:rgba(255,255,255,.6)}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:14px}
+.panel-head .tag{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;color:var(--muted)}
+.panel-head h3{font-size:.95rem}
+
+.four{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mini{border:1px solid var(--line);border-radius:10px;padding:11px 12px;background:#FCFAF5}
+.mini b{display:block;font-size:.78rem;margin-bottom:3px}
+.mini b .idx{font-family:var(--mono);font-size:.56rem;color:var(--muted);margin-right:6px}
+.mini p{font-size:.72rem;color:#5A5953;line-height:1.6}
+.mini em{font-style:normal;background:linear-gradient(transparent 62%,var(--butter) 62%)}
+
+.pitfalls{list-style:none;display:flex;flex-direction:column;gap:8px;margin-top:14px}
+.pitfalls li{display:grid;grid-template-columns:22px 1fr;gap:10px;align-items:start;font-size:.76rem;color:#4B4A45}
+.pitfalls .x{width:22px;height:22px;border-radius:6px;background:#FFE3EA;color:#A63B57;display:grid;place-items:center;
+  font-weight:900;font-size:.8rem;line-height:1}
+.pitfalls b{font-weight:800;color:var(--ink)}
+
+.stepper{list-style:none;display:flex;flex-direction:column}
+.stepper li{display:grid;grid-template-columns:26px 1fr;gap:12px;padding:9px 0;border-bottom:1px dashed var(--line);font-size:.78rem}
+.stepper li:last-child{border-bottom:0}
+.stepper .n{font-family:var(--mono);font-size:.6rem;width:24px;height:24px;border-radius:50%;background:var(--ink);
+  color:#fff;display:grid;place-items:center}
+.stepper b{display:block;font-size:.8rem}
+.stepper span{color:var(--muted);font-size:.72rem}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.stat{border:1px solid var(--ink);border-radius:12px;padding:12px 13px;background:var(--paper-2)}
+.stat .v{font-size:clamp(1.2rem,2vw,1.6rem);font-weight:900;letter-spacing:-.03em;line-height:1.1}
+.stat .k{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;color:var(--muted);margin-top:4px}
+.stat:nth-child(1){background:var(--mint)}
+.stat:nth-child(4){background:var(--sky)}
+
+.dark{border-color:var(--ink);background:var(--ink);color:#F7F4EC}
+.dark .panel-head .tag,.dark .stepper span{color:#B9B6AD}
+.dark .stepper li{border-bottom-color:rgba(255,255,255,.18)}
+.dark .stepper .n{background:var(--lime);color:var(--ink)}
+.dark .stepper b{color:#fff}
+
+.tri{margin-top:14px;display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:8px;
+  border:1px solid var(--ink);border-radius:14px;padding:11px 15px;background:rgba(216,246,90,.25)}
+.tri .box{text-align:center}
+.tri .box b{display:block;font-size:.8rem}
+.tri .box span{font-size:.66rem;color:var(--muted)}
+.tri .ar{font-size:.9rem;color:#8C8A82}
+
+.quote{margin-top:16px;font-size:.78rem;color:#4B4A45;border-left:3px solid var(--ink);padding-left:12px}
+.quote span{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;color:var(--muted);margin-top:6px}
+
+/* ============ PAGE 3 ============ */
+.synth{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:clamp(18px,2.6vw,30px);align-items:start}
+.empathy{border:1px solid var(--ink);border-radius:16px;overflow:hidden;background:#fff}
+.empathy .eh{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:11px 14px;background:var(--ink);color:#fff}
+.empathy .eh b{font-size:.8rem}
+.empathy .eh span{font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;color:#C9C6BD}
+.egrid{display:grid;grid-template-columns:1fr 1fr}
+.ecell{padding:13px 14px;min-height:104px}
+.ecell:nth-child(odd){border-right:1px dashed var(--line)}
+.ecell:nth-child(1),.ecell:nth-child(2){border-bottom:1px dashed var(--line)}
+.ecell .lab{font-family:var(--mono);font-size:.55rem;letter-spacing:.16em;color:var(--muted);display:flex;align-items:center;gap:6px}
+.ecell .lab i{width:7px;height:7px;border-radius:2px;background:var(--lime);display:inline-block}
+.ecell:nth-child(2) .lab i{background:var(--sky)}
+.ecell:nth-child(3) .lab i{background:var(--pink)}
+.ecell:nth-child(4) .lab i{background:var(--butter)}
+.ecell p{font-size:.73rem;line-height:1.7;color:#413F3B;margin-top:6px}
+.efoot{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink)}
+.efoot div{padding:12px 14px}
+.efoot div:first-child{border-right:1px solid var(--ink);background:#FFF1F5}
+.efoot div:last-child{background:#F4FBDD}
+.efoot b{display:block;font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;color:var(--muted);margin-bottom:4px}
+.efoot p{font-size:.72rem;line-height:1.7}
+
+.cluster-head{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:10px}
+.cluster-head h3{font-size:.9rem}
+.cluster-head span{font-family:var(--mono);font-size:.56rem;letter-spacing:.12em;color:var(--muted)}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.note{border:1px solid rgba(20,20,20,.55);border-radius:10px;padding:10px 11px;font-size:.72rem;line-height:1.6;
+  box-shadow:3px 3px 0 rgba(20,20,20,.55);transition:transform .25s ease}
+.note:hover{transform:translateY(-3px) rotate(-.4deg)}
+.note b{display:block;font-size:.72rem;margin-bottom:4px;letter-spacing:.01em}
+.note .cnt{font-family:var(--mono);font-size:.54rem;letter-spacing:.1em;color:#4B4A45;opacity:.8}
+.note:nth-child(1){background:var(--butter);transform:rotate(-1.1deg)}
+.note:nth-child(2){background:var(--sky);transform:rotate(.9deg)}
+.note:nth-child(3){background:var(--mint);transform:rotate(.7deg)}
+.note:nth-child(4){background:var(--pink);transform:rotate(-.8deg)}
+.note .resp{display:block;margin-top:6px;padding-top:6px;border-top:1px dashed rgba(20,20,20,.3);font-size:.66rem}
+
+.opps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:clamp(18px,2.2vw,26px)}
+.opp{background:#fff;border:1px solid var(--ink);border-radius:14px;padding:15px 14px;box-shadow:4px 4px 0 rgba(20,20,20,.9);
+  display:flex;flex-direction:column;gap:6px;transition:transform .25s ease,box-shadow .25s ease}
+.opp:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 rgba(20,20,20,.9)}
+.opp .on{font-family:var(--mono);font-size:.58rem;letter-spacing:.16em;color:var(--muted)}
+.opp h3{font-size:.86rem;line-height:1.35}
+.opp p{font-size:.72rem;color:#55534E;line-height:1.65}
+.opp .from{margin-top:auto;font-family:var(--mono);font-size:.54rem;letter-spacing:.08em;color:#2B2A27;
+  background:var(--lime);border-radius:4px;padding:3px 7px;align-self:flex-start}
+
+.next{margin-top:20px;border:1px solid var(--ink);border-radius:14px;background:var(--ink);color:#F7F4EC;
+  padding:16px 18px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.next b{font-size:.8rem;letter-spacing:.02em;white-space:nowrap}
+.next ol{display:flex;list-style:none;gap:8px;flex-wrap:wrap}
+.next li{font-size:.7rem;border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:4px 10px;color:#E9E5DA}
+.next .spacer{flex:1}
+.next .stamp{font-family:var(--mono);font-size:.55rem;letter-spacing:.14em;color:#B9B6AD;white-space:nowrap}
+
+.footnote{margin-top:14px;font-size:.64rem;color:var(--muted);line-height:1.8}
+.footnote b{color:#3C3B37}
+
+/* 进场 */
+.rv{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+
+.scroll-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font-family:var(--mono);
+  font-size:.55rem;letter-spacing:.2em;color:var(--muted);display:flex;align-items:center;gap:7px}
+.scroll-hint::after{content:"";width:1px;height:18px;background:var(--ink);opacity:.35;animation:hint 1.8s ease-in-out infinite}
+@keyframes hint{0%,100%{transform:translateY(-2px);opacity:.25}50%{transform:translateY(3px);opacity:.65}}
+
+/* ============ 响应式 ============ */
+@media (max-width:1180px){
+  .three{grid-template-columns:1fr 1fr}
+}
+@media (max-width:1080px){
+  .hero{grid-template-columns:1fr;gap:26px}
+  .synth{grid-template-columns:1fr}
+  .takeaways{grid-template-columns:1fr}
+  .opps{grid-template-columns:1fr 1fr}
+  .two{grid-template-columns:1fr}
+  .three{grid-template-columns:1fr}
+}
+@media (max-width:700px){
+  .sheet{padding:18px 14px 56px;min-height:0}
+  .nav{display:none}
+  .topbar{font-size:.56rem;letter-spacing:.1em}
+  .pnum{display:none}
+  h1{font-size:clamp(1.85rem,9vw,2.5rem)}
+  .four{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .notes{grid-template-columns:1fr}
+  .opps{grid-template-columns:1fr}
+  .tri{grid-template-columns:1fr;gap:10px;text-align:center}
+  .tri .ar{transform:rotate(90deg)}
+  .timeline{gap:6px}
+  .scroll-hint{display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .scroll-hint::after{animation:none}
+}
+
+@media print{
+  body{background:#fff}
+  .nav,#bar,.scroll-hint{display:none}
+  .sheet{min-height:0;border-bottom:0;page-break-after:always;padding:24px}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div id="bar"></div>
+
+<nav class="nav" aria-label="页面导航">
+  <a href="#p1" class="on" data-p="p1"><i></i><span>01 研究概览</span></a>
+  <a href="#p2" data-p="p2"><i></i><span>02 调研工具</span></a>
+  <a href="#p3" data-p="p3"><i></i><span>03 洞察收敛</span></a>
+</nav>
+
+<!-- ================= PAGE 1 ================= -->
+<section class="sheet" id="p1">
+  <div class="sheet-in">
+    <header class="topbar">
+      <div class="brand"><span class="mark">FN</span><span>Field Notes · 校园二手闲置 App</span></div>
+      <div class="pnum"><b>01</b> / 03 · 前期调研</div>
+    </header>
+
+    <div class="hero">
+      <div class="rv">
+        <p class="kicker">Research overview / 桌面研究与竞品拆解</p>
+        <h1>二手交易，<br>卡在<em>「信任」</em><br>和<em>「顺路」</em>之间</h1>
+        <p class="lede">
+          这是校园二手闲置 App 的前期调研记录：先用竞品看清市场在哪一段掉链子，再用问卷确认「面」上的分布，
+          用深访补齐「为什么」，最后把便签贴成一张可执行的设计地图。
+        </p>
+        <div class="chips">
+          <span>二手闲置 · 校园场景</span>
+          <span>桌面研究</span>
+          <span>竞品分析</span>
+          <span>问卷</span>
+          <span>深度访谈</span>
+          <span>同理心地图</span>
+          <span>亲和图</span>
+        </div>
+      </div>
+
+      <div class="qpanel rv">
+        <span class="kicker">Three questions / 三个研究问题</span>
+        <ol class="qlist">
+          <li>
+            <span class="qno">Q1</span>
+            <p>学生为什么宁愿堆着、送人，也不挂出去卖？
+              <small>是懒、是怕麻烦，还是根本不缺这点钱？</small>
+            </p>
+          </li>
+          <li>
+            <span class="qno">Q2</span>
+            <p>闲鱼、转转、小红书、校园墙，分别在哪一步让人放弃？
+              <small>发布、沟通、议价、交付，断点在哪一环？</small>
+            </p>
+          </li>
+          <li>
+            <span class="qno">Q3</span>
+            <p>「同校、同楼、当面交付」能带来什么别人给不了的东西？
+              <small>如果只做一个校区，最小可行的闭环是什么？</small>
+            </p>
+          </li>
+        </ol>
+
+        <div class="timeline" aria-label="调研流程">
+          <div class="step"><i>1</i>桌面研究</div><span class="arrow">→</span>
+          <div class="step"><i>2</i>竞品拆解</div><span class="arrow">→</span>
+          <div class="step"><i>3</i>问卷设计</div><span class="arrow">→</span>
+          <div class="step"><i>4</i>问卷投放</div><span class="arrow">→</span>
+          <div class="step"><i>5</i>深访</div><span class="arrow">→</span>
+          <div class="step"><i>6</i>同理心 / 亲和图</div><span class="arrow">→</span>
+          <div class="step"><i>7</i>设计原则</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sec-head rv">
+      <span class="num">01 / 竞品</span>
+      <h2>竞品不是比功能，是看它们各自解决了哪一段</h2>
+      <span class="note">4 个典型渠道 · 按「定位 / 优势 / 短板 / 可借鉴」横向拆</span>
+    </div>
+
+    <div class="matrix-wrap rv">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" style="width:96px"></th>
+            <th scope="col"><span class="dot" style="background:#FFD43B"></span>闲鱼<small>综合二手社区</small></th>
+            <th scope="col"><span class="dot" style="background:#FF7A59"></span>转转<small>标准化交易</small></th>
+            <th scope="col"><span class="dot" style="background:#FF4D6D"></span>小红书二手<small>内容延伸交易</small></th>
+            <th scope="col"><span class="dot" style="background:#4FA6DA"></span>校园墙 / 微信群<small>熟人 + 地理</small></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">产品定位</th>
+            <td>啥都能卖的二手社区，靠鱼塘与内容留住人</td>
+            <td>以 3C 验机建立信任的标准化二手平台</td>
+            <td>先种草再交易的「内容型」二手</td>
+            <td>校内信息墙，靠熟人关系和地理位置撮合</td>
+          </tr>
+          <tr>
+            <th scope="row">核心优势</th>
+            <td>流量大、供给全；信用分与鱼塘形成社区感</td>
+            <td>质检、保卖、售后，降低高客单决策成本</td>
+            <td>图文表达好，商品看起来「值得买」</td>
+            <td>同校身份天然可信，零平台门槛</td>
+          </tr>
+          <tr>
+            <th scope="row">明显短板</th>
+            <td class="weak">信息噪音大；面交时间地点全靠自己约</td>
+            <td class="weak">流程重、抽成/服务费高；校园小件不划算</td>
+            <td class="weak">交易链路不闭环，沟通仍要跳私信</td>
+            <td class="weak">不可检索、刷屏即消失；无担保、无记录</td>
+          </tr>
+          <tr>
+            <th scope="row">可借鉴</th>
+            <td class="learn">信用体系 + 内容化商品陈列</td>
+            <td class="learn">标准化描述模板与成色分级</td>
+            <td class="learn">首图与文案的「种草式」表达</td>
+            <td class="learn">校内身份认证 + 楼栋级地理圈层</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="takeaways rv">
+      <article class="tk"><span class="bar"></span>
+        <h3>大平台解决了「买得到」，没解决「今天下午顺路拿到」</h3>
+        <p>物流与快递对几十块的旧教材、台灯、衣架来说太重，最后一公里才是校园的高频场景。</p>
+      </article>
+      <article class="tk"><span class="bar"></span>
+        <h3>熟人渠道有信任，却没有结构化的信息</h3>
+        <p>微信群一条消息几分钟就被刷走，想找「同款台灯」只能翻聊天记录，供给无法沉淀。</p>
+      </article>
+      <article class="tk"><span class="bar"></span>
+        <h3>机会窗口：校内身份 + 楼栋自提 + 30 秒发布</h3>
+        <p>把「可信」和「顺路」两件事同时做到，才可能让学生愿意把闲置真的挂出来。</p>
+      </article>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ================= PAGE 2 ================= -->
+<section class="sheet" id="p2">
+  <div class="sheet-in">
+    <header class="topbar">
+      <div class="brand"><span class="mark">FN</span><span>Field Notes · 校园二手闲置 App</span></div>
+      <div class="pnum"><b>02</b> / 03 · 调研工具</div>
+    </header>
+
+    <div class="rv" style="max-width:52em">
+      <p class="kicker">Toolkit / 问卷与访谈</p>
+      <h1>问卷负责「面」，<br>访谈负责<em>「为什么」</em></h1>
+      <p class="lede">
+        先设计好问题，再去找人。工具的目的不是收集一堆答案，而是尽快排除掉错误的假设——
+        所以问卷要短、访谈要具体到「最近一次」。
+      </p>
+    </div>
+
+    <div class="three" style="margin-top:clamp(24px,3.4vw,38px)">
+      <!-- 列 1：问卷设计 -->
+      <div class="rv">
+        <div class="panel">
+          <div class="panel-head">
+            <h3>四种问法，覆盖四种信息</h3>
+            <span class="tag">SURVEY DESIGN</span>
+          </div>
+          <div class="four">
+            <div class="mini">
+              <b><span class="idx">01</span>问数量</b>
+              <p>一周发布 / 购买几次？宿舍里现在有几件闲置？<br><em>得到频次与规模。</em></p>
+            </div>
+            <div class="mini">
+              <b><span class="idx">02</span>问程度</b>
+              <p>「当面交付」对你有多重要？1–5 分有多介意和陌生人见面？<br><em>得到权重与排序。</em></p>
+            </div>
+            <div class="mini">
+              <b><span class="idx">03</span>问场景</b>
+              <p>最近一次卖东西是什么时候、在哪、和谁、卖的是什么？<br><em>得到真实语境。</em></p>
+            </div>
+            <div class="mini">
+              <b><span class="idx">04</span>问原因</b>
+              <p>最后为什么没卖成？哪一步让你想放弃？<br><em>得到动机与阻力。</em></p>
+            </div>
+          </div>
+
+          <div class="panel-head" style="margin-top:16px">
+            <h3>四个最常见的坑</h3>
+            <span class="tag">AVOID</span>
+          </div>
+          <ul class="pitfalls">
+            <li><span class="x">×</span><span><b>一题问两件事：</b>「发布麻烦、沟通也累吗？」拆成两题。</span></li>
+            <li><span class="x">×</span><span><b>带引导的选项：</b>「你是不是也觉得闲鱼很乱？」换成中性描述。</span></li>
+            <li><span class="x">×</span><span><b>假设性问题：</b>「你会用这个 App 吗？」改问过去的真实行为。</span></li>
+            <li><span class="x">×</span><span><b>模糊词：</b>「经常、一般」→ 换成具体次数与时间范围。</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 列 2：问卷骨架 -->
+      <div class="rv">
+        <div class="panel dark">
+          <div class="panel-head">
+            <h3 style="color:#fff">问卷骨架：3–5 分钟能答完</h3>
+            <span class="tag">STRUCTURE</span>
+          </div>
+          <ol class="stepper">
+            <li><span class="n">1</span><div><b>开场说明</b><span>调研目的、匿名、耗时、无对错</span></div></li>
+            <li><span class="n">2</span><div><b>甄别题</b><span>是否在校、是否有过二手买卖经历</span></div></li>
+            <li><span class="n">3</span><div><b>使用习惯</b><span>常用渠道、频次、客单价区间</span></div></li>
+            <li><span class="n">4</span><div><b>最近一次交易</b><span>从想卖到成交/放弃的完整路径</span></div></li>
+            <li><span class="n">5</span><div><b>痛点与顾虑</b><span>信任、时间、价格、沟通成本排序</span></div></li>
+            <li><span class="n">6</span><div><b>开放题</b><span>「如果只能改一件事，你选什么？」</span></div></li>
+          </ol>
+        </div>
+        <p class="footnote" style="margin-top:12px;color:#6C6A64">
+          投放渠道：校园群 / 校园墙 / 朋友圈 / 宿舍楼栋群。回收后先剔除无效样本（时长过短、全选同一项），再进入编码。
+        </p>
+      </div>
+
+      <!-- 列 3：样本与访谈 -->
+      <div class="rv">
+        <div class="stats" style="margin-top:0">
+          <div class="stat"><div class="v">80–120</div><div class="k">目标问卷份数</div></div>
+          <div class="stat"><div class="v">3–5 min</div><div class="k">单份填写时长</div></div>
+          <div class="stat"><div class="v">5–8 人</div><div class="k">深度访谈样本</div></div>
+          <div class="stat"><div class="v">45–60 min</div><div class="k">单场访谈时长</div></div>
+        </div>
+
+        <div class="panel flat" style="margin-top:12px">
+          <div class="panel-head">
+            <h3>访谈提纲：只聊「最近一次」</h3>
+            <span class="tag">INTERVIEW</span>
+          </div>
+          <ol class="stepper">
+            <li><span class="n">1</span><div><b>暖场</b><span>最近一次在校园里买卖二手是什么？</span></div></li>
+            <li><span class="n">2</span><div><b>复盘</b><span>从起念、拍照、发布到交付，一步步还原</span></div></li>
+            <li><span class="n">3</span><div><b>卡点</b><span>哪一步想放弃？当时是什么情绪？</span></div></li>
+            <li><span class="n">4</span><div><b>期待</b><span>愿意为哪些能力多走一步？哪些绝不妥协？</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+
+    <div class="tri" style="margin-top:16px">
+      <div class="box"><b>竞品分析</b><span>行业基线</span></div>
+      <span class="ar">＋</span>
+      <div class="box"><b>问卷</b><span>分布与频次</span></div>
+      <span class="ar">＋</span>
+      <div class="box"><b>深访</b><span>动机与语境</span></div>
+    </div>
+    <p class="quote">
+      三者交叉验证：问卷证明「有多普遍」，访谈解释「为什么会这样」，竞品告诉我们「哪些已经被验证过」。
+      <span>TRIANGULATION / 三角验证</span>
+    </p>
+  </div>
+</section>
+
+<!-- ================= PAGE 3 ================= -->
+<section class="sheet" id="p3">
+  <div class="sheet-in">
+    <header class="topbar">
+      <div class="brand"><span class="mark">FN</span><span>Field Notes · 校园二手闲置 App</span></div>
+      <div class="pnum"><b>03</b> / 03 · 洞察收敛</div>
+    </header>
+
+    <div class="rv" style="max-width:52em">
+      <p class="kicker">Synthesis / 同理心地图 · 亲和图</p>
+      <h1>把散落的便签，<br>贴成一张<em>能走的地图</em></h1>
+      <p class="lede">
+        同理心地图还原一个人的语境，亲和图找出多数人的共性。最后收敛成四簇主题、四个设计机会——
+        每一条都能对应回某张便签，而不是凭空想出来的功能。
+      </p>
+    </div>
+
+    <div class="synth" style="margin-top:clamp(22px,3vw,34px)">
+      <!-- 同理心地图 -->
+      <div class="rv">
+        <div class="empathy">
+          <div class="eh"><b>同理心地图 · EMPATHY MAP</b><span>原型：想卖又懒得卖的大二学生</span></div>
+          <div class="egrid">
+            <div class="ecell">
+              <div class="lab"><i></i>看 SEE</div>
+              <p>宿舍角落越堆越多的旧物；群里不断刷屏的转让消息；闲鱼冗长的发布表单。</p>
+            </div>
+            <div class="ecell">
+              <div class="lab"><i></i>听 HEAR</div>
+              <p>室友说「挂上去也没人问」；学长提醒「面交容易被放鸽子」；家里说「不值钱就扔了吧」。</p>
+            </div>
+            <div class="ecell">
+              <div class="lab"><i></i>说与做 SAY &amp; DO</div>
+              <p>在群里问一句「有人要吗」；拍两张照片发校园墙；嫌麻烦最后直接送给学弟学妹。</p>
+            </div>
+            <div class="ecell">
+              <div class="lab"><i></i>想与感 THINK &amp; FEEL</div>
+              <p>怕麻烦、怕被砍价、怕遇到不靠谱的人；也怕自己显得「很计较这点钱」。</p>
+            </div>
+          </div>
+          <div class="efoot">
+            <div><b>PAINS / 痛点</b><p>发布成本高、发出去无人问津、约见时间对不上、交易没有保障。</p></div>
+            <div><b>GAINS / 目标</b><p>快速出手、换点生活费、别折腾；最好顺路就能完成。</p></div>
+          </div>
+        </div>
+        <p class="footnote">访谈时只记录原话，不急着归类；情绪词单独标色，后面往往就是痛点的线索。</p>
+      </div>
+
+      <!-- 亲和图 -->
+      <div class="rv">
+        <div class="cluster-head">
+          <h3>亲和图 · 四簇主题</h3>
+          <span>AFFINITY DIAGRAM</span>
+        </div>
+        <div class="notes">
+          <article class="note">
+            <b>信任成本</b>
+            <span class="cnt">陌生人 / 身份不明 / 被放鸽子</span>
+            <span class="resp">→ 校内实名轻认证 · 交易评价</span>
+          </article>
+          <article class="note">
+            <b>信息效率</b>
+            <span class="cnt">刷屏 / 搜不到 / 描述不清</span>
+            <span class="resp">→ 结构化发布 · 标签与搜索</span>
+          </article>
+          <article class="note">
+            <b>距离与时间</b>
+            <span class="cnt">跨校区 / 约不上 / 快递太贵</span>
+            <span class="resp">→ 楼栋自提点 · 顺路交付</span>
+          </article>
+          <article class="note">
+            <b>价格预期</b>
+            <span class="cnt">砍价 / 比价 / 怕被白嫖</span>
+            <span class="resp">→ 同校成交价 · 成色分级</span>
+          </article>
+        </div>
+        <p class="footnote">同一句话可能同时属于两簇，保留出现频次最高的一簇作为主标签，另一簇记在备注里。</p>
+      </div>
+    </div>
+
+    <!-- 设计机会 -->
+    <div class="sec-head rv" style="margin-top:clamp(26px,3.2vw,38px)">
+      <span class="num">02 / 机会</span>
+      <h2>四个可以被设计回应的机会点</h2>
+      <span class="note">每条都对应上面的一簇洞察</span>
+    </div>
+
+    <div class="opps rv">
+      <article class="opp">
+        <span class="on">OPPORTUNITY 01</span>
+        <h3>30 秒发布</h3>
+        <p>拍照 → 自动识别品类 → 只填三个字段（价格、成色、取货楼栋）。把「发布」从表单变成一次快门。</p>
+        <span class="from">对应：信息效率</span>
+      </article>
+      <article class="opp">
+        <span class="on">OPPORTUNITY 02</span>
+        <h3>楼栋自提地图</h3>
+        <p>按宿舍楼筛选商品，顺路取货；支持「今晚 9 点前可自提」的时间标签，减少来回约时间。</p>
+        <span class="from">对应：距离与时间</span>
+      </article>
+      <article class="opp">
+        <span class="on">OPPORTUNITY 03</span>
+        <h3>校内身份 + 轻信用</h3>
+        <p>学号 / 校园邮箱认证，展示成交次数与评价；放鸽子会被记录，但不必做到「重社交」。</p>
+        <span class="from">对应：信任成本</span>
+      </article>
+      <article class="opp">
+        <span class="on">OPPORTUNITY 04</span>
+        <h3>成色与价格参考</h3>
+        <p>给出同校同款的近期成交区间与成色分级，让「砍价」有依据，也让卖家不必凭感觉定价。</p>
+        <span class="from">对应：价格预期</span>
+      </article>
+    </div>
+
+    <div class="next rv">
+      <b>NEXT / 下一步</b>
+      <ol>
+        <li>信息架构</li><li>核心任务流</li><li>低保真原型</li><li>5 人可用性测试</li><li>迭代发布流程</li>
+      </ol>
+      <span class="spacer"></span>
+      <span class="stamp">RESEARCH → DESIGN</span>
+    </div>
+
+    <p class="footnote rv">
+      <b>说明：</b>本页整理自竞品分析模板、竞品对比表、问卷与访谈提纲、同理心地图与亲和图工作稿；
+      问卷份数、访谈人数为调研目标值，最终以实际回收样本为准。页面可直接用浏览器打印 / 导出 PDF 作为汇报材料。
+    </p>
+  </div>
+</section>
+
+<script>
+/* 顶部进度 */
+const bar=document.getElementById('bar');
+function onScroll(){
+  const h=document.documentElement;
+  const max=h.scrollHeight-h.clientHeight;
+  bar.style.width=(max>0?(h.scrollTop/max)*100:0)+'%';
+}
+document.addEventListener('scroll',onScroll,{passive:true});
+onScroll();
+
+/* 右侧导航高亮 */
+const links=[...document.querySelectorAll('.nav a')];
+const sheets=[...document.querySelectorAll('.sheet')];
+const navIO=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(a=>a.classList.toggle('on',a.dataset.p===e.target.id));
+    }
+  });
+},{threshold:.4});
+sheets.forEach(s=>navIO.observe(s));
+
+/* 进场动画 */
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!RM){
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+  },{threshold:.12});
+  document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+}else{
+  document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'));
+}
+
+/* 键盘翻页 */
+document.addEventListener('keydown',e=>{
+  if(!['ArrowRight','ArrowLeft','PageDown','PageUp'].includes(e.key))return;
+  const y=window.scrollY, vh=window.innerHeight;
+  const idx=Math.min(sheets.length-1,Math.round(y/vh));
+  let next=idx;
+  if(e.key==='ArrowRight'||e.key==='PageDown')next=Math.min(sheets.length-1,idx+1);
+  if(e.key==='ArrowLeft'||e.key==='PageUp')next=Math.max(0,idx-1);
+  if(next!==idx){e.preventDefault();sheets[next].scrollIntoView({behavior:RM?'auto':'smooth'});}
+});
+</script>
+</body>
+</html>
