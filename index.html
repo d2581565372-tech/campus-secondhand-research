@@ -290,6 +290,23 @@ table.pit{width:100%;border-collapse:collapse;font-size:.7rem}
 .flow5 .fcell{background:#F5F6FA;border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:.6rem}
 .flow5 .arr{color:var(--muted);font-weight:900}
 
+/* 亲和图原始资料条 */
+.evwrap{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:16px}
+.ev{border-radius:8px;padding:8px 10px;font-size:.55rem;line-height:1.6;box-shadow:1px 2px 0 rgba(31,36,48,.12)}
+.ev b{font-family:var(--mono);font-size:.5rem;display:block;opacity:.65;margin-bottom:2px}
+.ev.v1{background:#DDEBFC;color:#3A4E7E}
+.ev.v2{background:#DDF5E4;color:#2E5C42}
+.ev.v3{background:#FFF3B8;color:#8A6B1F}
+.ev.v4{background:#FFEFDD;color:#8A551F}
+.ev.v5{background:#FFE3EE;color:#7E3A5C}
+.ev.v6{background:#F1EAFE;color:#5E3A8E}
+.acol{display:flex;flex-direction:column}
+.acol .mode{font-size:.54rem;line-height:1.6;margin-top:auto;padding-top:10px;font-weight:600}
+.ins5{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:16px}
+.ins5 .plan-box{font-size:.6rem}
+.ins5 .plan-box p{margin-top:4px}
+.ins5 .plan-box .ph2{color:#B9BECB;font-size:.52rem}
+
 /* 故事气泡 */
 .story{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px)}
 .step{position:relative;padding-top:16px}
@@ -496,7 +513,7 @@ footer b{color:var(--ink)}
       </div>
       <div class="metric">
         <div class="v">7 组</div><div class="t">亲和图主题分组</div>
-        <div class="d">对 100+ 条原话逐条编码、归类收敛</div>
+        <div class="d">对 25 条原话逐条编码、归类收敛</div>
         <svg viewBox="0 0 100 34"><polyline points="4,28 22,26 40,20 58,14 76,10 96,5"/><circle cx="96" cy="5" r="3"/></svg>
       </div>
       <div class="metric">
@@ -775,7 +792,7 @@ footer b{color:var(--ink)}
   <div class="wrap">
     <div class="sec-head rv">
       <span class="kicker">03 · Synthesis</span>
-      <h2>把 100+ 条原话，<span class="g">贴成一张地图</span></h2>
+      <h2>把 25 条原话，<span class="g">贴成一张地图</span></h2>
       <p class="lede">用户旅程地图还原一个人的语境，亲和图找出多数人的共性——每条设计决策都能对应回某张便签。</p>
     </div>
 
@@ -902,70 +919,103 @@ footer b{color:var(--ink)}
       <div class="fn-head"><h3>亲和图 · 大学生二手交易方案</h3><span class="sub">Affinity Mapping · 7 组主题</span></div>
       <div class="fn-body">
         <div class="affwrap">
+          <div class="evwrap">
+            <div class="ev v1"><b>E01 · P01 小陈</b>「卖卖买来回消息有点慢吧」</div>
+            <div class="ev v2"><b>E02 · P02 压了</b>「最麻烦的，就是在等回复消息，还不知道这个东西卖出去没有。」</div>
+            <div class="ev v3"><b>E03 · P04 大黄</b>「懒得出，感觉发的消息一发就沉大海了。」</div>
+            <div class="ev v3"><b>E04 · P04 大黄</b>「给他发了消息，他看完之后不回我，最后自己就显示了。如果他半天不回我就暗自拉黑。」</div>
+            <div class="ev v2"><b>E05 · P02 压了</b>「回复快一点吧，然后及时把已经出售的商品标注一下，没有出售的就还留在那里。」</div>
+            <div class="ev v2"><b>E06 · P02 压了</b>「希望出一个类似于小程序或网站，把要卖的东西汇总整理。」</div>
+            <div class="ev v1"><b>E07 · P01 小陈</b>「如果是一个二手或者是三手的卖家，他肯定回答不上来你的东西问题，比如他也不知道这个东西哪里有瑕疵的。」</div>
+            <div class="ev v2"><b>E08 · P02 压了</b>「最不放心的就是他那个东西的质量吧。」</div>
+            <div class="ev v3"><b>E09 · P04 大黄</b>「希望可以点击视频观看，物品能够 360 度展示，避免后边因为破损产生纠纷」</div>
+            <div class="ev v1"><b>E10 · P01 小陈</b>「有成交的价格吧，然后包邮。」</div>
+            <div class="ev v2"><b>E11 · P02 压了</b>「肯定会觉得有没有比他更好的，或者说卖便宜一点点的。」</div>
+            <div class="ev v3"><b>E12 · P04 大黄</b>「要贵一点的东西就用闲鱼，便宜点的东西就用二手的，小红书也有用。」</div>
+            <div class="ev v3"><b>E13 · P04 大黄</b>「希望它有同类型的品，不出压得过低的价。」</div>
+            <div class="ev v3"><b>E14 · P04 大黄</b>「然后最好针对纠纷行为，可以有客服介入，就跟闲鱼的小法庭一样。」</div>
+            <div class="ev v1"><b>E15 · P01 小陈</b>「拍了一堆照片发到那个二手群里面，然后没有人鸟」</div>
+            <div class="ev v1"><b>E16 · P01 小陈</b>「我希望这个东西直接空投到我家，不要省去那三天的时间。」</div>
+            <div class="ev v6"><b>E17 · P03 了了</b>「我在校园群里发消息没人理我。」</div>
+            <div class="ev v6"><b>E18 · P03 了了</b>「我说我的 500 块钱，已经是最低了，他上来问我 250 卖不卖。」</div>
+            <div class="ev v6"><b>E19 · P03 了了</b>「在甘肃，发到那个买家那个地方居然要 20 块运费。」</div>
+            <div class="ev v4"><b>E20 · P05 泡芙</b>「就是可能在和买家讨价还价的时候花费了我很多时间和精力。」</div>
+            <div class="ev v4"><b>E21 · P05 泡芙</b>「有时候你卖出一些东西，必须要填写物品类别，还要描述这个物品。」</div>
+            <div class="ev v4"><b>E22 · P05 泡芙</b>「部分买家想要卖家包邮，不愿意承担运费成本。」</div>
+            <div class="ev v5"><b>E23 · P06 章章</b>「和商家沟通确认有没有货的过程很麻烦，其实卖家东西已经被卖掉了，但他没有下架那个商品。」</div>
+            <div class="ev v5"><b>E24 · P06 章章</b>「不要让卖家自己随便设置运费。」</div>
+            <div class="ev v6"><b>E25 · P03 了了</b>「比如售后服务。」</div>
+          </div>
+
           <div class="aff">
-            <div class="src">
-              <h5>原始资料</h5>
-              <div class="sub">一叠另一一夜，把所有调查的原话一条条拆</div>
-              <div class="stk y"><b>P01</b>帖子发下去，过一会儿就沉了</div>
-              <div class="stk y"><b>P02</b>这个到底值多少钱？</div>
-              <div class="stk y"><b>P03</b>怕被骗，不敢先打款</div>
-              <div class="stk y"><b>P04</b>快递费比东西还贵</div>
-              <div class="stk y"><b>P05</b>群里全是广告，刷不到想要的</div>
-              <div class="stk y"><b>P06</b>约了三次都没遇上人</div>
-              <div class="stk y"><b>P07</b>希望直接空投到寝室</div>
-              <div class="stk y"><b>P08</b>卖家一问三不敢，默认不靠谱</div>
-            </div>
             <div class="acol ac1">
-              <h5>主题 01</h5><div class="sub">信任与担保</div>
-              <div class="stk y"><b>P03</b>怕被骗，不敢先打款</div>
-              <div class="stk y"><b>P08</b>卖家一问三不敢，默认不靠谱</div>
-              <div class="stk y"><b>P09</b>缺少规则约束，交易有风险</div>
+              <h5>主题分组 01</h5><div class="sub">主题名称：沟通回复低效率</div>
+              <div class="stk y"><b>E01</b>「卖卖买来回消息有点慢吧」</div>
+              <div class="stk y"><b>E02</b>「最麻烦的，就是在等回复消息，还不知道这个东西卖出去没有。」</div>
+              <div class="stk y"><b>E03</b>「懒得出，感觉发的消息一发就沉大海了。」</div>
+              <div class="stk y"><b>E04</b>「给他发了消息，他看完之后不回我，最后自己就显示了。如果他半天不回我就暗自拉黑。」</div>
+              <div class="stk y"><b>E17</b>「我在校园群里发消息没人理我。」</div>
+              <div class="stk y"><b>E20</b>「就是可能在和买家讨价还价的时候花费了我很多时间和精力。」</div>
+              <div class="mode">共同模式：需要一套即时反馈机制，解决沟通响应滞后</div>
             </div>
             <div class="acol ac2">
-              <h5>主题 02</h5><div class="sub">定价与比价</div>
-              <div class="stk y"><b>P02</b>这个到底值多少钱？</div>
-              <div class="stk y"><b>P10</b>同校比价难，定价随缘</div>
-              <div class="stk y"><b>P11</b>有人随意定价，没法参考</div>
+              <h5>主题分组 02</h5><div class="sub">主题名称：商品管理混乱，发布帖子麻烦</div>
+              <div class="stk y"><b>E05</b>「回复快一点吧，然后及时把已经出售的商品标注一下，没有出售的就还留在那里。」</div>
+              <div class="stk y"><b>E06</b>「希望出一个类似于小程序或网站，把要卖的东西汇总整理。」</div>
+              <div class="stk y"><b>E18</b>「我说我的 500 块钱，已经是最低了，他上来问我 250 卖不卖。」</div>
+              <div class="stk y"><b>E21</b>「有时候你卖出一些东西，必须要填写物品类别，还要描述这个物品。」</div>
+              <div class="stk y"><b>E23</b>「和商家沟通确认有没有货的过程很麻烦，其实卖家东西已经被卖掉了，但他没有下架那个商品。」</div>
+              <div class="mode">共同模式：需要集中的商品库存货架，统一管理上架、待售、已售信息</div>
             </div>
             <div class="acol ac3">
-              <h5>主题 03</h5><div class="sub">信息沉没与曝光</div>
-              <div class="stk y"><b>P01</b>帖子发下去，过一会儿就沉了</div>
-              <div class="stk y"><b>P05</b>群里全是广告，刷不到想要的</div>
-              <div class="stk y"><b>P12</b>要反复刷屏重发，很累</div>
+              <h5>主题分组 03</h5><div class="sub">主题名称：物品交易信任不足</div>
+              <div class="stk y"><b>E07</b>「如果是一个二手或者是三手的卖家，他肯定回答不上来你的东西问题，比如他也不知道这个东西哪里有瑕疵的。」</div>
+              <div class="stk y"><b>E08</b>「最不放心的就是他那个东西的质量吧。」</div>
+              <div class="stk y"><b>E09</b>「希望可以点击视频观看，物品能够 360 度展示，避免后边因为破损产生纠纷」</div>
+              <div class="stk y"><b>E24</b>「不要让卖家自己随便设置运费。」</div>
+              <div class="mode">共同模式：需要更可信的实物展示方式，补充成色与瑕疵信息，降低信任风险</div>
             </div>
             <div class="acol ac4">
-              <h5>主题 04</h5><div class="sub">沟通与响应</div>
-              <div class="stk y"><b>P13</b>卖家回消息有点慢</div>
-              <div class="stk y"><b>P06</b>约了三次都没遇上人</div>
-              <div class="stk y"><b>P14</b>已读不回，不知道什么意思</div>
+              <h5>主题分组 04</h5><div class="sub">主题名称：定价/比价困难</div>
+              <div class="stk y"><b>E10</b>「有成交的价格吧，然后包邮。」</div>
+              <div class="stk y"><b>E11</b>「肯定会觉得有没有比他更好的，或者说卖便宜一点点的。」</div>
+              <div class="stk y"><b>E12</b>「要贵一点的东西就用闲鱼，便宜点的东西就用二手的，小红书也有用。」</div>
+              <div class="stk y"><b>E13</b>「希望它有同类型的品，不出压得过低的价。」</div>
+              <div class="stk y"><b>E22</b>「部分买家想要卖家包邮，不愿意承担运费成本。」</div>
+              <div class="mode">共同模式：需要公开价格参考体系，打破信息孤岛，减少恶意压价与盲目比价</div>
             </div>
             <div class="acol ac5">
-              <h5>主题 05</h5><div class="sub">物流与交付</div>
-              <div class="stk y"><b>P04</b>快递费比东西还贵</div>
-              <div class="stk y"><b>P07</b>希望直接空投到寝室</div>
-              <div class="stk y"><b>P15</b>想要校内自提，顺路拿</div>
+              <h5>主题分组 05</h5><div class="sub">主题名称：交易缺保障</div>
+              <div class="stk y"><b>E14</b>「然后最好针对纠纷行为，可以有客服介入，就跟闲鱼的小法庭一样。」</div>
+              <div class="stk y"><b>E25</b>「比如售后服务。」</div>
+              <div class="mode">共同模式：需要交易留痕保障，约束口头约定下的跑单、毁约行为</div>
             </div>
             <div class="acol ac6">
-              <h5>主题 06</h5><div class="sub">商品与成色</div>
-              <div class="stk y"><b>P16</b>图片和实物差太多</div>
-              <div class="stk y"><b>P17</b>到手才发现有破损</div>
+              <h5>主题分组 06</h5><div class="sub">主题名称：曝光引流难</div>
+              <div class="stk y"><b>E15</b>「拍了一堆照片发到那个二手群里面，然后没有人鸟」</div>
+              <div class="stk y"><b>E17</b>「我在校园群里发消息没人理我。」</div>
+              <div class="mode">共同模式：需要稳定长效的商品曝光渠道，摆脱刷屏信息</div>
             </div>
             <div class="acol ac7">
-              <h5>主题 07</h5><div class="sub">功能与风险</div>
-              <div class="stk y"><b>P18</b>拼单、代取要换别的软件，麻烦</div>
-              <div class="stk y"><b>P19</b>校外人员混进来，不放心</div>
-              <div class="stk y"><b>P20</b>校内平台不怕功能少，最怕没人用</div>
+              <h5>主题分组 07</h5><div class="sub">主题名称：快速流程中遇到时间长，价格高的问题</div>
+              <div class="stk y"><b>E16</b>「我希望这个东西直接空投到我家，不要省去那三天的时间。」</div>
+              <div class="stk y"><b>E19</b>「在甘肃，发到那个买家那个地方居然要 20 块运费。」</div>
+              <div class="stk y"><b>E24</b>「如果交易地点距离很远，就不想过去。」</div>
+              <div class="mode">共同模式：需要标准化交付，简化取货协商流程，缩短从成交到拿到物品的等待时间</div>
             </div>
           </div>
-        </div>
-        <div class="sum3">
-          <div class="plan-box"><h5>核心痛点<span class="tag">Pain</span></h5><p>信任保障缺失 · 价格不透明 · 信息易沉没 · 沟通成本高 · 交付绕路</p></div>
-          <div class="plan-box"><h5>用户需求<span class="tag">Needs</span></h5><p>同校可信赖 · 当面交易更方便 · 定价有参照 · 交付快且省事</p></div>
-          <div class="plan-box"><h5>设计建议<span class="tag">Design</span></h5><p>学号轻认证 + 资金托管；历史成交价参考；校内推送与分类；驿站自提 + 跑腿代送</p></div>
+
+          <div class="ins5">
+            <div class="plan-box"><h5>共同模式</h5><p>回复效率低，商品实际状态可能跟帖子描述不一致</p></div>
+            <div class="plan-box"><h5>核心痛点</h5><p>商品管理混乱，发布帖子麻烦</p></div>
+            <div class="plan-box"><h5>用户需求</h5><p>高效率的解决闲置物品或者快速找到需要的物品</p></div>
+            <div class="plan-box"><h5>设计机会</h5><p>对卖家发布的帖子做出要求（与实际情况相符）；对不同商品分类，方便买家快速定位；设置一些市场参考价；设置售后服务</p></div>
+            <div class="plan-box"><h5>优先级与依据</h5><p><b>高：</b>沟通回复低效率、商品管理混乱、发布帖子麻烦<br><b>中：</b>定价比价困难、快速流程中遇到时间长价格高的问题、售后问题<br><b>低：</b>物品交易信任不足、交易缺保障<br><b>待讨论</b></p></div>
+          </div>
         </div>
       </div>
-      <div class="fn-cap"><span class="tag">Rebuilt</span>
-        <p>由亲和图工作稿重新排版为网页分栏（原话编码 P01–P20 → 7 组主题 → 调研总结），非截图。</p>
+      <div class="fn-cap"><span class="tag">Extracted</span>
+        <p>由超宽拼板「AFFINITY MAPPING」逐条提取：25 条原话（E01–E25，受访者 P01 小陈 / P02 压了 / P03 了了 / P04 大黄 / P05 泡芙 / P06 章章）→ 7 组主题 → 洞察总结，非截图。</p>
       </div>
     </div>
 
@@ -989,14 +1039,14 @@ footer b{color:var(--ink)}
       <div class="fn-card rv">
         <div class="fn-head"><h3>POV → HMW</h3><span class="sub">问题重述 · 功能优先级的裁判</span></div>
         <div class="fn-body">
-          <div class="stk y"><b>POV · 定价难</b>同校同学在卖出闲置时，因为没有任何成交参照，无法给物品定一个心里有底的价格。</div>
-          <div class="stk p"><b>HMW</b>我们如何让同学定价时直接看到同校同类的真实成交价？</div>
-          <div class="stk y"><b>POV · 消息被刷走</b>在校园微信群里出售闲置的同学，因为消息几分钟就沉底，被迫反复刷屏重发。</div>
-          <div class="stk p"><b>HMW</b>我们如何让好东西不被群消息淹没、持续被有需要的人看到？</div>
-          <div class="stk y"><b>POV · 交易没保障</b>约面交与付款环节没有规则约束，被放鸽子、被骗的顾虑让交易停在半路。</div>
-          <div class="stk p"><b>HMW</b>我们如何让校内交易自带信任与兜底？</div>
+          <div class="stk y"><b>POV · 沟通回复低效率</b>从 E01–E04、E17、E20 的一簇原话看到：卖出闲置的同学在等待回复、反复催促与讨价还价上消耗大量时间精力——「感觉发的消息一发就沉大海了」。</div>
+          <div class="stk p"><b>HMW</b>我们如何让每一次询问与回复即时可见，沟通不再石沉大海？</div>
+          <div class="stk y"><b>POV · 定价比价困难</b>从 E10–E13、E18、E22 的一簇原话看到：定价没有参照，只能凭感觉开价——「我说我的 500 块钱，已经是最低了，他上来问我 250 卖不卖」。</div>
+          <div class="stk p"><b>HMW</b>我们如何让成交价沉淀下来，成为下一次定价的参照？</div>
+          <div class="stk y"><b>POV · 交易缺保障</b>从 E14、E25 的一簇原话看到：纠纷没有约束与兜底——「最好针对纠纷行为，可以有客服介入，就跟闲鱼的小法庭一样」。</div>
+          <div class="stk p"><b>HMW</b>我们如何给校内交易加上规则与兜底？</div>
         </div>
-        <div class="fn-cap"><span class="tag">Rebuilt</span><p>POV / HMW 重述便签，网页化排版。</p></div>
+        <div class="fn-cap"><span class="tag">Extracted</span><p>POV 依据亲和图原话簇重述（E 编码对应上方原始资料）。</p></div>
       </div>
     </div>
   </div>
