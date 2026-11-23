@@ -99,6 +99,76 @@ h3{font-size:1.02rem;font-weight:800;letter-spacing:-.01em}
 .metric svg polyline{fill:none;stroke:var(--green);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
 .metric svg circle{fill:var(--green)}
 
+/* FIELD NOTES 重建：表格与卡片 */
+.fn-card{background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  box-shadow:0 24px 50px rgba(31,36,48,.09)}
+.fn-head{background:#14161C;color:#fff;padding:15px clamp(16px,2.4vw,24px);display:flex;
+  align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.fn-head h3{color:#fff;font-size:.98rem;letter-spacing:.02em}
+.fn-head .sub{font-family:var(--mono);font-size:.54rem;letter-spacing:.22em;color:#8E93A6;text-transform:uppercase;font-weight:600}
+.fn-body{padding:clamp(14px,2.2vw,24px)}
+.fn-cap{display:flex;align-items:center;gap:10px;padding:12px 6px 2px;flex-wrap:wrap;border-top:1px dashed var(--line);margin-top:14px}
+.fn-cap .tag{font-family:var(--mono);font-size:.56rem;letter-spacing:.14em;text-transform:uppercase;
+  background:var(--lav);border-radius:6px;padding:4px 9px;color:#3A4160;font-weight:700}
+.fn-cap p{font-size:.72rem;color:var(--muted)}
+table.cmp{width:100%;border-collapse:collapse;font-size:.7rem}
+.cmp th,.cmp td{border:1px solid var(--line);padding:9px 12px;vertical-align:top;text-align:left}
+.cmp thead th{background:#F2F4FA;font-size:.72rem;font-weight:900;letter-spacing:.02em}
+.cmp thead th small{display:block;font-family:var(--mono);font-size:.5rem;color:var(--muted);letter-spacing:.12em;font-weight:600;margin-top:2px}
+.cmp tbody th{background:#F7F8FC;width:112px;font-weight:800;font-size:.68rem;white-space:nowrap}
+.cmp tbody th small{display:block;font-family:var(--mono);font-size:.48rem;color:var(--muted);letter-spacing:.14em;font-weight:600;margin-top:2px}
+.cmp td{color:#4A5063;line-height:1.7}
+.cmp td b{color:var(--ink)}
+.cmp td ol{margin:0;padding-left:1.1em}
+.fn-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.fn-mini{border:1px solid var(--line);border-radius:12px;padding:12px 13px;background:#FBFCFE}
+.fn-mini b{font-size:.76rem;display:flex;align-items:center;gap:7px}
+.fn-mini b .idx{font-family:var(--mono);font-size:.52rem;background:var(--ink);color:#fff;border-radius:5px;padding:2px 6px;letter-spacing:.06em}
+.fn-mini p{font-size:.68rem;color:#565D72;margin-top:5px;line-height:1.65}
+.fn-mini p em{font-style:normal;color:var(--muted)}
+.fn-head2{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:20px 0 12px;flex-wrap:wrap}
+.fn-head2 h4{font-size:.86rem;font-weight:900;letter-spacing:-.01em}
+.fn-head2 span{font-family:var(--mono);font-size:.54rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;font-weight:700}
+table.pit{width:100%;border-collapse:collapse;font-size:.7rem}
+.pit th,.pit td{border:1px solid var(--line);padding:8px 12px;text-align:left;vertical-align:top;line-height:1.65}
+.pit thead th{background:#F2F4FA;font-size:.68rem;font-weight:800}
+.pit .kind{white-space:nowrap;font-weight:800;color:var(--ink);font-size:.68rem}
+.pit .bad{color:#B23A48}
+.pit .good{color:#2FA36B}
+.word4{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.w4{border:1px solid var(--line);border-radius:12px;padding:12px;background:var(--yellow-soft);text-align:center}
+.w4 .zi{font-size:1.5rem;font-weight:900;letter-spacing:0;color:var(--ink)}
+.w4 p{font-size:.62rem;color:#6B5A1F;margin-top:4px;line-height:1.5}
+.plan{display:grid;grid-template-columns:1.15fr .85fr;gap:12px}
+.plan-box{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#FBFCFE}
+.plan-box h5{font-size:.72rem;font-weight:900;margin-bottom:6px;display:flex;gap:8px;align-items:center}
+.plan-box h5 .tag{font-family:var(--mono);font-size:.5rem;letter-spacing:.14em;background:var(--blue-soft);color:var(--blue);border-radius:5px;padding:2px 7px;text-transform:uppercase}
+.plan-box p,.plan-box li{font-size:.68rem;color:#565D72;line-height:1.7}
+.plan-box ol{margin:0;padding-left:1.2em}
+.opening{background:#14161C;color:#D8DAE3;border-radius:12px;padding:12px 14px;font-size:.68rem;line-height:1.8}
+.opening b{color:#FFD84D}
+/* 同理心地图 */
+.emap{display:grid;grid-template-columns:1fr 1fr;gap:10px;position:relative;padding-top:44px}
+.emap .q{border:1px solid var(--line);border-radius:14px;padding:12px 12px 10px;background:#FBFCFE;min-height:150px}
+.emap .q h4{font-family:var(--mono);font-size:.56rem;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;font-weight:700;display:flex;justify-content:space-between}
+.emap .q h4 b{color:var(--ink);font-size:.7rem;font-family:var(--sans);letter-spacing:0}
+.emap .notes{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.emap .note{background:#FFF7DC;border-radius:7px;padding:7px 10px;font-size:.65rem;color:#4E4630;
+  box-shadow:2px 2px 0 rgba(31,36,48,.12);line-height:1.55}
+.emap .q.blue .note{background:#E7EEFF;color:#3A4E7E}
+.emap .q.pink .note{background:#FFE3EE;color:#7E3A5C}
+.emap .q.green .note{background:#E3F5E9;color:#2E5C42}
+.emap .core{position:absolute;top:16px;left:50%;transform:translateX(-50%);
+  background:#fff;border:1.5px solid var(--ink);border-radius:999px;padding:6px 16px;
+  font-size:.64rem;font-weight:800;box-shadow:0 10px 22px rgba(31,36,48,.14);white-space:nowrap;z-index:2}
+.emap .pg{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.emap .pg .p,.emap .pg .g{border-radius:14px;padding:12px;font-size:.66rem;line-height:1.7}
+.emap .pg .p{background:#FFEDF0;border:1px solid rgba(178,58,72,.25)}
+.emap .pg .g{background:#EAF7EF;border:1px solid rgba(47,163,107,.25)}
+.emap .pg b{display:block;font-size:.72rem;margin-bottom:4px}
+.emap .pg .p b{color:#B23A48}
+.emap .pg .g b{color:#2FA36B}
+
 /* 故事气泡 */
 .story{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px)}
 .step{position:relative;padding-top:16px}
@@ -206,6 +276,15 @@ footer b{color:var(--ink)}
   .hmw{grid-template-columns:1fr}
   .fc3{right:-2%}
   .nav .links{display:none}
+  .fn-grid{grid-template-columns:1fr 1fr}
+  .word4{grid-template-columns:1fr 1fr}
+  .plan{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  table.cmp{display:block;overflow-x:auto;white-space:normal}
+  .fn-grid,.word4{grid-template-columns:1fr}
+  .emap{grid-template-columns:1fr}
+  .emap .pg{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -337,17 +416,126 @@ footer b{color:var(--ink)}
       </p>
     </div>
 
-    <div class="evidence rv">
-      <img src="assets/story/ref-competitor.jpg" alt="竞品对比表：闲鹅与直接竞品、间接竞品、替代方案的横向对比">
-      <div class="cap"><span class="tag">Competitive Analysis</span>
-        <p>竞品对比表：直接竞品 / 间接竞品 / 替代方案，按目标用户、核心问题、关键流程、做得好、不足逐项拆，并标注「待验证的设计机会」。</p>
+    <div class="fn-card rv">
+      <div class="fn-head"><h3>竞品对比表</h3><span class="sub">Competitive Analysis · Field Notes</span></div>
+      <div class="fn-body">
+        <table class="cmp">
+          <thead>
+            <tr>
+              <th style="width:112px">比较维度<small>Dimension</small></th>
+              <th>直接竞品<small>Direct · 闲鱼</small></th>
+              <th>间接竞品<small>Indirect · 微信群 / 朋友圈</small></th>
+              <th>替代方案<small>Alternative · 扔掉 / 送人</small></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th>产品名称<small>Name</small></th>
+              <td><b>闲鱼 · 二手市场</b></td>
+              <td><b>校园微信群 / 朋友圈</b></td>
+              <td><b>闲置堆放 · 送人</b></td></tr>
+            <tr><th>目标用户<small>Who</small></th>
+              <td>有二手交易需求的泛用户，规模大但人群杂</td>
+              <td>同校同学、熟人圈层</td>
+              <td>有闲置处理需求的个人</td></tr>
+            <tr><th>核心问题<small>Pain Point</small></th>
+              <td>校园场景覆盖弱：几十块的旧教材走快递不划算，定价无参考、陌生人信任成本高</td>
+              <td>信息易刷走、无法沉淀与检索，约面交全靠运气，没有担保</td>
+              <td>卖不出价值，堆着占地方，最后只能扔</td></tr>
+            <tr><th>关键流程<small>User Flow</small></th>
+              <td><ol><li>发布闲置</li><li>浏览 / 搜索</li><li>拍下商品</li><li>支付等待发货</li><li>确认收货 · 评价</li></ol></td>
+              <td><ol><li>群内发图文</li><li>消息被刷走</li><li>私聊砍价</li><li>约时间面交</li></ol></td>
+              <td><ol><li>打包</li><li>送人 / 扔掉</li></ol></td></tr>
+            <tr><th>做得好<small>Good</small></th>
+              <td>品类全、规模化，有验货担保机制，用户基数大</td>
+              <td>熟人信任是现成的，沟通直接，无平台费用</td>
+              <td>零成本、即刻解决</td></tr>
+            <tr><th>不足<small>Deficiency</small></th>
+              <td>物流成本高、同城面交效率低，买卖双方沟通与售后费劲</td>
+              <td>信息不可沉淀、不可检索、无担保，容易被广告刷屏</td>
+              <td>价值归零，没有交易闭环</td></tr>
+            <tr><th>待验证的设计机会<small>Opportunity</small></th>
+              <td colspan="3">校内身份轻认证能否降低信任成本？驿站自提能否取代快递走完「最后一公里」？AI 参考价能否解决「定价难」？</td></tr>
+          </tbody>
+        </table>
+
+        <div class="fn-head2"><h4>这张表怎么用</h4><span>How to use</span></div>
+        <div class="fn-grid">
+          <div class="fn-mini"><b><span class="idx">1</span>明确赛道</b><p>先写清楚你做的产品、目标用户和核心问题。<em>别急着找竞品。</em></p></div>
+          <div class="fn-mini"><b><span class="idx">2</span>找 3–5 款竞品</b><p>记住：竞品不一定是一项产品——相似产品是<b>直接竞品</b>，相同需求不同方式是<b>间接竞品</b>，用户手动替代是<b>替代方案</b>。</p></div>
+          <div class="fn-mini"><b><span class="idx">3</span>拆入表格</b><p>按用户、问题、流程、好与不足逐行拆，不要只罗列功能。</p></div>
+          <div class="fn-mini"><b><span class="idx">4</span>写结论，不保平安</b><p>每个格子都标注「待验证的设计机会」，<em>对比的终点是判断。</em></p></div>
+        </div>
+        <div class="fn-head2"><h4>四种常见错误</h4><span>Common mistakes</span></div>
+        <table class="pit">
+          <thead><tr><th style="width:150px">错误类型</th><th>常见写法 ✗</th><th>改进写法 ✓</th></tr></thead>
+          <tbody>
+            <tr><td class="kind">只看功能，不看策略</td><td class="bad">整个表格都在罗列竞品有什么功能</td><td class="good">标注每项功能背后要达成的目标</td></tr>
+            <tr><td class="kind">只做对比，不做判断</td><td class="bad">把「谁更好」写成小作文</td><td class="good">用「做得好 / 不足 / 机会」三栏下结论</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="fn-cap"><span class="tag">Extracted</span>
+        <p>由调研板「竞品分析模板 + 竞品对比表」重建为网页表格，非截图。</p>
       </div>
     </div>
 
-    <div class="evidence rv" style="margin-top:clamp(18px,2.8vw,30px)">
-      <img src="assets/story/ref-survey.jpg" alt="问卷话术模板：如何使用这一页、四种题目句式、四个常见的坑与执行计划">
-      <div class="cap"><span class="tag">Survey Template</span>
-        <p>问卷话术模板 + 执行计划：四种问法（数量 / 程度 / 场景 / 原因）与四个最常见的坑；目标 210–220 份问卷、8–10 人深访，第 1 天线上、第 2 天线下补发、第 3 天回收并同步访谈、第 4 天汇总成报告。</p>
+    <div class="fn-card rv" style="margin-top:clamp(18px,2.8vw,30px)">
+      <div class="fn-head"><h3>问卷话术模板</h3><span class="sub">Survey Script · Field Notes</span></div>
+      <div class="fn-body">
+        <div class="plan">
+          <div>
+            <div class="opening"><b>开场说明 ·</b> 你好！我们是【××大学】Feeling Futures 课程的学生，正在做一个关于【大学生闲置】的小调研，想占用你大约【3】分钟。回答没有对错，只用于课程作业，不会写你的名字。如果哪个问题不想答，随时可以跳过。</div>
+            <div class="fn-head2"><h4>四种题目句式</h4><span>Question patterns</span></div>
+            <div class="fn-grid" style="grid-template-columns:1fr 1fr">
+              <div class="fn-mini"><b><span class="idx">问数量</span>HOW MANY</b><p>每周几次？了解使用强度——<em>过去【1 周】内，有几次【浏览 / 发布闲置】？</em></p></div>
+              <div class="fn-mini"><b><span class="idx">问频率</span>HOW OFTEN</b><p>限定时间范围——<em>最近【1 个月】里，【搜寻闲置】几次？</em></p></div>
+              <div class="fn-mini"><b><span class="idx">问程度</span>HOW MUCH</b><p>判断态度强度——<em>你觉得【闲置定价难】问题严重吗？（1–5 分）</em></p></div>
+              <div class="fn-mini"><b><span class="idx">问感受</span>HOW SATISFIED</b><p>比较参照系——<em>和【其他二手渠道】比，你满意度打几分？（1–5 分）</em></p></div>
+            </div>
+          </div>
+          <div>
+            <div class="plan-box" style="height:100%">
+              <h5>执行计划<span class="tag">Field plan</span></h5>
+              <p><b>调研样本：</b>问卷 210–220 份，覆盖不同年级、不同院系；深度访谈 8–10 人，线上 + 线下结合。</p>
+              <ol>
+                <li><b>第 1 天：</b>问卷定稿，预约访谈对象</li>
+                <li><b>第 2–3 天：</b>全员投放（线上渠道 + 宿舍楼栋 / 食堂入口），同步访谈、录音记录</li>
+                <li><b>第 3–4 天：</b>整理问卷数据与访谈逐字稿，汇总写调研总结</li>
+              </ol>
+              <p><b>分析要点：</b>问卷看集中度与分布，访谈看动机与语境——两路证据交叉验证，别用一个问题下结论。</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fn-head2"><h4>四种最常见的坑</h4><span>Common traps</span></div>
+        <table class="pit">
+          <thead><tr><th style="width:120px">坑</th><th>常见写法 ✗</th><th>改进写法 ✓</th></tr></thead>
+          <tbody>
+            <tr><td class="kind">一题问两件事</td><td class="bad">「发布 & 沟通 & 你会觉得麻烦吗？」</td><td class="good">拆开问：发布麻烦吗？沟通麻烦吗？</td></tr>
+            <tr><td class="kind">选项不周全</td><td class="bad">「使用频率：1–3 / 3–5 / 5 次以上」（漏了 0 次）</td><td class="good">加「0 次」，覆盖不使用者</td></tr>
+            <tr><td class="kind">带倾向的选项</td><td class="bad">「它是非常好用还是太难用？」（暗示难用）</td><td class="good">改中性：使用中经常遇到哪些问题？</td></tr>
+            <tr><td class="kind">问未来不问过去</td><td class="bad">「以后会经常用这个 App 吗？」</td><td class="good">问真实行为：你最近一次没买成的东西是什么？</td></tr>
+          </tbody>
+        </table>
+
+        <div class="fn-head2"><h4>发出前，记住 4 个字</h4><span>Before sending</span></div>
+        <div class="word4">
+          <div class="w4"><div class="zi">一</div><p><b>一题一问</b><br>一个问题，只问一件事</p></div>
+          <div class="w4"><div class="zi">全</div><p><b>选项周全</b><br>不重叠、覆盖所有情况，留「其他」</p></div>
+          <div class="w4"><div class="zi">中</div><p><b>保持中立</b><br>不暗示答案，不带预设判断</p></div>
+          <div class="w4"><div class="zi">真</div><p><b>真问具体</b><br>问真实发生的事，不问想象</p></div>
+        </div>
+
+        <div class="fn-head2"><h4>读数据时的提醒</h4><span>Data worries</span></div>
+        <div class="fn-grid">
+          <div class="fn-mini"><b>数量 ≠ 代言</b><p>100 份不等于全校的代表性——实训题：问卷到底发给了谁？</p></div>
+          <div class="fn-mini"><b>警惕样本偏差</b><p>只在社群发问卷，结果更能代表「活跃的那群人」。</p></div>
+          <div class="fn-mini"><b>相关 ≠ 因果</b><p>「点外卖多的同学不太去第一饭堂」不构成结论。</p></div>
+          <div class="fn-mini"><b>不爱回答要谨慎</b><p>30 人没回答的题，可能是问题模糊、羞于开口，别直接计入平均。</p></div>
+        </div>
+      </div>
+      <div class="fn-cap"><span class="tag">Extracted</span>
+        <p>由调研板「问卷话术模板（两页）+ 执行计划」重建为网页内容，非截图。</p>
       </div>
     </div>
 
@@ -378,18 +566,58 @@ footer b{color:var(--ink)}
       <p class="lede">用户旅程地图还原一个人的语境，亲和图找出多数人的共性——每条设计决策都能对应回某张便签。</p>
     </div>
 
-    <div class="duo">
-      <div class="evidence rv">
-        <img src="assets/story/ref-journey.png" alt="用户旅程地图：用户小陈，20岁在校大学生，买卖二手物品的完整旅程">
-        <div class="cap"><span class="tag">Journey Map</span>
-          <p>用户旅程地图：以「小陈 · 20 岁 · 在校大学生」为原型，从找东西、联系对方、沟通价格、付款、等待物流到收货检查，逐段标注想法 / 行为 / 接触点 / 问题 / 情绪 / 机会。</p>
+    <div class="evidence rv">
+      <img src="assets/story/ref-journey.png" alt="用户旅程地图：用户小陈，20岁在校大学生，买卖二手物品的完整旅程">
+      <div class="cap"><span class="tag">Journey Map</span>
+        <p>用户旅程地图：以「小陈 · 20 岁 · 在校大学生」为原型，从找东西、联系对方、沟通价格、付款、等待物流到收货检查，逐段标注想法 / 行为 / 接触点 / 问题 / 情绪 / 机会。</p>
+      </div>
+    </div>
+
+    <div class="fn-card rv" style="margin-top:clamp(18px,2.8vw,30px)">
+      <div class="fn-head"><h3>同理心地图 · 校内二手交易平台</h3><span class="sub">Empathy Map · 每位典型受访者一张</span></div>
+      <div class="fn-body">
+        <div class="emap">
+          <span class="core">受访同学 · 在校大学生 · 有过二手买卖经历</span>
+          <div class="q blue">
+            <h4><b>SEE</b>看到</h4>
+            <div class="notes">
+              <div class="note">宿舍角落堆着「懒得卖」的教材和小家电</div>
+              <div class="note">群里的转让消息几分钟就沉底</div>
+              <div class="note">闲鱼上同款挂价五花八门，没有参照</div>
+            </div>
+          </div>
+          <div class="q pink">
+            <h4><b>HEAR</b>听到</h4>
+            <div class="notes">
+              <div class="note">「这个到底值多少钱？」</div>
+              <div class="note">「刚发的消息就被刷走了」</div>
+              <div class="note">「约了三次都没遇上人」</div>
+            </div>
+          </div>
+          <div class="q green">
+            <h4><b>SAY &amp; DO</b>说与做</h4>
+            <div class="notes">
+              <div class="note">在群里发图文求转让，隔天再发一遍</div>
+              <div class="note">拍照挂上大平台，嫌麻烦又下架</div>
+              <div class="note">和买家反复改约时间，最后不了了之</div>
+            </div>
+          </div>
+          <div class="q">
+            <h4><b>THINK &amp; FEEL</b>想与感</h4>
+            <div class="notes">
+              <div class="note">定价没参照，怕贱卖也怕卖不掉</div>
+              <div class="note">想腾空间，又嫌流程太麻烦</div>
+              <div class="note">担心面交被放鸽子，白跑一趟</div>
+            </div>
+          </div>
+          <div class="pg">
+            <div class="p"><b>痛点 · PAIN</b>定价难 · 信息易沉 · 沟通费劲 · 信任成本高 · 空间被占用</div>
+            <div class="g"><b>目标 · GAIN</b>顺手卖掉 · 快速出手 · 卖个合理价 · 省心交付不折腾</div>
+          </div>
         </div>
       </div>
-      <div class="evidence rv">
-        <img src="assets/story/ref-empathy.png" alt="同理心地图工作稿：为典型受访者逐张绘制的 EMPATHY MAP">
-        <div class="cap"><span class="tag">Empathy Map</span>
-          <p>同理心地图工作稿：为每位典型受访者各画一张（看 / 听 / 说与做 / 想与感 + 痛点 / 目标），情绪词单独标色。</p>
-        </div>
+      <div class="fn-cap"><span class="tag">Extracted</span>
+        <p>由调研板「EMPATHY MAP 工作稿」重建为网页卡片（六张受访者地图的结构与共性内容），非截图。</p>
       </div>
     </div>
 
