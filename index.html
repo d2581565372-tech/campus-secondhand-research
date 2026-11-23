@@ -169,6 +169,36 @@ table.pit{width:100%;border-collapse:collapse;font-size:.7rem}
 .emap .pg .p b{color:#B23A48}
 .emap .pg .g b{color:#2FA36B}
 
+/* 用户旅程地图 */
+.jinfo{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:14px}
+.jinfo .card{border:1px solid var(--line);border-radius:12px;padding:12px 14px;background:#F7F8FC;display:flex;gap:10px;align-items:center}
+.jinfo .card .av{font-size:1.6rem}
+.jinfo .card b{font-size:.72rem;color:var(--ink)}
+.jinfo .card p{font-size:.68rem;color:#565D72;margin-top:2px;line-height:1.5}
+.jscroll{overflow-x:auto;padding-bottom:4px}
+.jgrid{display:grid;grid-template-columns:84px repeat(6,1fr);gap:6px;min-width:900px}
+.jlab{background:#EEF1FA;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:.7rem;color:#3A4160;min-height:44px;padding:6px 4px;text-align:center}
+.jstage{grid-column:span 2;background:#DDEBFC;border-radius:10px;display:flex;align-items:center;justify-content:center;
+  font-weight:900;font-size:.75rem;color:#2E5B8F;padding:10px;letter-spacing:.05em}
+.jgoal{background:#E9EBF4;clip-path:polygon(0 0,calc(100% - 12px) 0,100% 50%,calc(100% - 12px) 100%,0 100%,12px 50%);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.68rem;color:#3A4160;
+  min-height:44px;padding:6px 16px;text-align:center}
+.jcell{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 11px;
+  font-size:.65rem;color:#4A5063;line-height:1.7}
+.jcell.say{font-style:italic;background:#FBFCFE}
+.jcell.touch{background:#F2F7FF;border-color:#D6E5FB}
+.jcell.prob{background:#FFF5F6;border-color:#F5DBDF}
+.jcell.opp{background:#F2FAF5;border-color:#CFE9DA}
+.jcell.prob,.jcell.opp{font-weight:600}
+.jchip{display:inline-block;background:#F0F1F5;border-radius:8px;padding:4px 10px;font-size:.62rem;font-weight:700;color:#5A6072}
+.jemo{position:relative;background:#fff;border:1px solid var(--line);border-radius:10px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:74px;padding:8px}
+.jemo .e{font-size:1.35rem;line-height:1}
+.jemo .t{font-size:.58rem;color:#C4764F;font-weight:800}
+.jemo svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.jemo svg path{fill:none;stroke:#E8A87C;stroke-width:.45;opacity:.75}
+
 /* 故事气泡 */
 .story{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px)}
 .step{position:relative;padding-top:16px}
@@ -608,10 +638,76 @@ footer b{color:var(--ink)}
       <p class="lede">用户旅程地图还原一个人的语境，亲和图找出多数人的共性——每条设计决策都能对应回某张便签。</p>
     </div>
 
-    <div class="evidence rv">
-      <img src="assets/story/ref-journey.png" alt="用户旅程地图：用户小陈，20岁在校大学生，买卖二手物品的完整旅程">
-      <div class="cap"><span class="tag">Journey Map</span>
-        <p>用户旅程地图：以「小陈 · 20 岁 · 在校大学生」为原型，从找东西、联系对方、沟通价格、付款、等待物流到收货检查，逐段标注想法 / 行为 / 接触点 / 问题 / 情绪 / 机会。</p>
+    <div class="fn-card rv">
+      <div class="fn-head"><h3>用户旅程地图 · 买卖二手物品</h3><span class="sub">Journey Map · Field Notes</span></div>
+      <div class="fn-body">
+        <div class="jinfo">
+          <div class="card"><span class="av">🙄</span><div><b>用户名</b><p>小陈 · 20 岁<br>在校大学生</p></div></div>
+          <div class="card"><span class="av">🛒</span><div><b>场景</b><p>买卖二手物品</p></div></div>
+          <div class="card"><span class="av">🎯</span><div><b>预期</b><p>高效买卖二手物品</p></div></div>
+        </div>
+
+        <div class="jscroll">
+          <div class="jgrid">
+            <div class="jlab">阶段</div>
+            <div class="jstage">第一阶段</div><div class="jstage">第二阶段</div><div class="jstage">第三阶段</div>
+
+            <div class="jlab">目标</div>
+            <div class="jgoal">找东西</div><div class="jgoal">联系对方</div><div class="jgoal">沟通价格</div>
+            <div class="jgoal">付款</div><div class="jgoal">等待物流</div><div class="jgoal">收货检查</div>
+
+            <div class="jlab">想法</div>
+            <div class="jcell say">「哪个平台上东西价格更低」</div>
+            <div class="jcell say">「等待回复，商品到底卖没卖给别人」</div>
+            <div class="jcell say">「能不能快点确定，能不能砍一点价格」</div>
+            <div class="jcell say">「这价格合不合适心里，运费是否能接受」</div>
+            <div class="jcell say">「物品能不能快点到」</div>
+            <div class="jcell say">「商品有没有破损，不想要售后，很麻烦」</div>
+
+            <div class="jlab">行为</div>
+            <div class="jcell"><span class="jchip">去各个平台上浏览，对比价格</span></div>
+            <div class="jcell"><span class="jchip">发起对话</span></div>
+            <div class="jcell"><span class="jchip">沟通</span></div>
+            <div class="jcell"><span class="jchip">付款</span></div>
+            <div class="jcell"><span class="jchip">等待收货</span></div>
+            <div class="jcell"><span class="jchip">收货，检查商品</span></div>
+
+            <div class="jlab">接触点</div>
+            <div class="jcell touch">在网上浏览想要的二手物品，但是平台推送不准确</div>
+            <div class="jcell touch">与多方沟通价格、运费，但是消息提醒混杂</div>
+            <div class="jcell touch">找到心意卖家后，平台提醒消息</div>
+            <div class="jcell touch">付钱后，平台赚取中介费</div>
+            <div class="jcell touch">催发货，平台显示物流速度</div>
+            <div class="jcell touch">平台提醒到货，可以售后</div>
+
+            <div class="jlab">问题</div>
+            <div class="jcell prob">看到随意定价的人，找不到想买的物品</div>
+            <div class="jcell prob">问了对方有没有货，对方已读不回，不知道什么意思</div>
+            <div class="jcell prob">谈价过程中对方下架消失</div>
+            <div class="jcell prob">付款时发现总额加运费，纠结要不要买</div>
+            <div class="jcell prob">等待时间有点久</div>
+            <div class="jcell prob">货物到手发现有运输破损或物品问题，找卖家售后没有回复、没有好的解决方案</div>
+
+            <div class="jlab">情绪</div>
+            <div class="jemo"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M8,12 C 17,14 20,20 25,21 S 37,12 42,13 S 54,23 58,22 S 72,24 75,23 S 87,26 92,26"/></svg><span class="e">😐</span><span class="t">平静</span></div>
+            <div class="jemo"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M8,12 C 17,14 20,20 25,21 S 37,12 42,13 S 54,23 58,22 S 72,24 75,23 S 87,26 92,26"/></svg><span class="e">😟</span><span class="t">焦虑</span></div>
+            <div class="jemo"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M8,12 C 17,14 20,20 25,21 S 37,12 42,13 S 54,23 58,22 S 72,24 75,23 S 87,26 92,26"/></svg><span class="e">😐</span><span class="t">平静</span></div>
+            <div class="jemo"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M8,12 C 17,14 20,20 25,21 S 37,12 42,13 S 54,23 58,22 S 72,24 75,23 S 87,26 92,26"/></svg><span class="e">😠</span><span class="t">不满</span></div>
+            <div class="jemo"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M8,12 C 17,14 20,20 25,21 S 37,12 42,13 S 54,23 58,22 S 72,24 75,23 S 87,26 92,26"/></svg><span class="e">😢</span><span class="t">难过</span></div>
+            <div class="jemo"><svg viewBox="0 0 100 30" preserveAspectRatio="none"><path d="M8,12 C 17,14 20,20 25,21 S 37,12 42,13 S 54,23 58,22 S 72,24 75,23 S 87,26 92,26"/></svg><span class="e">😫</span><span class="t">崩溃</span></div>
+
+            <div class="jlab">机会</div>
+            <div class="jcell opp">精准推送，分类物品，拼热门物品</div>
+            <div class="jcell opp">有效消息显示，标记已读</div>
+            <div class="jcell opp">分类用户，可选择相同用户买卖，出现拉黑</div>
+            <div class="jcell opp">严格审查卖家资质设置，同城价格必须小于某个数</div>
+            <div class="jcell opp">校内平台服务范围小，配送快</div>
+            <div class="jcell opp">加入售后服务</div>
+          </div>
+        </div>
+      </div>
+      <div class="fn-cap"><span class="tag">Extracted</span>
+        <p>由调研板「用户旅程地图」逐格提取重建为网页表格（小陈 · 20 岁 · 在校大学生），非截图。</p>
       </div>
     </div>
 
