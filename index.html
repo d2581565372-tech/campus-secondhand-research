@@ -315,7 +315,7 @@ footer b{color:var(--ink)}
         我们想把「定价难、消息被刷走、沟通费劲」这些买卖二手时真实的坎，一个个搬走。
       </p>
       <div class="hero-metrics">
-        <div class="chip b"><div class="v">210+</div><div class="k">目标问卷</div></div>
+        <div class="chip b"><div class="v">120+</div><div class="k">计划问卷</div></div>
         <div class="chip p"><div class="v">8–10</div><div class="k">深度访谈</div></div>
         <div class="chip"><div class="v">2.0→3.0</div><div class="k">版本迭代</div></div>
         <div class="chip g"><div class="v">12+</div><div class="k">功能升级</div></div>
@@ -336,8 +336,8 @@ footer b{color:var(--ink)}
   <div class="wrap">
     <div class="metrics rv">
       <div class="metric">
-        <div class="v">210+</div><div class="t">目标问卷份数</div>
-        <div class="d">覆盖不同年级与院系，线上线下同步发放</div>
+        <div class="v">120+</div><div class="t">计划回收问卷</div>
+        <div class="d">线上问卷 + 微访谈组合，覆盖不同年级、不同院系</div>
         <svg viewBox="0 0 100 34"><polyline points="4,28 22,24 40,25 58,17 76,12 96,6"/><circle cx="96" cy="6" r="3"/></svg>
       </div>
       <div class="metric">
@@ -419,44 +419,54 @@ footer b{color:var(--ink)}
     <div class="fn-card rv">
       <div class="fn-head"><h3>竞品对比表</h3><span class="sub">Competitive Analysis · Field Notes</span></div>
       <div class="fn-body">
+        <p style="font-size:.66rem;color:var(--muted);margin-bottom:10px">
+          姓名 / 组名：丁雯静 · 选题：校园二手平台 · 核心用户任务：三个方案比较同一个任务（例：找到一个现在能用的自习位置）
+        </p>
         <table class="cmp">
           <thead>
             <tr>
               <th style="width:112px">比较维度<small>Dimension</small></th>
-              <th>直接竞品<small>Direct · 闲鱼</small></th>
-              <th>间接竞品<small>Indirect · 微信群 / 朋友圈</small></th>
-              <th>替代方案<small>Alternative · 扔掉 / 送人</small></th>
+              <th>直接竞品<small>相同问题 · 类似产品</small></th>
+              <th>间接竞品<small>相似需求 · 不同方式</small></th>
+              <th>替代方案<small>用户现在怎么解决</small></th>
             </tr>
           </thead>
           <tbody>
             <tr><th>产品名称<small>Name</small></th>
-              <td><b>闲鱼 · 二手市场</b></td>
-              <td><b>校园微信群 / 朋友圈</b></td>
-              <td><b>闲置堆放 · 送人</b></td></tr>
+              <td><b>咸鱼、转转</b></td>
+              <td><b>小红书</b></td>
+              <td><b>QQ、微信二手物品群</b></td></tr>
             <tr><th>目标用户<small>Who</small></th>
-              <td>有二手交易需求的泛用户，规模大但人群杂</td>
-              <td>同校同学、熟人圈层</td>
-              <td>有闲置处理需求的个人</td></tr>
-            <tr><th>核心问题<small>Pain Point</small></th>
-              <td>校园场景覆盖弱：几十块的旧教材走快递不划算，定价无参考、陌生人信任成本高</td>
-              <td>信息易刷走、无法沉淀与检索，约面交全靠运气，没有担保</td>
-              <td>卖不出价值，堆着占地方，最后只能扔</td></tr>
-            <tr><th>关键流程<small>User Flow</small></th>
-              <td><ol><li>发布闲置</li><li>浏览 / 搜索</li><li>拍下商品</li><li>支付等待发货</li><li>确认收货 · 评价</li></ol></td>
-              <td><ol><li>群内发图文</li><li>消息被刷走</li><li>私聊砍价</li><li>约时间面交</li></ol></td>
-              <td><ol><li>打包</li><li>送人 / 扔掉</li></ol></td></tr>
-            <tr><th>做得好<small>Good</small></th>
-              <td>品类全、规模化，有验货担保机制，用户基数大</td>
-              <td>熟人信任是现成的，沟通直接，无平台费用</td>
-              <td>零成本、即刻解决</td></tr>
-            <tr><th>不足<small>Deficiency</small></th>
-              <td>物流成本高、同城面交效率低，买卖双方沟通与售后费劲</td>
-              <td>信息不可沉淀、不可检索、无担保，容易被广告刷屏</td>
-              <td>价值归零，没有交易闭环</td></tr>
-            <tr><th>待验证的设计机会<small>Opportunity</small></th>
-              <td colspan="3">校内身份轻认证能否降低信任成本？驿站自提能否取代快递走完「最后一公里」？AI 参考价能否解决「定价难」？</td></tr>
+              <td>为二手出售的人</td>
+              <td>年轻人</td>
+              <td>同学</td></tr>
+            <tr><th>核心问题<small>What</small></th>
+              <td>通过官方平台有保障地出售二手物品（二手电子产品），了解市场价格</td>
+              <td>发帖询问市场需求，浏览类似物品需求</td>
+              <td>方便同校出物，没有平台赚取手续费，没有邮费</td></tr>
+            <tr><th>关键流程<small>How</small></th>
+              <td><ol><li>实名认证登录 → 点「＋」发闲置</li><li>上传物品图，填标题、成色、定价、配送方式（快递 / 自提）</li><li>发布上架，等待咨询议价</li><li>买家拍下付款 → 沟通，发货 / 线下当面交付</li><li>买家确认收货 → 收款</li></ol></td>
+              <td><ol><li>账号登录（满足条件、开通个人售卖）</li><li>发布图文笔记，可挂上商品卡</li><li>用户评论 / 私信询问议价</li><li>买家在小红书站内拍下付款（平台担保）</li><li>约定快递 / 自提，交付物品</li><li>买家确认收货，卖家收款</li></ol></td>
+              <td><ol><li>入群</li><li>了解群内物品定价</li><li>群内发物品图文</li><li>私聊协商</li><li>线下当面转账交付</li></ol></td></tr>
+            <tr><th>做得好<small>Experience</small></th>
+              <td>商品基数大，担保交易</td>
+              <td>有平台保障，二次元、追星周边圈层曝光好</td>
+              <td>无平台手续费，自理便捷</td></tr>
+            <tr><th>不足<small>Experience</small></th>
+              <td>用户混杂，帖子易下沉，本校比价难，平台手续费</td>
+              <td>重图文包装，无同校分区，交易流程割裂</td>
+              <td>消息快速被刷走，需反复刷屏；无分类检索、比价功能；无交易担保</td></tr>
           </tbody>
         </table>
+
+        <div class="fn-head2"><h4>待验证的设计机会</h4><span>Opportunity</span></div>
+        <div class="fn-grid">
+          <div class="fn-mini"><b><span class="idx">现象</span>发现现象</b><p>大学生校内闲置交易渠道分散，拼单、代取等需求无法统一解决。</p></div>
+          <div class="fn-mini"><b><span class="idx">问题</span>识别问题</b><p>现有渠道普遍存在帖子易沉没、同校比价困难、功能割裂、交易风险等痛点。</p></div>
+          <div class="fn-mini"><b><span class="idx">机会</span>提出机会</b><p>搭建本校专属平台，闲置比价为核心，整合拼单、代取快递等校内服务。</p></div>
+          <div class="fn-mini"><b><span class="idx">验证</span>验证假设</b><p>通过问卷、用户访谈验证需求真实性。</p></div>
+        </div>
+        <p style="font-size:.62rem;color:var(--muted);margin-top:12px">※ 比较时记录操作步骤、截图和体验依据，区分观察事实与推测；不能实际体验时标注「待核实」。</p>
 
         <div class="fn-head2"><h4>这张表怎么用</h4><span>How to use</span></div>
         <div class="fn-grid">
@@ -482,9 +492,22 @@ footer b{color:var(--ink)}
     <div class="fn-card rv" style="margin-top:clamp(18px,2.8vw,30px)">
       <div class="fn-head"><h3>问卷话术模板</h3><span class="sub">Survey Script · Field Notes</span></div>
       <div class="fn-body">
-        <div class="plan">
+        <div class="fn-head2" style="margin-top:0"><h4>调研目标</h4><span>Research goals</span></div>
+        <div class="fn-grid" style="grid-template-columns:1fr 1fr 1fr">
+          <div class="fn-mini"><b><span class="idx">01</span>摸清真实痛点</b><p>现有二手微信群、闲鱼的使用麻烦点——邮费、自提、定价难、交易信任问题。</p></div>
+          <div class="fn-mini"><b><span class="idx">02</span>验证两个核心功能</b><p>① 校内寝室点点跑腿代送；② 历史成交记录辅助定价——看学生是否愿意使用。</p></div>
+          <div class="fn-mini"><b><span class="idx">03</span>支撑设计决策</b><p>收集二手品类、交易习惯、信任顾虑、付费意愿，为功能优先级、界面设计提供依据。</p></div>
+        </div>
+
+        <div class="plan" style="margin-top:16px">
           <div>
-            <div class="opening"><b>开场说明 ·</b> 你好！我们是【××大学】Feeling Futures 课程的学生，正在做一个关于【大学生闲置】的小调研，想占用你大约【3】分钟。回答没有对错，只用于课程作业，不会写你的名字。如果哪个问题不想答，随时可以跳过。</div>
+            <div class="plan-box">
+              <h5>调研方法说明<span class="tag">Method</span></h5>
+              <p><b>组合使用【线上问卷 + 微访谈】</b></p>
+              <p><b>问卷：</b>面向大范围在校生，快速统计整体偏好、使用频率、价格接受度，适合量化数据。</p>
+              <p><b>访谈：</b>挑选有二手买卖经验的同学深度聊天，挖掘问卷看不到的细节——比如跑腿安全顾虑、定价时的纠结、担心被骗等隐性问题。</p>
+            </div>
+            <div class="opening" style="margin-top:12px"><b>开场说明 ·</b> 你好！我们是【××大学】Feeling Futures 课程的学生，正在做一个关于【大学生闲置】的小调研，想占用你大约【3】分钟。回答没有对错，只用于课程作业，不会写你的名字。如果哪个问题不想答，随时可以跳过。</div>
             <div class="fn-head2"><h4>四种题目句式</h4><span>Question patterns</span></div>
             <div class="fn-grid" style="grid-template-columns:1fr 1fr">
               <div class="fn-mini"><b><span class="idx">问数量</span>HOW MANY</b><p>每周几次？了解使用强度——<em>过去【1 周】内，有几次【浏览 / 发布闲置】？</em></p></div>
@@ -494,15 +517,21 @@ footer b{color:var(--ink)}
             </div>
           </div>
           <div>
-            <div class="plan-box" style="height:100%">
-              <h5>执行计划<span class="tag">Field plan</span></h5>
-              <p><b>调研样本：</b>问卷 210–220 份，覆盖不同年级、不同院系；深度访谈 8–10 人，线上 + 线下结合。</p>
+            <div class="plan-box">
+              <h5>执行安排<span class="tag">Field plan</span></h5>
+              <p><b>调研对象：</b>本校在校本科生、研究生。问卷计划回收 <b>120 份以上</b>，覆盖不同年级、不同院系；访谈 <b>8~10 人</b>，筛选经常在二手群 / 闲鱼买卖闲置、愿意尝试校内跑腿的同学。</p>
+              <p><b>调研地点：</b>问卷——微信朋友圈、班级群、校园闲置群线上发放；访谈——线下空闲教室 / 校园安静长椅，或线上语音。</p>
               <ol>
-                <li><b>第 1 天：</b>问卷定稿，预约访谈对象</li>
-                <li><b>第 2–3 天：</b>全员投放（线上渠道 + 宿舍楼栋 / 食堂入口），同步访谈、录音记录</li>
-                <li><b>第 3–4 天：</b>整理问卷数据与访谈逐字稿，汇总写调研总结</li>
+                <li><b>第 1 天：</b>编写问卷题目、整理访谈提纲</li>
+                <li><b>第 2–3 天：</b>投放问卷，同步邀约访谈对象，开展访谈、录音记录（征得同意）</li>
+                <li><b>第 4 天：</b>整理问卷数据、转录访谈要点，汇总问题和需求</li>
               </ol>
-              <p><b>分析要点：</b>问卷看集中度与分布，访谈看动机与语境——两路证据交叉验证，别用一个问题下结论。</p>
+              <p><b>分工：</b>主负责人——统筹进度、邀约访谈对象、整理最终调研报告；记录员——访谈文字记录、整理问卷回收数据与原始材料。</p>
+            </div>
+            <div class="plan-box" style="margin-top:12px">
+              <h5>调研核心问题方向<span class="tag">Key questions</span></h5>
+              <p><b>问卷重点：</b>是否买 / 卖过校园闲置、平时在哪交易、最讨厌什么问题；是否愿意寝室点点配送；能接受的跑腿费用；会不会参考历史成交定价；担心哪些风险（物品损坏、跑腿人员安全、交易纠纷）。</p>
+              <p><b>访谈重点：</b>交易踩过什么坑；如果有跑腿，下单和收货最在意什么；定价一般怎么估；对 App 还有什么额外期待。</p>
             </div>
           </div>
         </div>
@@ -533,9 +562,22 @@ footer b{color:var(--ink)}
           <div class="fn-mini"><b>相关 ≠ 因果</b><p>「点外卖多的同学不太去第一饭堂」不构成结论。</p></div>
           <div class="fn-mini"><b>不爱回答要谨慎</b><p>30 人没回答的题，可能是问题模糊、羞于开口，别直接计入平均。</p></div>
         </div>
+
+        <div class="fn-head2"><h4>问卷提交卡 · 五个测量板块</h4><span>Question card · 试填 30 人后修订投放</span></div>
+        <div class="plan" style="grid-template-columns:1fr">
+          <div class="plan-box">
+            <ol>
+              <li><b>一、基础背景信息（用户画像）</b>——年级；在校闲置出售 / 收物频率（从不 / 一学期 1–2 次 / 每月 1 次 / 每月多次）；是否参与过校内拼单、是否使用过代取快递服务。</li>
+              <li><b>二、现有渠道使用情况（闲鱼 / 转转 / 小红书 / 校园二手群）</b>——常用渠道（多选）；在该渠道遇到痛点的困扰程度（李克特 5 分）：帖子很快被刷下去需反复重发 · 难查本校同类闲置参考价、定价困难 · 校外无关人员过多 · 平台手续费 / 快递成本高 · 交易缺少保障担心被骗 · 拼单代取要换到别的软件 / 群聊操作很麻烦。</li>
+              <li><b>三、核心功能需求测量（5 分打分）</b>——仅限本校学生登录的闲置交易板块；发布闲置时自动查看本校同类商品历史成交价作为定价参考（核心卖点）；校内拼单板块（零食、周边、二次元 / 追星团购）；校内代取快递互助板块；校内定点自提交易方式。</li>
+              <li><b>四、产品接受意愿测量</b>——如果有本校专属一体化平台，是否愿意尝试使用；相比闲鱼 / 二手群优先选择本校平台的原因（多选）；可接受的平台形式（微信小程序 / App / 网页端）。</li>
+              <li><b>五、风险与顾虑测量</b>——使用本校平台最担心的问题（信息泄露、没人用、交易纠纷、功能不好用等）。</li>
+            </ol>
+          </div>
+        </div>
       </div>
       <div class="fn-cap"><span class="tag">Extracted</span>
-        <p>由调研板「问卷话术模板（两页）+ 执行计划」重建为网页内容，非截图。</p>
+        <p>由调研板「问卷话术模板（两页）+ 执行计划 + 问卷提交卡」重建为网页内容，非截图。</p>
       </div>
     </div>
 
@@ -577,47 +619,45 @@ footer b{color:var(--ink)}
       <div class="fn-head"><h3>同理心地图 · 校内二手交易平台</h3><span class="sub">Empathy Map · 每位典型受访者一张</span></div>
       <div class="fn-body">
         <div class="emap">
-          <span class="core">受访同学 · 在校大学生 · 有过二手买卖经历</span>
+          <span class="core">受访者 01 · 小陈 · 20 岁 · 访谈日期 11.8 · 记录 丁雯静</span>
           <div class="q blue">
-            <h4><b>SEE</b>看到</h4>
+            <h4><b>FEELS</b>感受什么</h4>
             <div class="notes">
-              <div class="note">宿舍角落堆着「懒得卖」的教材和小家电</div>
-              <div class="note">群里的转让消息几分钟就沉底</div>
-              <div class="note">闲鱼上同款挂价五花八门，没有参照</div>
+              <div class="note">① 来回等回复，消耗耐心</div>
+              <div class="note">② 校内交易缺少规则约束，交易风险有隐患，很担心</div>
+              <div class="note">③ 拿到货的时间可以尽可能缩短，很急切</div>
             </div>
           </div>
           <div class="q pink">
-            <h4><b>HEAR</b>听到</h4>
+            <h4><b>MEET</b>遇到什么买卖家</h4>
             <div class="notes">
-              <div class="note">「这个到底值多少钱？」</div>
-              <div class="note">「刚发的消息就被刷走了」</div>
-              <div class="note">「约了三次都没遇上人」</div>
+              <div class="note">① 部分二手 / 三手卖家，被问到物品瑕疵时，回答不上具体问题</div>
+              <div class="note">② 出手全部，但是只要几本</div>
             </div>
           </div>
           <div class="q green">
-            <h4><b>SAY &amp; DO</b>说与做</h4>
+            <h4><b>SAYS</b>说些什么</h4>
             <div class="notes">
-              <div class="note">在群里发图文求转让，隔天再发一遍</div>
-              <div class="note">拍照挂上大平台，嫌麻烦又下架</div>
-              <div class="note">和买家反复改约时间，最后不了了之</div>
+              <div class="note">「拍了一堆照片发到那个二手群里面，然后没有人鸟」</div>
+              <div class="note">「卖家买家回消息有点慢吧」「看成交的价格吧，然后包不包邮」</div>
+              <div class="note">「如果是二手或者三手的买家，他肯定回答不上你的某些问题——他也不知道这个东西哪里有瑕疵啥的」</div>
+              <div class="note">「我希望这个东西直接空投到我家，不要省去那三天的时间」</div>
             </div>
           </div>
           <div class="q">
-            <h4><b>THINK &amp; FEEL</b>想与感</h4>
+            <h4><b>THINKS</b>在想什么</h4>
             <div class="notes">
-              <div class="note">定价没参照，怕贱卖也怕卖不掉</div>
-              <div class="note">想腾空间，又嫌流程太麻烦</div>
-              <div class="note">担心面交被放鸽子，白跑一趟</div>
+              <div class="note">① 卖东西优先看物品对自己是否还有用处，情感纪念意义也会影响要不要出</div>
+              <div class="note">② 买二手，需求和喜欢程度，价格、物流也考量</div>
+              <div class="note">③ 如果卖家对自家物品一问三不知，直接默认物品不靠谱，不愿冒险</div>
+              <div class="note">④ 对于校内平台，不怕功能少，最怕没人用</div>
+              <div class="note">⑤ 很看重物流速度、交付速度</div>
             </div>
-          </div>
-          <div class="pg">
-            <div class="p"><b>痛点 · PAIN</b>定价难 · 信息易沉 · 沟通费劲 · 信任成本高 · 空间被占用</div>
-            <div class="g"><b>目标 · GAIN</b>顺手卖掉 · 快速出手 · 卖个合理价 · 省心交付不折腾</div>
           </div>
         </div>
       </div>
       <div class="fn-cap"><span class="tag">Extracted</span>
-        <p>由调研板「EMPATHY MAP 工作稿」重建为网页卡片（六张受访者地图的结构与共性内容），非截图。</p>
+        <p>由调研板「EMPATHY MAP · 校内二手市场交易平台」受访者 01 地图逐条提取（共 6 位受访者，此处展示典型一张），非截图。</p>
       </div>
     </div>
 
@@ -729,12 +769,12 @@ footer b{color:var(--ink)}
       <p class="lede">调研里出现频率最高、但我们还没来得及做完的事，排进了 3.1 的清单。</p>
     </div>
     <div class="next-steps rv">
-      <article class="next-card"><span class="k">Next 01</span><h3>资金托管担保交易</h3>
-        <p>参考 Gali 的模式：货款平台托管，确认无误当面验货后放款，纠纷在交接点处理。</p></article>
-      <article class="next-card"><span class="k">Next 02</span><h3>校内信用体系</h3>
-        <p>学号 / 校园邮箱轻认证 + 成交次数与评价；放鸽子会被记录，但不必做成重社交。</p></article>
-      <article class="next-card"><span class="k">Next 03</span><h3>更聪明的 AI 定价</h3>
-        <p>同校同款的近期成交区间 + 成色分级参考，让砍价有依据，让卖家不必凭感觉定价。</p></article>
+      <article class="next-card"><span class="k">Next 01 · 假设①</span><h3>寝室点点跑腿代送</h3>
+        <p>校内代取快递互助 + 寝室点点配送：回应「空投到家」的期待，把拿到货的时间压到最短。</p></article>
+      <article class="next-card"><span class="k">Next 02 · 假设②</span><h3>历史成交价参考定价</h3>
+        <p>发布闲置时自动展示本校同类商品历史成交价，让定价有依据——问卷里标注的核心卖点。</p></article>
+      <article class="next-card"><span class="k">Next 03</span><h3>校内信用与担保</h3>
+        <p>学号轻认证 + 资金托管担保交易（参考 Gali 模式）：交易有规则约束，解决「交易风险有隐患」。</p></article>
     </div>
     <p class="rv" style="text-align:center;margin-top:clamp(26px,4vw,44px)">
       <a class="cta" href="#top" style="text-decoration:none;display:inline-block;font-size:.8rem;border:1.5px solid var(--ink);border-radius:999px;padding:10px 22px;font-weight:800">← 回到故事开头</a>
