@@ -26,9 +26,22 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;margin:8px 0 10px;letter-spa
 .g{color:var(--or)}
 /* Hero */
 #pain{padding-top:56px}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center;margin-bottom:34px}
-.hero-grid h1{font-size:clamp(30px,5vw,52px);font-weight:900;line-height:1.18;letter-spacing:-.02em}
-.hero-grid .sub{font-size:1.05rem;color:var(--mut);margin-top:16px}
+.hero-text{max-width:700px;margin-bottom:28px}
+.hero-text h1{font-size:clamp(30px,5vw,52px);font-weight:900;line-height:1.18;letter-spacing:-.02em}
+.hero-text .sub{font-size:1.05rem;color:var(--mut);margin-top:16px}
+/* 照片拼贴 */
+.collage{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-bottom:40px}
+.collage figure{margin:0;position:relative;overflow:hidden;border-radius:14px;height:210px}
+.collage .wide{grid-column:span 2;grid-row:span 1}
+.collage img{width:100%;height:100%;object-fit:cover;transition:.35s}
+.collage figure:hover img{transform:scale(1.05)}
+.collage figcaption{position:absolute;left:0;right:0;bottom:0;padding:18px 12px 8px;font-size:.66rem;font-weight:700;color:#fff;
+  background:linear-gradient(transparent,rgba(15,17,22,.72))}
+@media(max-width:860px){
+ .collage{grid-template-columns:1fr 1fr}
+ .collage figure{height:170px}
+ .collage .wide{grid-column:span 2}
+}
 .pain-visual{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:40px}
 .pv{background:#fff;border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 16px 40px rgba(21,23,28,.08)}
 .pv .ph-h{background:#2B2E38;color:#B9BECB;font-size:.68rem;padding:9px 14px;display:flex;justify-content:space-between}
@@ -264,44 +277,18 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 
 <!-- 01 痛点 Hero -->
 <section id="pain"><div class="wrap">
-  <div class="hero-grid rv">
-    <div>
-      <div class="kick">🪿 闲鹅 · 校园二手闲置平台 · 2026 · 已上线迭代中</div>
-      <h1>一切从<span class="hl">卖不出去的闲置</span>开始</h1>
-      <p class="sub">每个宿舍角落都堆着「懒得卖」的东西：教材、台灯、小家电。<b>不是不想卖，而是定价没参照、消息被刷走、和陌生人沟通太费劲。</b></p>
-    </div>
-    <div class="pain-visual" style="margin:0">
-      <div class="pv">
-        <div class="ph-h"><span>宿舍一角 · 实景</span><span>📁 卖不掉的东西</span></div>
-        <div class="ph-b">
-          <div class="dorm">
-            <div class="it"><span class="e">📚</span><b>高数教材</b><span class="pr">挂了 3 周</span><span class="tag2">懒得卖</span></div>
-            <div class="it"><span class="e">💡</span><b>宿舍台灯</b><span class="pr">没人问</span><span class="tag2">懒得卖</span></div>
-            <div class="it"><span class="e">🔌</span><b>小风扇</b><span class="pr">带不走</span><span class="tag2">懒得卖</span></div>
-            <div class="it"><span class="e">🧺</span><b>收纳箱</b><span class="pr">占地方</span><span class="tag2">懒得卖</span></div>
-            <div class="it"><span class="e">🎧</span><b>备用耳机</b><span class="pr">卖不掉</span><span class="tag2">懒得卖</span></div>
-            <div class="it"><span class="e">🧸</span><b>手办摆件</b><span class="pr">不会定价</span><span class="tag2">懒得卖</span></div>
-          </div>
-        </div>
-        <div class="cap2">教材、台灯、小家电——<b>每个宿舍角落都堆着「懒得卖」</b></div>
-      </div>
-      <div class="pv">
-        <div class="ph-h"><span>校园二手群 · 微信聊天</span><span>2026-11-08</span></div>
-        <div class="ph-b">
-          <div class="chat">
-            <div class="bub l fade">出个台灯，几乎全新 📷[图片]</div>
-            <div class="bub l fade">便宜出！宿舍楼下自提</div>
-            <div class="bub l fade">有人要吗…</div>
-            <div class="sys">以下为新消息</div>
-            <div class="bub r">这个到底值多少钱？🤔</div>
-            <div class="bub l">20 出吗？</div>
-            <div class="bub r">30 吧，九成新</div>
-            <div class="sys">对方已读，没有回复</div>
-          </div>
-        </div>
-        <div class="cap2"><b>「拍了一堆照片发到那个二手群里面，然后没有人鸟。」</b>—— 受访者 P01 小陈</div>
-      </div>
-    </div>
+  <div class="hero-text rv">
+    <div class="kick">🪿 闲鹅 · 校园二手闲置平台 · 2026 · 已上线迭代中</div>
+    <h1>一切从<span class="hl">卖不出去的闲置</span>开始</h1>
+    <p class="sub">每个宿舍角落都堆着「懒得卖」的东西：教材、台灯、小家电。<b>不是不想卖，而是定价没参照、消息被刷走、和陌生人沟通太费劲。</b></p>
+  </div>
+
+  <div class="collage rv">
+    <figure class="wide"><img src="assets/hero/hero-market.jpg" alt="校园地摊实景：学生把闲置铺在地上甩卖"><figcaption>校园地摊 · 闲置甩卖现场</figcaption></figure>
+    <figure><img src="assets/hero/hero-books.jpg" alt="堆积的二手教材"><figcaption>挂了 3 周没人要的教材</figcaption></figure>
+    <figure><img src="assets/hero/hero-dorm.jpg" alt="宿舍闲置九宫格：拉筋板、化妆镜、置物架、头盔等都标价5-8块"><figcaption>宿舍闲置 · 5~8 块甩卖</figcaption></figure>
+    <figure><img src="assets/hero/hero-items.jpg" alt="桌面平铺的小物品：风扇、鸭舌帽、发夹、眼罩等带价签"><figcaption>带不出校门的小物</figcaption></figure>
+    <figure><img src="assets/hero/hero-flat.jpg" alt="平铺的大件闲置：马克笔、口风琴、球拍、麻将、素描本"><figcaption>大件闲置 · 占地方难出</figcaption></figure>
   </div>
 
   <div class="band rv">
