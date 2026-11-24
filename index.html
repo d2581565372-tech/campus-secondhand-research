@@ -57,6 +57,14 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;margin:8px 0 10px;letter-spa
 .band .n .t{font-size:.8rem;font-weight:800;margin-top:4px}
 .band .n .d{font-size:.66rem;color:var(--mut);margin-top:2px}
 .foot-note{font-size:.62rem;color:#A2A8B5;margin-top:10px}
+/* 真实界面展示 */
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;justify-items:center}
+.shots figure{margin:0;text-align:center}
+.shots img{width:min(320px,84vw);border-radius:30px;box-shadow:0 24px 56px rgba(21,23,28,.18);border:1px solid var(--line);transition:.3s}
+.shots figure:hover img{transform:translateY(-6px)}
+.shots figcaption{font-size:.74rem;color:var(--mut);margin-top:12px;max-width:300px}
+.shots figcaption b{color:var(--ink);display:block;font-size:.82rem;margin-bottom:2px}
+@media(max-width:860px){.shots{grid-template-columns:1fr}}
 /* 市场机会 */
 .mkt{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px}
 .mcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
@@ -303,6 +311,14 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <div class="n"><div class="v">56</div><div class="t">产品迭代</div><div class="d">从 1.0 到 3.0 持续打磨</div></div>
   </div>
   <p class="foot-note">数据口径：项目组统计（问卷回收 120+ 份、用户测试 10 次、产品迭代 56 次）</p>
+
+  <h3 style="font-size:1.05rem;margin:44px 0 6px">闲鹅 3.0 · <span class="g">真实界面</span></h3>
+  <p class="foot-note" style="margin-bottom:22px">上线版本实际界面 —— 启动页 / 首页小市集 / 发布闲置</p>
+  <div class="shots rv">
+    <figure><img src="assets/app/screen-boot.png" alt="闲鹅启动页：让闲置在校园里流动起来"><figcaption><b>启动页</b>「让闲置在校园里流动起来」</figcaption></figure>
+    <figure><img src="assets/app/screen-home.png" alt="闲鹅首页·闲置小市集：推荐排序、分类筛选、商品卡片"><figcaption><b>首页 · 闲置小市集</b>推荐 / 最新 / 热门排序 + 分类筛选，商品卡片直接呈现</figcaption></figure>
+    <figure><img src="assets/app/screen-publish.png" alt="闲鹅发布闲置页：出闲置/收闲置、AI识别、库存管理、成色与议价设置"><figcaption><b>发布 · AI 识别</b>出/收闲置分类 + AI 识别 + 库存自动管理，30 秒发布</figcaption></figure>
+  </div>
 </div></section>
 
 <!-- 02 市场机会 -->
