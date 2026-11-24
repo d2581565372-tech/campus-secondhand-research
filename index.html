@@ -156,6 +156,11 @@ details .dbody{padding:0 16px 16px;font-size:.78rem;color:#4A5063}
 .pov b{display:block;font-size:.76rem;margin-bottom:5px}
 .pov.hmw{background:#FFE3EE;color:#7E3A5C}
 /* 头脑风暴 */
+.bs3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:10px}
+.bs3 figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 10px 28px rgba(21,23,28,.05)}
+.bs3 img{width:100%;height:300px;object-fit:contain;border-radius:8px;background:#FBFCFE}
+.bs3 figcaption{font-size:.7rem;color:var(--mut);margin-top:10px;text-align:left;line-height:1.6}
+.bs3 figcaption b{display:block;color:var(--ink);font-size:.78rem;margin-bottom:2px}
 .brain{display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-bottom:14px}
 .bnote{background:#FFF3B8;border-radius:10px;padding:11px 13px;font-size:.72rem;color:#5C4A1E;box-shadow:2px 3px 0 rgba(21,23,28,.1);margin-bottom:9px;transform:rotate(-.4deg)}
 .bnote:nth-child(2n){transform:rotate(.5deg);background:#FFF9D6}
@@ -461,25 +466,19 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <div class="pov hmw"><b>HMW</b>我们如何给校内交易加上规则与兜底？</div>
   </div>
 
-  <h3 style="font-size:1.05rem;margin:30px 0 14px">头脑风暴 · 从洞察到产品的发散</h3>
-  <div class="brain rv">
-    <div class="bcol">
-      <h4>成员想法<em>MEMBERS</em></h4>
-      <div class="bnote"><b>想法 1</b>做一个校内二手小程序，全校买卖闲置都装进一个 App，不用再混在群里。</div>
-      <div class="bnote"><b>想法 2</b>资金托管担保交易——确认收货后再放款，买卖双方都放心。</div>
-      <div class="bnote"><b>想法 3</b>定价要有参照：同校同类商品的成交价直接摆出来。</div>
-      <div class="bnote"><b>想法 4</b>固定点位当面验货（东门驿站），顺路交货不走快递。</div>
-    </div>
-    <div class="bcol">
-      <h4>AI 想法<em>AI IDEAS</em></h4>
-      <div class="bnote gn"><b>整合分散渠道</b>统一到一个数字化平台：集中发布、担保交易、约定时间地点交付。</div>
-      <div class="bnote gn"><b>降低交易摩擦</b>资金托管 + 物流/自提衔接，让管理提速、交易更简化高效。</div>
-      <h4 style="margin-top:14px">现实参照<em>BENCHMARK</em></h4>
-      <div class="bm3">
-        <div class="bm"><b>Gali</b>资金托管 + 固定点位当面验货</div>
-        <div class="bm"><b>校闲荟</b>小程序担保 + 纠纷仲裁 + VR 看货</div>
-        <div class="bm"><b>咸鱼 AI</b>拍照识别自动生成标题描述</div>
-      </div>
+  <h3 style="font-size:1.05rem;margin:30px 0 6px">头脑风暴 · 从洞察到产品的发散</h3>
+  <p class="foot-note" style="margin-bottom:18px">真实头脑风暴记录：成员发散想法 + AI 补充方案（数字便签 + 现场白板 A/B 两组）</p>
+  <div class="bs3 rv">
+    <figure><img src="assets/brain/bs-m1.png" alt="成员1头脑风暴数字便签"><figcaption><b>成员 1 · 数字便签</b>快捷沟通语导 / 匹配相似用户（秒回匹配秒回）/ 无人二手售卖柜 / 可视频交流买卖 / 校园地图二手漂流瓶 / 自选收货方式 / 360° 拍摄录入 3D 展示</figcaption></figure>
+    <figure><img src="assets/brain/bs-wall.jpg" alt="现场白板头脑风暴便签墙"><figcaption><b>现场白板 · A/B 两组</b>小组发散讨论的原始便签墙——从痛点追问到方案假设</figcaption></figure>
+    <figure><img src="assets/brain/bs-ai.png" alt="AI想法便签"><figcaption><b>AI 想法</b>校内闲置互助中转站：统一登记物品成色信息，交易完成前资金暂存平台，出现问题可在站点当场提交凭证快速处理</figcaption></figure>
+  </div>
+  <div class="rv" style="margin-top:6px">
+    <h4 style="font-size:.8rem;margin-bottom:10px;font-weight:900">现实参照<em style="font-style:normal;font-family:ui-monospace,monospace;font-size:.56rem;color:var(--mut);letter-spacing:.14em;margin-left:6px">BENCHMARK</em></h4>
+    <div class="bm3">
+      <div class="bm"><b>Gali</b>资金托管 + 固定点位当面验货</div>
+      <div class="bm"><b>校闲荟</b>小程序担保 + 纠纷仲裁 + VR 看货</div>
+      <div class="bm"><b>咸鱼 AI</b>拍照识别自动生成标题描述</div>
     </div>
   </div>
 </div></section>
