@@ -84,6 +84,7 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;margin:8px 0 10px;letter-spa
 .mcard .ic{font-size:1.6rem}
 .mcard b{display:block;font-size:.95rem;margin:8px 0 6px}
 .mcard p{font-size:.8rem;color:var(--mut)}
+.ansbar{background:#FFF6EC;border:1px solid var(--line);border-left:4px solid var(--or);border-radius:14px;padding:14px 18px;font-size:.9rem;margin-bottom:16px}
 .formula{background:var(--ink);color:#fff;border-radius:18px;padding:22px 26px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-weight:800;font-size:clamp(.9rem,2vw,1.15rem)}
 .formula .fx{background:rgba(255,255,255,.12);border-radius:10px;padding:8px 16px}
 .formula .eq{color:var(--or);font-size:1.3em}
@@ -93,6 +94,7 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;margin:8px 0 10px;letter-spa
 .rv-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 12px 32px rgba(21,23,28,.06)}
 .rv-card .lg2{display:flex;align-items:center;gap:10px;margin-bottom:12px}
 .rv-card .lg2 .mk{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem}
+.rv-card .lg2 img.mk{object-fit:cover;box-shadow:0 4px 12px rgba(21,23,28,.15)}
 .rv-card .lg2 b{font-size:1rem}
 .rv-card .lg2 small{display:block;font-size:.62rem;color:var(--mut)}
 .pl{list-style:none;font-size:.74rem}
@@ -314,10 +316,11 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
   <h2>校园二手市场：<span class="g">高频、刚需、就在楼下</span></h2>
   <p class="lede">调研发现的三个结构性空档——大平台看不上、熟人渠道接不住，这就是闲鹅的位置。</p>
   <div class="mkt rv">
-    <div class="mcard"><span class="ic">🧩</span><b>渠道分散，没人管全程</b><p>闲鱼管担保、群聊管吆喝、小红书管种草——拼单、代取等校园需求<b>没有统一解决方案</b>，交易被切成四五段。</p></div>
-    <div class="mcard"><span class="ic">📦</span><b>最后一公里太贵太慢</b><p>几十块的旧教材走快递要 <b>20 块运费</b>、等 <b>三天</b>；「今天下午顺路拿到」才是校园高频场景，大平台赢在流量，输在最后一公里。</p></div>
-    <div class="mcard"><span class="ic">🤝</span><b>信任是现成的，工具是缺的</b><p>同校熟人渠道天然有信任，但消息<b>不沉淀、不可检索、无担保</b>——缺的不是人，是工具。</p></div>
+    <div class="mcard"><span class="ic">🧩</span><b>渠道分散，没有稳定挂帖的地方</b><p>对于同校的大学生来讲，<b>没有稳定挂收物、出物帖子的地方</b>——需求没有统一解决方案交易被切成四五段。</p></div>
+    <div class="mcard"><span class="ic">📦</span><b>最后一公里太贵太慢</b><p>几十块的旧教材走快递要 <b>6 块运费</b>、等 <b>三天</b>「今天下午顺路拿到」才是校园高频场景，大平台赢在流量，输在最后一公里。</p></div>
+    <div class="mcard"><span class="ic">🛡</span><b>交易缺安全感</b><p>二手群交易<b>没有安全保障，被骗只能自己解决</b>；App 上与陌生人交易过程不放心，<b>降低交易欲望，出物收物速度变慢</b>。</p></div>
   </div>
+  <div class="ansbar rv">💡 <b>我们的答案：</b>建设相对规范的交易平台，提供买卖双方<b>安全感</b>，让交易帖子<b>留存</b>——没收到或者没卖出去，可以一直挂着。</div>
   <div class="formula rv">
     <span class="fx">🎓 校内身份认证</span><span class="eq">+</span>
     <span class="fx">🏪 驿站自提 / 寝室代送</span><span class="eq">+</span>
@@ -334,7 +337,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
   <p class="lede">竞品调研结论（完整流程拆解见附录折叠）：每个对手都只解决了交易的一段。</p>
   <div class="rivals rv">
     <div class="rv-card">
-      <div class="lg2"><span class="mk" style="background:#FFF3D6">🐟</span><div><b>闲鱼</b><small>直接竞品 · 综合二手平台</small></div></div>
+      <div class="lg2"><img class="mk" src="assets/logos/logo-1.png" alt="闲鱼图标"><div><b>闲鱼</b><small>直接竞品 · 综合二手平台</small></div></div>
       <ul class="pl">
         <li><span class="pp">✓</span>商品基数大，官方担保交易</li>
         <li><span class="pp">✓</span>纠纷有客服介入（小法庭）</li>
@@ -343,7 +346,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
       </ul>
     </div>
     <div class="rv-card">
-      <div class="lg2"><span class="mk" style="background:#FFE3EA">📕</span><div><b>小红书</b><small>间接竞品 · 种草 + 站内交易</small></div></div>
+      <div class="lg2"><img class="mk" src="assets/logos/logo-2.png" alt="小红书图标"><div><b>小红书</b><small>间接竞品 · 种草 + 站内交易</small></div></div>
       <ul class="pl">
         <li><span class="pp">✓</span>二次元、追星周边圈层曝光好</li>
         <li><span class="pp">✓</span>有平台保障</li>
@@ -352,7 +355,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
       </ul>
     </div>
     <div class="rv-card">
-      <div class="lg2"><span class="mk" style="background:#E2F4DC">💬</span><div><b>微信二手群</b><small>替代方案 · 学生现在的选择</small></div></div>
+      <div class="lg2"><img class="mk" src="assets/logos/logo-3.png" alt="微信图标"><div><b>微信二手群</b><small>替代方案 · 学生现在的选择</small></div></div>
       <ul class="pl">
         <li><span class="pp">✓</span>无手续费，同校方便</li>
         <li><span class="pp">✓</span>当面交付，即时顺路</li>
