@@ -152,6 +152,7 @@ details .dbody{padding:0 16px 16px;font-size:.78rem;color:#4A5063}
 .ps h3 em{font-style:normal;color:var(--or)}
 .ps p{font-size:.76rem;color:#B9BECB;margin-top:12px}
 .pov3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.pov3.two{grid-template-columns:1fr 1fr;margin-bottom:18px}
 .povimg{max-width:680px;margin:20px auto 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:0 10px 28px rgba(21,23,28,.05)}
 .povimg img{width:100%;border-radius:8px;display:block}
 .povcap{font-size:.74rem;color:var(--mut);margin-top:12px;line-height:1.7}
@@ -228,6 +229,7 @@ details .dbody{padding:0 16px 16px;font-size:.78rem;color:#4A5063}
 .tgl{width:26px;height:14px;background:#F08C3D;border-radius:999px;position:relative;flex:none}
 .tgl::after{content:"";position:absolute;right:2px;top:2px;width:10px;height:10px;background:#fff;border-radius:50%}
 .co{position:absolute;z-index:3;width:18px;height:18px;background:var(--red);color:#fff;border-radius:50%;font-size:.55rem;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(232,69,44,.4)}
+.pairimg{width:100%;max-width:760px;border-radius:14px;display:block;margin:0 auto;border:1px solid var(--line)}
 .pchg{margin-top:12px;font-size:.72rem;color:var(--mut);text-align:center}
 .pchg .cb{display:inline-block;background:#FFF1EB;border:1px solid #F8D8C4;color:#C4651F;border-radius:999px;padding:3px 11px;font-weight:700;font-size:.66rem;margin:2px 3px}
 /* 演示 */
@@ -466,24 +468,15 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
   <h2>重新定义问题，<span class="g">再发散答案</span></h2>
   <p class="lede">调研结论收敛成一句问题定义，再打开头脑风暴——每一条功能都能追根到某条调研证据。</p>
 
+  <div class="pov3 two rv">
+    <div class="pov"><b>POV · 用户视角</b>大学生想出售二手闲置物品的时候遇到定价难、关注市场难——二手消息容易被刷走，买卖家双方沟通困难。</div>
+    <div class="pov hmw"><b>HMW</b>如何让校园二手物品出售更加高效？</div>
+  </div>
+
   <div class="ps rv">
-    <div class="k2">PROBLEM STATEMENT · 项目组讨论收敛</div>
+    <div class="k2">PROBLEM STATEMENT · 问题重述</div>
     <h3>我们可以怎样，让大学生在买卖二手闲置物品时<em>流程更高效</em>、<em>沟通更顺畅</em>、<em>售后更省心</em>？</h3>
-    <p>由 POV · 115 刘芸熙「定价难、消息易被刷走、买卖双方沟通困难」收敛而来</p>
-  </div>
-
-  <div class="pov3 rv">
-    <div class="pov"><b>POV · 沟通回复低效率</b>等待回复、反复催促与讨价还价消耗大量时间精力——「感觉发的消息一发就沉大海了」（E03）</div>
-    <div class="pov hmw"><b>HMW</b>我们如何让每一次询问与回复即时可见，沟通不再石沉大海？</div>
-    <div class="pov"><b>POV · 定价比价困难</b>定价没有参照，只能凭感觉开价——「我说我的 500 块钱，已经是最低了，他上来问我 250 卖不卖」（E18）</div>
-    <div class="pov hmw"><b>HMW</b>我们如何让成交价沉淀下来，成为下一次定价的参照？</div>
-    <div class="pov"><b>POV · 交易缺保障</b>纠纷没有约束与兜底——「最好针对纠纷行为，可以有客服介入，就跟闲鱼的小法庭一样」（E14）</div>
-    <div class="pov hmw"><b>HMW</b>我们如何给校内交易加上规则与兜底？</div>
-  </div>
-
-  <div class="povimg rv">
-    <img src="assets/design/pov-hmw.png" alt="POV与HMW原板便签">
-    <div class="povcap"><b>POV → HMW · 原板便签</b>问题的重新定义过程：从调研痛点出发，收敛为一句设计问题</div>
+    <p>由 POV 便签逐步收敛而来 —— 即闲鹅的产品核心问题</p>
   </div>
 
   <h3 style="font-size:1.05rem;margin:30px 0 6px">头脑风暴 · 从洞察到产品的发散</h3>
@@ -541,190 +534,54 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <div class="sc"><span class="vtag c">2.0 · 升级</span><b>AI 发布 30 秒，驿站自提</b><p>AI 拍照识别生成标签与描述；东门驿站自提 / 送到楼下；偏好档案匹配相似用户。</p></div>
   </div>
 
-  <h3 style="font-size:1.05rem;margin-bottom:6px">2.0 → 3.0 · 八处迭代对比 <span style="font-size:.66rem;color:var(--mut);font-weight:500">（左：修改前 2.0 ｜ 右：修改后 3.0 · 🔴 标注改动位置）</span></h3>
+  <h3 style="font-size:1.05rem;margin-bottom:6px">2.0 → 3.0 · 八处迭代对比 <span style="font-size:.66rem;color:var(--mut);font-weight:500">（左：修改前 2.0 ｜ 右：修改后 3.0 · 红框标注改动位置）</span></h3>
 
   <div class="pair rv">
     <div class="pair-h"><span class="idx">01</span><b>编辑资料上线</b></div>
-    <div class="bapair">
-      <div class="mini before"><span class="mt">2.0</span>
-        <div class="mh"><span>← 我的</span><span style="background:rgba(255,255,255,.25);border-radius:999px;padding:1px 8px;font-size:.5rem">编辑资料</span></div>
-        <div class="mb"><div class="mrow">○ 4 · 校园闲置用户</div><div class="toast">资料编辑功能开发中~</div><div class="mrow">收藏</div><div class="mrow">浏览记录</div></div>
-      </div>
-      <div class="mini after"><span class="mt">3.0</span><span class="co" style="top:26px;right:10px">1</span>
-        <div class="mh"><span>← 我的</span></div>
-        <div class="mb">
-          <div class="mrow em">✎ 编辑资料</div>
-          <div class="mrow"><b>昵称</b><br><span style="color:#B79A82">给自己起个响亮的名字</span></div>
-          <div class="krow"><b>性别</b><span><span class="kpill">保密</span> <span class="kpill">男</span> <span class="kpill">女</span></span></div>
-          <div class="mrow" style="font-size:.5rem;background:#F08C3D;border:none;color:#fff;text-align:center;font-weight:800">保存资料</div>
-        </div>
-      </div>
-    </div>
-    <div class="pchg"><span class="cb">① 「开发中」占位 → 可直接改头像、昵称、性别、签名</span></div>
+    <img class="pairimg" src="assets/compare/cmp-1.jpg" alt="2.0旧版本与3.0新版本对比：编辑资料功能已开发">
+    <div class="pchg"><span class="cb">⑪ 点击编辑资料功能已开发：头像 / 昵称 / 性别 / 个性签名 / 保存资料</span></div>
   </div>
 
   <div class="pair rv">
     <div class="pair-h"><span class="idx">02</span><b>把缺失的选项补齐</b></div>
-    <div class="bapair">
-      <div class="mini before"><span class="mt">2.0</span>
-        <div class="mh"><span>消息列表</span></div>
-        <div class="mb" style="justify-content:center;align-items:center;text-align:center"><p style="font-size:.56rem;color:#8A7B6B">✉️ 还没有消息<br>去商品详情点「联系卖家」开始第一段对话吧</p></div>
-      </div>
-      <div class="mini after"><span class="mt">3.0</span><span class="co" style="bottom:34px;right:10px">1</span>
-        <div class="mh"><span>消息列表</span></div>
-        <div class="mb" style="justify-content:center;align-items:center;text-align:center">
-          <p style="font-size:.56rem;color:#8A7B6B">✉️ 还没有消息<br>去商品详情点「联系卖家」开始第一段对话吧</p>
-          <div class="mtabs"><span class="tb"><i>🏠</i>首页</span><span class="tb"><i>▦</i>广场</span><span class="tb"><i style="background:#F08C3D;color:#fff;width:22px;height:22px;line-height:22px;border-radius:50%;margin:-4px auto 0">＋</i>发布</span><span class="tb on"><i>🔔</i>消息</span><span class="tb"><i>👤</i>我的</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="pchg"><span class="cb">① 消息页空状态没有退路 → 补上完整底部导航</span></div>
+    <img class="pairimg" src="assets/compare/cmp-2.jpg" alt="2.0旧版本与3.0新版本对比：消息列表补上底部导航">
+    <div class="pchg"><span class="cb">⑫ 把缺失选项补齐：消息页空状态补上完整底部导航</span></div>
   </div>
 
   <div class="pair rv">
     <div class="pair-h"><span class="idx">03</span><b>我的页做减法</b></div>
-    <div class="bapair">
-      <div class="mini before"><span class="mt">2.0</span>
-        <div class="mh"><span>← 我的</span></div>
-        <div class="mb">
-          <div class="mrow">我的订单 <span style="float:right">0 个进行中 ›</span></div>
-          <div class="mrow em">📁 偏好档案 <span class="kpill" style="float:right">匹配已开启</span></div>
-          <div class="krow mrow">相似用户匹配<span class="tgl"></span></div>
-          <div class="krow mrow">期望对方回复速度<span class="kpill">不限</span></div>
-        </div>
-      </div>
-      <div class="mini after"><span class="mt">3.0</span><span class="co" style="top:70px;right:10px">1</span>
-        <div class="mh"><span>← 我的</span></div>
-        <div class="mb">
-          <div class="mrow">我的订单 <span style="float:right">2 个进行中 ›</span></div>
-          <div class="mrow">收藏 ›</div><div class="mrow">浏览记录 ›</div>
-          <div class="mrow">客服反馈 ›</div>
-          <div class="mrow" style="text-align:center;color:#C0392B;font-weight:800">退出登录</div>
-        </div>
-      </div>
-    </div>
-    <div class="pchg"><span class="cb">① 复杂设置收起，页面更清爽 · 退出登录更明确</span></div>
+    <img class="pairimg" src="assets/compare/cmp-3.jpg" alt="2.0旧版本与3.0新版本对比：我的页优化内容">
+    <div class="pchg"><span class="cb">⑤ 优化内容：偏好档案等复杂设置收起，新增退出登录</span></div>
   </div>
 
   <div class="pair rv">
     <div class="pair-h"><span class="idx">04</span><b>广场更好逛</b></div>
-    <div class="bapair">
-      <div class="mini before"><span class="mt">2.0</span>
-        <div class="mh"><span>闲鹅广场</span><span style="background:rgba(255,255,255,.25);border-radius:999px;padding:1px 8px;font-size:.5rem">＋发帖</span></div>
-        <div class="mb">
-          <div class="mrow"><b>6</b> · 11/20 22:02<br>看看猫</div>
-          <div class="mrow" style="font-size:.52rem">❤ 点赞 · ⭐ 收藏 · 💬 1 评论</div>
-          <div class="mrow warm" style="font-size:.5rem;color:#B79A82">友善评论，让广场更有爱…</div>
-        </div>
-      </div>
-      <div class="mini after"><span class="mt">3.0</span><span class="co" style="top:84px;right:10px">1</span><span class="co" style="top:150px;right:10px">2</span>
-        <div class="mh"><span>闲鹅广场</span><span style="background:rgba(255,255,255,.25);border-radius:999px;padding:1px 8px;font-size:.5rem">＋发帖</span></div>
-        <div class="mb">
-          <div class="mrow"><b>6</b> · 11/20 22:02<br>看看猫</div>
-          <div class="mcard2"><div class="im d" style="height:42px">🐈</div></div>
-          <div class="mrow" style="font-size:.52rem">❤ 点赞 · ⭐ 收藏 · 💬 1 评论</div>
-          <div class="mrow warm" style="font-size:.5rem;color:#B79A82">😊 友善评论，让广场更有爱…</div>
-        </div>
-      </div>
-    </div>
-    <div class="pchg"><span class="cb">① 帖子支持图片</span><span class="cb">② 表情评论</span><span class="cb">＋ 我的点赞 / 我的收藏</span></div>
+    <img class="pairimg" src="assets/compare/cmp-4.jpg" alt="2.0旧版本与3.0新版本对比：广场支持图片与表情评论">
+    <div class="pchg"><span class="cb">① 新增我的点赞 / 我的收藏</span><span class="cb">② 帖子支持图片</span><span class="cb">③ 表情评论</span></div>
   </div>
 
   <div class="pair rv">
     <div class="pair-h"><span class="idx">05</span><b>分类移到首页</b></div>
-    <div class="bapair">
-      <div class="mini before"><span class="mt">2.0</span>
-        <div class="mh"><span>闲置小市集</span></div>
-        <div class="mb">
-          <div class="mrow warm" style="color:#B79A82;font-size:.52rem">🔍 搜索闲置物品</div>
-          <div class="mrow">‖ 热门闲置</div>
-          <div class="mgrid"><div class="mcard2"><div class="im a" style="height:34px">🍟</div></div><div class="mcard2"><div class="im b" style="height:34px">📏</div></div></div>
-        </div>
-      </div>
-      <div class="mini after"><span class="mt">3.0</span><span class="co" style="top:52px;right:10px">1</span><span class="co" style="top:96px;right:10px">2</span>
-        <div class="mh"><span>闲置小市集</span></div>
-        <div class="mb">
-          <div class="mrow warm" style="color:#B79A82;font-size:.52rem">🔍 搜索闲置物品</div>
-          <div class="ftabs" style="margin:2px 0"><span class="ftab on">推荐</span><span class="ftab">最新发布</span><span class="ftab">热门商品</span><span style="margin-left:auto;color:#E9812F;font-weight:800;font-size:.55rem">▽ 筛选</span></div>
-          <div class="chips"><span class="c-cat">📖 教材</span><span class="c-cat">📱 数码</span><span class="c-cat">🎨 文体</span><span class="c-cat">👗 服饰</span><span class="c-cat">🛏 宿舍</span><span class="c-cat">🎀 周边</span></div>
-          <div class="mgrid"><div class="mcard2"><div class="im a" style="height:26px">🍟</div></div><div class="mcard2"><div class="im c" style="height:26px">🧸</div></div></div>
-        </div>
-      </div>
-    </div>
-    <div class="pchg"><span class="cb">① 推荐 / 最新 / 热门排序 + 筛选</span><span class="cb">② 分类图标上首页</span></div>
+    <img class="pairimg" src="assets/compare/cmp-5.jpg" alt="2.0旧版本与3.0新版本对比：分类移到首页并新增排序筛选">
+    <div class="pchg"><span class="cb">④ 把分类移到首页：推荐 / 最新发布 / 热门商品 + 筛选</span></div>
   </div>
 
   <div class="pair rv">
     <div class="pair-h"><span class="idx">06</span><b>图片放大观看</b></div>
-    <div class="bapair">
-      <div class="mini before"><span class="mt">2.0</span>
-        <div class="mh"><span>← 商品详情</span></div>
-        <div class="mb">
-          <div class="mcard2"><div class="im a" style="height:52px">🍽</div></div>
-          <div class="mrow"><b style="color:#E9812F">¥30.00</b> <span class="kpill">可小刀</span></div>
-          <div class="mrow">盘子，爱情盘子</div>
-        </div>
-      </div>
-      <div class="mini after" style="background:#2B2622"><span class="mt">3.0</span><span class="co" style="top:30px;right:10px">1</span>
-        <div class="mh" style="background:transparent"><span style="margin-left:auto">✕</span></div>
-        <div class="mb" style="justify-content:center;align-items:center;min-height:150px">
-          <div style="font-size:3.2rem;background:#fff;border-radius:14px;padding:15px 19px;box-shadow:0 14px 30px rgba(0,0,0,.4)">🍽</div>
-          <p style="font-size:.5rem;color:#D8CFC6">点击图片 → 全屏查看成色细节</p>
-        </div>
-      </div>
-    </div>
-    <div class="pchg"><span class="cb">① 详情图片支持全屏放大，看清再下单</span></div>
+    <img class="pairimg" src="assets/compare/cmp-6.jpg" alt="2.0旧版本与3.0新版本对比：点击图片放大观看">
+    <div class="pchg"><span class="cb">⑧ 点击图片放大观看，看清成色再下单</span></div>
   </div>
 
   <div class="pair rv">
     <div class="pair-h"><span class="idx">07</span><b>发布更完整</b></div>
-    <div class="bapair">
-      <div class="mini before"><span class="mt">2.0</span>
-        <div class="mh"><span>← 发布闲置</span></div>
-        <div class="mb">
-          <div class="chips"><span class="c-cat" style="padding:8px 14px;border-style:dashed">＋</span><span class="c-cat" style="padding:8px 14px;border-style:dashed">📷</span></div>
-          <div class="mrow em" style="font-size:.52rem">🤖 AI 识别 · 上传照片后自动识别</div>
-          <div class="mrow warm" style="font-size:.52rem">¥ 0.00</div>
-          <div class="krow mrow">成色<span><span class="c-hot">九成新</span></span></div>
-        </div>
-      </div>
-      <div class="mini after"><span class="mt">3.0</span><span class="co" style="top:52px;right:10px">1</span><span class="co" style="bottom:44px;right:10px">2</span>
-        <div class="mh"><span>← 发布闲置</span></div>
-        <div class="mb">
-          <div class="mrow em">🏷 发布类型：出闲置（卖东西）· 收闲置（求购）</div>
-          <div class="chips"><span class="c-cat" style="padding:6px 12px;border-style:dashed">＋</span><span class="c-cat" style="padding:6px 12px;border-style:dashed">📷</span></div>
-          <div class="mrow em" style="font-size:.52rem">🤖 AI 识别 · 上传照片后自动识别</div>
-          <div class="krow mrow">📦 库存 <span class="kpill">1</span><span style="font-size:.5rem;color:#B79A82">卖出自动减一</span></div>
-        </div>
-      </div>
-    </div>
-    <div class="pchg"><span class="cb">① 新增出闲置 / 收闲置类型</span><span class="cb">② 库存设置：0 件自动下架</span></div>
+    <img class="pairimg" src="assets/compare/cmp-7.jpg" alt="2.0旧版本与3.0新版本对比：发布页新增类型分类与库存设置">
+    <div class="pchg"><span class="cb">⑥ 增加发布类型分类（出闲置 / 收闲置）</span><span class="cb">⑦ 增加库存数量设置：卖出自动减一，0 件自动下架</span></div>
   </div>
 
   <div class="pair rv">
     <div class="pair-h"><span class="idx">08</span><b>库存可观察 + 可再编辑</b></div>
-    <div class="bapair">
-      <div class="mini before"><span class="mt">2.0</span>
-        <div class="mh"><span>← 我的商品</span></div>
-        <div class="mb">
-          <div class="mrow"><b style="color:#E9812F">¥20.00</b> <span class="kpill">可小刀</span> 教材书藉 好物转让</div>
-          <div class="mrow">交易方式 · 仅自提面交</div>
-          <div class="mrow" style="text-align:center;font-weight:800;border-color:#E8D0D4;background:#FFF5F6;color:#B23A48">下架商品</div>
-        </div>
-      </div>
-      <div class="mini after"><span class="mt">3.0</span><span class="co" style="top:64px;right:10px">1</span><span class="co" style="bottom:56px;right:10px">2</span>
-        <div class="mh"><span>← 我的商品</span></div>
-        <div class="mb">
-          <div class="mrow"><b style="color:#E9812F">¥20.00</b> <span class="kpill">可小刀</span> 教材书藉 好物转让</div>
-          <div class="mrow em">📦 库存 1 件 <span style="font-size:.5rem;color:#B79A82">可观察</span></div>
-          <div class="krow" style="gap:6px">
-            <div class="mrow" style="flex:1;text-align:center;font-weight:800;border-color:#E8D0D4;background:#FFF5F6;color:#B23A48">下架商品</div>
-            <div class="mrow" style="flex:1;text-align:center;font-weight:800;background:#F08C3D;border:none;color:#fff">编辑商品</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="pchg"><span class="cb">① 库存件数可观察</span><span class="cb">② 卖家可随时重新编辑已发布商品</span></div>
+    <img class="pairimg" src="assets/compare/cmp-8.jpg" alt="2.0旧版本与3.0新版本对比：库存可观察与可再次编辑商品">
+    <div class="pchg"><span class="cb">⑨ 库存可观察</span><span class="cb">⑩ 可再次编辑发布商品</span></div>
   </div>
 </div></section>
 
