@@ -151,21 +151,22 @@ details .dbody{padding:0 16px 16px;font-size:.78rem;color:#4A5063}
 .ps h3{font-size:clamp(19px,2.8vw,26px);font-weight:900;line-height:1.5;margin-top:10px}
 .ps h3 em{font-style:normal;color:var(--or)}
 .ps p{font-size:.76rem;color:#B9BECB;margin-top:12px}
-.povimg{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 10px 28px rgba(21,23,28,.05)}
+.pov3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.povimg{max-width:680px;margin:20px auto 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:0 10px 28px rgba(21,23,28,.05)}
 .povimg img{width:100%;border-radius:8px;display:block}
 .povcap{font-size:.74rem;color:var(--mut);margin-top:12px;line-height:1.7}
 .povcap b{color:var(--ink);display:block;margin-bottom:2px;font-size:.8rem}
-.sk2{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.sk2 figure{margin:0;background:#FBFCFE;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 10px 28px rgba(21,23,28,.05)}
-.sk2 img{width:100%;height:380px;object-fit:contain;border-radius:8px;background:#fff}
-.sk2 figcaption{font-size:.72rem;color:var(--mut);margin-top:10px;line-height:1.6}
+.sk2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.sk2 figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;box-shadow:0 10px 28px rgba(21,23,28,.06);display:flex;flex-direction:column}
+.sk2 img{width:100%;height:400px;object-fit:contain;border-radius:10px;background:#fff;border:1px dashed var(--line)}
+.sk2 figcaption{font-size:.72rem;color:var(--mut);margin-top:12px;line-height:1.7}
 .sk2 figcaption b{display:block;color:var(--ink);font-size:.78rem;margin-bottom:2px}
-.vis2{display:grid;grid-template-columns:1fr 2fr;gap:14px}
-.vis2 figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 10px 28px rgba(21,23,28,.05)}
-.vis2 img{width:100%;height:240px;object-fit:contain;border-radius:8px}
-.vis2 figcaption{font-size:.72rem;color:var(--mut);margin-top:10px}
+.vis2{display:grid;grid-template-columns:300px 1fr;gap:16px}
+.vis2 figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 16px 14px;box-shadow:0 10px 28px rgba(21,23,28,.06);display:flex;flex-direction:column}
+.vis2 img{width:100%;flex:1;min-height:0;object-fit:contain;border-radius:10px;background:#fff}
+.vis2 figcaption{font-size:.72rem;color:var(--mut);margin-top:12px}
 .vis2 figcaption b{display:block;color:var(--ink);font-size:.78rem;margin-bottom:2px}
-@media(max-width:860px){.sk2,.vis2{grid-template-columns:1fr}.pov3{grid-template-columns:1fr}}
+@media(max-width:860px){.sk2,.vis2{grid-template-columns:1fr}.pov3{grid-template-columns:1fr}.vis2 img{height:220px}}
 .pov{background:#FFF3B8;border-radius:12px;padding:14px;font-size:.72rem;line-height:1.65;color:#5C4A1E;box-shadow:2px 3px 0 rgba(21,23,28,.1)}
 .pov b{display:block;font-size:.76rem;margin-bottom:5px}
 .pov.hmw{background:#FFE3EE;color:#7E3A5C}
@@ -471,9 +472,18 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <p>由 POV · 115 刘芸熙「定价难、消息易被刷走、买卖双方沟通困难」收敛而来</p>
   </div>
 
+  <div class="pov3 rv">
+    <div class="pov"><b>POV · 沟通回复低效率</b>等待回复、反复催促与讨价还价消耗大量时间精力——「感觉发的消息一发就沉大海了」（E03）</div>
+    <div class="pov hmw"><b>HMW</b>我们如何让每一次询问与回复即时可见，沟通不再石沉大海？</div>
+    <div class="pov"><b>POV · 定价比价困难</b>定价没有参照，只能凭感觉开价——「我说我的 500 块钱，已经是最低了，他上来问我 250 卖不卖」（E18）</div>
+    <div class="pov hmw"><b>HMW</b>我们如何让成交价沉淀下来，成为下一次定价的参照？</div>
+    <div class="pov"><b>POV · 交易缺保障</b>纠纷没有约束与兜底——「最好针对纠纷行为，可以有客服介入，就跟闲鱼的小法庭一样」（E14）</div>
+    <div class="pov hmw"><b>HMW</b>我们如何给校内交易加上规则与兜底？</div>
+  </div>
+
   <div class="povimg rv">
-    <img src="assets/design/pov-hmw.png" alt="POV与HMW原板便签：115刘芸熙">
-    <div class="povcap"><b>POV → HMW · 原板便签（115 刘芸熙）</b>POV：大学生想出售二手闲置物品的时候遇到定价难，关注市场难，因为我们遇到了二手消息容易被刷走，买卖家双方沟通困难 → HMW：如何让校园二手物品出售更加高效 → 设计问题：我们可以怎样，让大学生在买卖二手闲置物品时流程更高效，沟通更顺畅，售后更省心</div>
+    <img src="assets/design/pov-hmw.png" alt="POV与HMW原板便签">
+    <div class="povcap"><b>POV → HMW · 原板便签</b>问题的重新定义过程：从调研痛点出发，收敛为一句设计问题</div>
   </div>
 
   <h3 style="font-size:1.05rem;margin:30px 0 6px">头脑风暴 · 从洞察到产品的发散</h3>
