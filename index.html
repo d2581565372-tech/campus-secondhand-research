@@ -171,6 +171,19 @@ details .dbody{padding:0 16px 16px;font-size:.78rem;color:#4A5063}
 .pov{background:#FFF3B8;border-radius:12px;padding:14px;font-size:.72rem;line-height:1.65;color:#5C4A1E;box-shadow:2px 3px 0 rgba(21,23,28,.1)}
 .pov b{display:block;font-size:.76rem;margin-bottom:5px}
 .pov.hmw{background:#FFE3EE;color:#7E3A5C}
+/* POV 用户画像卡 */
+.persona{display:grid;grid-template-columns:290px 1fr;gap:16px;align-items:stretch}
+.pcard-l{background:linear-gradient(160deg,#1D1F26,#15171C);border-radius:18px;padding:16px;color:#fff;display:flex;flex-direction:column}
+.pcard-l img{width:100%;border-radius:12px;display:block}
+.pcard-l .who{font-size:.74rem;font-weight:800;color:#E7EAF0;margin-top:12px}
+.pcard-l .meta{font-size:.6rem;color:#9AA0AD;margin-top:5px}
+.pcard-l .quote{font-size:1.06rem;font-weight:900;line-height:1.55;margin-top:12px;color:#fff}
+.pcard-l .src{font-family:ui-monospace,monospace;font-size:.58rem;color:#8B909D;margin-top:auto;padding-top:10px}
+.pgrid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:13px}
+.pcell{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px;display:flex;flex-direction:column}
+.pcell b{font-size:.8rem;color:var(--ink)}
+.pcell p{font-size:.66rem;color:var(--mut);margin-top:7px;line-height:1.75;flex:1}
+.pcell .tag{font-family:ui-monospace,monospace;font-size:.56rem;color:var(--or);font-weight:800;letter-spacing:.05em}
 /* 情绪折线图 */
 .emoline{background:#FFFDF9;border:1px solid var(--line);border-radius:16px;padding:16px 18px 10px;margin-top:16px;box-shadow:0 8px 22px rgba(21,23,28,.05)}
 .emoline svg{width:100%;max-width:900px;display:block;margin:0 auto}
@@ -521,14 +534,24 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 
 <section class="slide" style="background:#fff"><div class="wrap">
   <div class="kick">04 · User Research</div>
-  <h2>用户旅程 · <span class="g">线性全景</span> <span style="font-size:.66rem;color:var(--mut);font-weight:500">（小陈 · 20 岁 · 在校大学生 · 买卖二手物品）</span></h2>
-  <div class="jrail rv">
-    <div class="jstep"><span class="je">😐</span><b>① 找东西</b><p>各平台浏览比价<br>推送不准</p></div>
-    <div class="jstep"><span class="warn">⚠ 瓶颈 · 已读不回</span><span class="je">😟</span><b>② 联系对方</b><p>消息提醒混杂<br>不知道有没有货</p></div>
-    <div class="jstep"><span class="je">😐</span><b>③ 沟通价格</b><p>谈价中对方<br>下架消失</p></div>
-    <div class="jstep"><span class="warn">⚠ 瓶颈 · 运费劝退</span><span class="je">😠</span><b>④ 付款</b><p>总额加运费<br>纠结要不要买</p></div>
-    <div class="jstep"><span class="je">😢</span><b>⑤ 等待物流</b><p>等待时间有点久<br>「不要省去那三天」</p></div>
-    <div class="jstep"><span class="warn">⚠ 瓶颈 · 售后无门</span><span class="je">😫</span><b>⑥ 收货检查</b><p>运输破损 / 物品问题<br>售后没回复</p></div>
+  <h2>用户画像 · <span class="g">典型用户 POV</span> <span style="font-size:.66rem;color:var(--mut);font-weight:500">（买卖二手物品的小陈 · 20 岁 · 在校大学生）</span></h2>
+  <div class="persona rv">
+    <div class="pcard-l">
+      <img src="assets/design/persona-meme.png" alt="小陈常用的表情包：我到底换个什么手机才可以收到你的消息">
+      <p class="who">买卖二手物品的小陈</p>
+      <p class="meta">化名 · 大学 · 连锁</p>
+      <p class="meta">一句话 · 想要迅速买卖二手物品的人</p>
+      <p class="quote">「对方回消息太慢，<br>等得人特别烦躁！」</p>
+      <p class="src">代表性原话 · P2 E01 · P01</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcell"><b>目标 · 他想要的</b><p>希望卖东西沟通更有效率</p><span class="tag">E01 · P01</span></div>
+      <div class="pcell"><b>痛点 · 他烦的</b><p>消息一发就石沉大海，商品标记不及时，没卖出的还得反复查询</p><span class="tag">E05 · P02</span></div>
+      <div class="pcell"><b>行为 · 他常做的</b><p>常刷闲鱼、小红书等平台比价，留意同款二手书的行情</p><span class="tag">P4 · P3</span></div>
+      <div class="pcell"><b>动机 · 他在乎的</b><p>希望点击视频观看，物品 360° 展示，靠真实影像建立信任</p><span class="tag">E05 · P04</span></div>
+      <div class="pcell"><b>场景 · 何时何地</b><p>买卖二手物品时，在二手群</p><span class="tag">P1</span></div>
+      <div class="pcell"><b>需要 · 他需要的</b><p>对新平台不敢轻易用，害怕没人气</p><span class="tag">P1 · P4</span></div>
+    </div>
   </div>
   <div class="emoline rv">
     <svg viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="用户旅程情绪曲线折线图">
