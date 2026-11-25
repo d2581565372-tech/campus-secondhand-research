@@ -86,10 +86,11 @@ h2{font-size:clamp(24px,3.6vw,34px);font-weight:900;margin:8px 0 10px;letter-spa
 .mcard b{display:block;font-size:.95rem;margin:8px 0 6px}
 .mcard p{font-size:.8rem;color:var(--mut)}
 .ansbar{background:#FFF6EC;border:1px solid var(--line);border-left:4px solid var(--or);border-radius:14px;padding:14px 18px;font-size:.9rem;margin-bottom:16px}
-.formula{background:var(--ink);color:#fff;border-radius:18px;padding:22px 26px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-weight:800;font-size:clamp(.9rem,2vw,1.15rem)}
-.formula .fx{background:rgba(255,255,255,.12);border-radius:10px;padding:8px 16px}
+.formula{background:#fff;border:1px solid var(--line);color:var(--ink);border-radius:18px;padding:22px 26px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-weight:800;font-size:clamp(.9rem,2vw,1.15rem);box-shadow:0 10px 28px rgba(21,23,28,.06)}
+.formula .fx{background:#FFF1E6;color:#9A4A12;border-radius:10px;padding:8px 16px}
 .formula .eq{color:var(--or);font-size:1.3em}
-.formula small{width:100%;font-weight:500;font-size:.68rem;color:#B9BECB}
+.formula .fx.final{background:linear-gradient(135deg,#F6A05C,#EE8434);color:#fff;box-shadow:0 8px 20px rgba(238,132,52,.3)}
+.formula small{width:100%;font-weight:500;font-size:.68rem;color:var(--mut)}
 /* 竞品 */
 .rivals{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:22px}
 .rv-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:0 12px 32px rgba(21,23,28,.06)}
@@ -317,7 +318,7 @@ nav{position:fixed;top:0;left:0;right:0}
 .slide.dark .ps h3 em{color:#FFE7CF;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:3px}
 .slide.dark .ps p{color:rgba(255,255,255,.85)}
 /* 封面页 · 苹果式浅色 */
-.slide.cover{background:radial-gradient(1100px 600px at 80% -10%,#FFFFFF 0%,transparent 60%),linear-gradient(160deg,#FAFAFC 0%,#F2F2F6 60%,#EBEBF0 100%);color:#1D1D1F}
+.slide.cover{background:radial-gradient(700px 480px at 84% 4%,rgba(249,178,105,.3) 0%,transparent 62%),radial-gradient(620px 440px at -8% 86%,rgba(255,163,138,.24) 0%,transparent 60%),radial-gradient(560px 420px at 102% 94%,rgba(146,190,255,.18) 0%,transparent 60%),radial-gradient(1100px 600px at 50% -20%,#FFFFFF 0%,transparent 60%),linear-gradient(160deg,#FAFAFC 0%,#F2F2F6 60%,#EBEBF0 100%);color:#1D1D1F}
 .slide.cover .wrap{position:relative;z-index:2}
 /* 手机墙循环流动背景 */
 .slide.cover{overflow:hidden}
@@ -337,12 +338,15 @@ nav{position:fixed;top:0;left:0;right:0}
 .cover-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
 .cov-icon{width:94px;height:94px;object-fit:cover;border-radius:22px;box-shadow:0 18px 40px rgba(29,29,31,.16);border:3px solid #fff}
 .slide.cover h1{font-size:clamp(44px,6vw,76px);font-weight:900;letter-spacing:.02em;margin:22px 0 8px;line-height:1.1;background:linear-gradient(120deg,#1D1D1F 55%,#5B5B63);-webkit-background-clip:text;background-clip:text;color:transparent}
-.slide.cover h1 span{font-weight:300;color:#86868B;-webkit-text-fill-color:#86868B;margin-left:12px;letter-spacing:.14em}
+.slide.cover h1 span{font-size:.34em;font-weight:600;color:#9A9AA2;-webkit-text-fill-color:#9A9AA2;margin-left:16px;letter-spacing:.42em;vertical-align:.14em}
 .cov-tag{font-size:clamp(18px,2.2vw,26px);font-weight:900;letter-spacing:.2em;background:linear-gradient(90deg,#F0821E,#D9541E);-webkit-background-clip:text;background-clip:text;color:transparent}
 .cov-line{width:64px;height:4px;background:linear-gradient(90deg,#F0821E,#D9541E);border-radius:2px;margin:18px 0 16px}
 .cov-desc{font-size:.9rem;line-height:2.05;color:#515154;max-width:440px;letter-spacing:.01em}
 .cov-tags{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
-.cov-tags span{background:#fff;border:1px solid #DCDCE2;color:#1D1D1F;border-radius:999px;padding:8px 22px;font-weight:700;font-size:.85rem;letter-spacing:.08em;box-shadow:0 2px 10px rgba(29,29,31,.07)}
+.cov-tags span{border-radius:999px;padding:8px 22px;font-weight:700;font-size:.85rem;letter-spacing:.08em;box-shadow:0 2px 10px rgba(29,29,31,.05)}
+.cov-tags span:nth-child(1){background:#FFEFE0;border:1px solid #F5D9BC;color:#C4651F}
+.cov-tags span:nth-child(2){background:#E8F6EC;border:1px solid #CBE8D4;color:#1E7A44}
+.cov-tags span:nth-child(3){background:#E9F1FD;border:1px solid #CDDFF5;color:#2456A8}
 .cov-meta{margin-top:36px;font-size:.7rem;color:#86868B;letter-spacing:.06em;font-weight:600}
 .cov-phones{position:relative;height:min(66vh,580px)}
 .cov-phones .ph{position:absolute;height:100%;width:auto}
@@ -450,7 +454,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <span class="fx">🎓 校内身份认证</span><span class="eq">+</span>
     <span class="fx">🏪 驿站自提 / 寝室代送</span><span class="eq">+</span>
     <span class="fx">🤖 AI 识别发布</span><span class="eq">=</span>
-    <span class="fx" style="background:var(--or)">闲鹅的差异化立足点</span>
+    <span class="fx final">闲鹅的差异化立足点</span>
     <small>三者缺一不可：单独做其中任何一项，都撑不起完整的校园交易闭环 —— 团队讨论板收敛结论</small>
   </div>
 </div></section>
