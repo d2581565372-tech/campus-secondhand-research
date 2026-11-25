@@ -311,10 +311,16 @@ nav{position:fixed;top:0;left:0;right:0}
 .cov-tags{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
 .cov-tags span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:8px 22px;font-weight:700;font-size:.85rem;letter-spacing:.08em}
 .cov-meta{margin-top:36px;font-size:.7rem;color:rgba(255,255,255,.78);letter-spacing:.06em}
-.cov-phones{position:relative;height:min(62vh,540px)}
-.cov-phones .ph{position:absolute;border-radius:26px;box-shadow:0 30px 70px rgba(120,50,5,.45);border:5px solid rgba(255,255,255,.28)}
-.cov-phones .back{width:min(30vw,300px);right:4%;top:9%;transform:rotate(8deg);opacity:.94}
-.cov-phones .front{width:min(26vw,258px);left:14%;top:0;transform:rotate(-4deg)}
+.cov-phones{position:relative;height:min(66vh,580px)}
+.cov-phones::before{content:"";position:absolute;inset:-8% -12%;background:radial-gradient(closest-side,rgba(255,255,255,.34) 0%,rgba(255,255,255,.12) 45%,transparent 72%);filter:blur(10px);border-radius:50%}
+.cov-phones .ph{position:absolute;height:100%;width:auto}
+.cov-phones .front{right:0;top:0;filter:drop-shadow(0 34px 46px rgba(110,42,4,.42)) drop-shadow(0 8px 14px rgba(110,42,4,.22));animation:covfloat 7s ease-in-out infinite}
+.cov-phones .back{left:2%;top:12%;height:80%;filter:drop-shadow(0 26px 38px rgba(110,42,4,.36));opacity:.97;animation:covfloat 7s ease-in-out -2.6s infinite}
+@keyframes covfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+@media(prefers-reduced-motion:reduce){.cov-phones .ph{animation:none}}
+.slide.cover h1{letter-spacing:.02em}
+.slide.cover .cov-tag{letter-spacing:.22em;font-weight:700}
+.slide.cover .cov-desc{color:rgba(255,255,255,.88);line-height:2.05;letter-spacing:.01em}
 @media(max-width:860px){.cover-grid{grid-template-columns:1fr}.cov-phones{height:380px}}
 /* 下一步 */
 .next3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -358,8 +364,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <p class="cov-meta">🪿 湖北美院联合创作营课程项目 · Pitch 演示 ｜ ← → 方向键翻页</p>
   </div>
   <div class="cov-phones rv">
-    <img class="ph back" src="assets/app/screen-home.png" alt="闲鹅首页界面">
-    <img class="ph front" src="assets/app/screen-boot.png" alt="闲鹅启动页界面">
+    <img class="ph back" src="assets/app/cov-boot.png" alt="闲鹅启动页真机">
+    <img class="ph front" src="assets/app/cov-home.png" alt="闲鹅首页真机">
   </div>
 </div></section>
 
