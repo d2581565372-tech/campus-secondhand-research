@@ -231,6 +231,8 @@ details .dbody{padding:0 16px 16px;font-size:.78rem;color:#4A5063}
 .co{position:absolute;z-index:3;width:18px;height:18px;background:var(--red);color:#fff;border-radius:50%;font-size:.55rem;font-weight:900;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 8px rgba(232,69,44,.4)}
 .pair2{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:860px;margin:0 auto}
 .pair2 img{width:100%;border-radius:12px;border:1px solid var(--line);display:block}
+.flowbox{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;box-shadow:0 10px 28px rgba(21,23,28,.05);text-align:center}
+.flowbox img{width:100%;max-width:920px;border-radius:10px;display:block;margin:0 auto}
 .pairimg{width:100%;max-width:760px;border-radius:14px;display:block;margin:0 auto;border:1px solid var(--line)}
 .pchg{margin-top:12px;font-size:.72rem;color:var(--mut);text-align:center}
 .pchg .cb{display:inline-block;background:#FFF1EB;border:1px solid #F8D8C4;color:#C4651F;border-radius:999px;padding:3px 11px;font-weight:700;font-size:.66rem;margin:2px 3px}
@@ -589,17 +591,21 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 
 <!-- 07 产品演示 -->
 <section id="demo"><div class="wrap">
+  <div class="kick" style="color:var(--or)">08 · Live Demo</div>
+  <h2>上手试试最终版本</h2>
+  <p class="lede">下方是闲鹅 3.0 的可交互模拟器——点击底部标签切换首页、发布、广场、消息、我的，直接体验完整流程。完整操作录屏见下方入口。</p>
+  <div class="btns" style="margin-bottom:30px">
+    <a class="btn p" href="#demo">▶ 开始体验</a>
+    <a class="btn s" href="https://quanbo1.github.io/campus-secondhand-research-v5/" target="_blank">📺 操作录屏 / 历史版本归档</a>
+  </div>
+
+  <h3 style="font-size:1.05rem;margin-bottom:6px">谁在用 · 怎么用 <span style="font-size:.66rem;color:var(--mut);font-weight:500">游客 / 卖家 / 买家三类角色的完整使用流程</span></h3>
+  <p class="foot-note" style="margin-bottom:16px">买卖前：浏览首页、分类查找、搜索商品 → 买卖中：卖家编辑商品（AI 识别 + 快捷语）、买家了解商品、双方议价并确认交易地点 → 买卖后：确认订单、确认交易完成、评价交易；游客可随时编辑资料</p>
+  <div class="flowbox rv">
+    <img src="assets/flow/user-flow.png" alt="闲鹅使用流程演示：游客、卖家、买家三类角色在买卖前/中/后的完整流程图">
+  </div>
+
   <div class="demo rv">
-    <div>
-      <div class="kick" style="color:var(--or)">08 · Live Demo</div>
-      <h2>上手试试最终版本</h2>
-      <p class="lede">右侧是闲鹅 3.0 的可交互模拟器——点击底部标签切换首页、发布、广场、消息、我的，直接体验完整流程。完整操作录屏见下方入口。</p>
-      <div class="btns">
-        <a class="btn p" href="#demo">▶ 开始体验</a>
-        <a class="btn s" href="https://quanbo1.github.io/campus-secondhand-research-v5/" target="_blank">📺 操作录屏 / 历史版本归档</a>
-      </div>
-    </div>
-    <div class="dphone">
       <!-- 首页 -->
       <div class="dsc on" data-s="home">
         <div class="dph-head"><div class="dph-title">闲置小市集</div><div class="dbar">🔍 搜索闲置物品</div></div>
