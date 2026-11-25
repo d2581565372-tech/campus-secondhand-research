@@ -302,8 +302,13 @@ nav{position:fixed;top:0;left:0;right:0}
 /* 封面页 */
 .slide.cover{background:radial-gradient(760px 460px at -4% -14%,rgba(255,255,255,.2) 0%,transparent 55%),linear-gradient(118deg,#F9B269 0%,#F29B4B 36%,#E97E2C 66%,#D96C1E 100%);color:#fff}
 .slide.cover::before{content:"";position:absolute;width:560px;height:560px;border:1.5px solid rgba(255,255,255,.28);border-radius:50%;right:-130px;top:-150px}
-.slide.cover::after{content:"闲鹅";position:absolute;right:-30px;bottom:-110px;font-size:330px;font-weight:900;line-height:1;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.14);letter-spacing:.02em;pointer-events:none}
-.slide.cover .wrap{position:relative;z-index:1}
+.slide.cover .wrap{position:relative;z-index:2}
+/* 手机网格流动背景 */
+.cov-bg{position:absolute;inset:-38% -24%;display:grid;grid-template-columns:repeat(4,1fr);gap:6%;rotate:-14deg;opacity:.26;pointer-events:none;z-index:0;animation:covdrift 30s ease-in-out infinite alternate}
+.cov-bg img{width:100%;height:auto;filter:saturate(.62) contrast(.9)}
+.cov-tint{position:absolute;inset:0;background:linear-gradient(118deg,rgba(249,178,105,.5) 0%,rgba(233,126,44,.55) 55%,rgba(217,108,30,.62) 100%);pointer-events:none;z-index:1}
+@keyframes covdrift{from{translate:0 1.6%}to{translate:0 -1.6%}}
+@media(prefers-reduced-motion:reduce){.cov-bg{animation:none}}
 .cover-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
 .cov-icon{width:94px;height:94px;object-fit:cover;border-radius:22px;box-shadow:0 18px 40px rgba(140,60,10,.35);border:3px solid rgba(255,255,255,.55)}
 .slide.cover h1{font-size:clamp(44px,6vw,76px);font-weight:900;letter-spacing:.02em;margin:22px 0 8px;line-height:1.1}
@@ -352,7 +357,14 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 </div></nav>
 
 <!-- 00 封面 -->
-<section class="slide cover on"><div class="wrap cover-grid">
+<section class="slide cover on">
+  <div class="cov-bg" aria-hidden="true">
+    <img src="assets/app/pm-1.png" alt=""><img src="assets/app/pm-2.png" alt=""><img src="assets/app/pm-3.png" alt=""><img src="assets/app/pm-4.png" alt="">
+    <img src="assets/app/pm-5.png" alt=""><img src="assets/app/pm-6.png" alt=""><img src="assets/app/pm-1.png" alt=""><img src="assets/app/pm-2.png" alt="">
+    <img src="assets/app/pm-3.png" alt=""><img src="assets/app/pm-4.png" alt=""><img src="assets/app/pm-5.png" alt=""><img src="assets/app/pm-6.png" alt="">
+  </div>
+  <div class="cov-tint" aria-hidden="true"></div>
+  <div class="wrap cover-grid">
   <div class="rv">
     <img class="cov-icon" src="assets/design/app-icon.jpg" alt="闲鹅 APP 图标">
     <h1>闲鹅<span>APP</span></h1>
