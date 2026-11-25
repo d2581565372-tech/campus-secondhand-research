@@ -300,28 +300,27 @@ nav{position:fixed;top:0;left:0;right:0}
 .slide.dark .ps h3 em{color:#FFE7CF;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:3px}
 .slide.dark .ps p{color:rgba(255,255,255,.85)}
 /* 封面页 */
-.slide.cover{background:radial-gradient(900px 520px at 88% 112%,rgba(255,255,255,.18) 0%,transparent 55%),radial-gradient(700px 420px at -6% -18%,rgba(255,255,255,.14) 0%,transparent 55%),linear-gradient(135deg,#F7A661 0%,#EF8A38 52%,#E8762A 100%);color:#fff}
+.slide.cover{background:radial-gradient(760px 460px at -4% -14%,rgba(255,255,255,.2) 0%,transparent 55%),linear-gradient(118deg,#F9B269 0%,#F29B4B 36%,#E97E2C 66%,#D96C1E 100%);color:#fff}
+.slide.cover::before{content:"";position:absolute;width:560px;height:560px;border:1.5px solid rgba(255,255,255,.28);border-radius:50%;right:-130px;top:-150px}
+.slide.cover::after{content:"闲鹅";position:absolute;right:-30px;bottom:-110px;font-size:330px;font-weight:900;line-height:1;color:transparent;-webkit-text-stroke:2px rgba(255,255,255,.14);letter-spacing:.02em;pointer-events:none}
+.slide.cover .wrap{position:relative;z-index:1}
 .cover-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
 .cov-icon{width:94px;height:94px;object-fit:cover;border-radius:22px;box-shadow:0 18px 40px rgba(140,60,10,.35);border:3px solid rgba(255,255,255,.55)}
-.slide.cover h1{font-size:clamp(44px,6vw,76px);font-weight:900;letter-spacing:.05em;margin:22px 0 8px;line-height:1.1}
+.slide.cover h1{font-size:clamp(44px,6vw,76px);font-weight:900;letter-spacing:.02em;margin:22px 0 8px;line-height:1.1}
 .slide.cover h1 span{font-weight:300;opacity:.95;margin-left:12px;letter-spacing:.14em}
-.cov-tag{font-size:clamp(18px,2.2vw,26px);font-weight:800;letter-spacing:.16em;color:#FFF3E4}
-.cov-line{width:64px;height:4px;background:rgba(255,255,255,.85);border-radius:2px;margin:18px 0 16px}
-.cov-desc{font-size:.9rem;line-height:1.95;color:rgba(255,255,255,.94);max-width:440px}
+.cov-tag{font-size:clamp(18px,2.2vw,26px);font-weight:900;letter-spacing:.2em;color:#6B3409}
+.cov-line{width:64px;height:4px;background:#6B3409;border-radius:2px;margin:18px 0 16px;opacity:.75}
+.cov-desc{font-size:.9rem;line-height:2.05;color:rgba(255,255,255,.94);max-width:440px;letter-spacing:.01em}
 .cov-tags{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
-.cov-tags span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:8px 22px;font-weight:700;font-size:.85rem;letter-spacing:.08em}
-.cov-meta{margin-top:36px;font-size:.7rem;color:rgba(255,255,255,.78);letter-spacing:.06em}
+.cov-tags span{background:rgba(255,255,255,.2);border:1px solid rgba(107,52,9,.4);color:#5F2E08;border-radius:999px;padding:8px 22px;font-weight:800;font-size:.85rem;letter-spacing:.08em}
+.cov-meta{margin-top:36px;font-size:.7rem;color:rgba(95,46,8,.75);letter-spacing:.06em;font-weight:600}
 .cov-phones{position:relative;height:min(66vh,580px)}
-.cov-phones::before{content:"";position:absolute;inset:-8% -12%;background:radial-gradient(closest-side,rgba(255,255,255,.34) 0%,rgba(255,255,255,.12) 45%,transparent 72%);filter:blur(10px);border-radius:50%}
 .cov-phones .ph{position:absolute;height:100%;width:auto}
 .cov-phones .front{right:0;top:0;filter:drop-shadow(0 34px 46px rgba(110,42,4,.42)) drop-shadow(0 8px 14px rgba(110,42,4,.22));animation:covfloat 7s ease-in-out infinite}
 .cov-phones .back{left:2%;top:12%;height:80%;filter:drop-shadow(0 26px 38px rgba(110,42,4,.36));opacity:.97;animation:covfloat 7s ease-in-out -2.6s infinite}
 @keyframes covfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
 @media(prefers-reduced-motion:reduce){.cov-phones .ph{animation:none}}
-.slide.cover h1{letter-spacing:.02em}
-.slide.cover .cov-tag{letter-spacing:.22em;font-weight:700}
-.slide.cover .cov-desc{color:rgba(255,255,255,.88);line-height:2.05;letter-spacing:.01em}
-@media(max-width:860px){.cover-grid{grid-template-columns:1fr}.cov-phones{height:380px}}
+@media(max-width:860px){.cover-grid{grid-template-columns:1fr}.cov-phones{height:380px}.slide.cover::after{font-size:180px;bottom:-60px}}
 /* 下一步 */
 .next3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .nc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
