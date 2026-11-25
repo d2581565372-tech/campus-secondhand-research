@@ -299,22 +299,22 @@ nav{position:fixed;top:0;left:0;right:0}
 .pptbar .dots i.on{background:var(--or);transform:scale(1.25)}
 .pptbar .hint{font-size:.62rem;color:#A2A8B5;margin-left:8px}
 .pptnav-title{position:fixed;top:0;right:0;height:52px;display:flex;align-items:center;padding:0 18px;z-index:60;font-size:.68rem;color:var(--mut);background:rgba(246,247,250,.92)}
-/* 深色强调页 */
-.slide.dark{background:radial-gradient(1200px 600px at 70% -10%,#2A2F3C 0%,transparent 60%),linear-gradient(135deg,#15171C,#1B1F28)}
-.slide.dark h2,.slide.dark .kick{color:#fff}
-.slide.dark h2 .g{color:var(--or)}
-.slide.dark .lede{color:#AEB4C0}
-.slide.dark .pov{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#E7EAF0;box-shadow:none}
-.slide.dark .pov b{color:var(--or)}
-.slide.dark .pov.hmw{background:rgba(255,227,238,.12);border-color:rgba(255,170,205,.35);color:#FFC9DE}
-.slide.dark .pov.hmw b{color:#FF9EC4}
+/* 强调页 · 暖奶油浅底 */
+.slide.dark{background:radial-gradient(1100px 560px at 78% -12%,#FFFFFF 0%,transparent 60%),linear-gradient(135deg,#FFF3E4 0%,#FFE7C8 100%)}
+.slide.dark h2{color:#1D1D1F}
+.slide.dark .kick{color:#D96C1E}
+.slide.dark h2 .g{color:#D96C1E}
+.slide.dark .lede{color:#7A6A58}
+.slide.dark .pov{background:#fff;border:1px solid #F2DCBF;color:#3A3A3F;box-shadow:0 10px 26px rgba(217,108,30,.1);border-left:4px solid var(--or)}
+.slide.dark .pov b{color:#D96C1E}
+.slide.dark .pov.hmw{background:#FFF0F5;border-color:#F8C9DC;border-left:4px solid #F27BA8;color:#8A4B62}
+.slide.dark .pov.hmw b{color:#E4568C}
 .slide.dark .ps{background:linear-gradient(135deg,#F6A05C,#EE8434);border:none;border-left:6px solid #FFC98A;color:#fff;box-shadow:0 18px 44px rgba(238,132,52,.35)}
 .slide.dark .ps .k2{color:rgba(255,255,255,.85)}
 .slide.dark .ps h3 em{color:#FFE7CF;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:3px}
 .slide.dark .ps p{color:rgba(255,255,255,.85)}
 /* 封面页 · 苹果式浅色 */
 .slide.cover{background:radial-gradient(1100px 600px at 80% -10%,#FFFFFF 0%,transparent 60%),linear-gradient(160deg,#FAFAFC 0%,#F2F2F6 60%,#EBEBF0 100%);color:#1D1D1F}
-.slide.cover::before{content:"";position:absolute;width:560px;height:560px;border:1.5px solid rgba(29,29,31,.09);border-radius:50%;right:-130px;top:-150px}
 .slide.cover .wrap{position:relative;z-index:2}
 /* 手机墙循环流动背景 */
 .slide.cover{overflow:hidden}
@@ -333,13 +333,13 @@ nav{position:fixed;top:0;left:0;right:0}
 @media(prefers-reduced-motion:reduce){.cov-wall .cw{animation:none}}
 .cover-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
 .cov-icon{width:94px;height:94px;object-fit:cover;border-radius:22px;box-shadow:0 18px 40px rgba(29,29,31,.16);border:3px solid #fff}
-.slide.cover h1{font-size:clamp(44px,6vw,76px);font-weight:900;letter-spacing:.02em;margin:22px 0 8px;line-height:1.1;color:#1D1D1F}
-.slide.cover h1 span{font-weight:300;color:#86868B;margin-left:12px;letter-spacing:.14em}
-.cov-tag{font-size:clamp(18px,2.2vw,26px);font-weight:900;letter-spacing:.2em;color:#D96C1E}
-.cov-line{width:64px;height:4px;background:#D96C1E;border-radius:2px;margin:18px 0 16px}
-.cov-desc{font-size:.9rem;line-height:2.05;color:#424245;max-width:440px;letter-spacing:.01em}
+.slide.cover h1{font-size:clamp(44px,6vw,76px);font-weight:900;letter-spacing:.02em;margin:22px 0 8px;line-height:1.1;background:linear-gradient(120deg,#1D1D1F 55%,#5B5B63);-webkit-background-clip:text;background-clip:text;color:transparent}
+.slide.cover h1 span{font-weight:300;color:#86868B;-webkit-text-fill-color:#86868B;margin-left:12px;letter-spacing:.14em}
+.cov-tag{font-size:clamp(18px,2.2vw,26px);font-weight:900;letter-spacing:.2em;background:linear-gradient(90deg,#F0821E,#D9541E);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cov-line{width:64px;height:4px;background:linear-gradient(90deg,#F0821E,#D9541E);border-radius:2px;margin:18px 0 16px}
+.cov-desc{font-size:.9rem;line-height:2.05;color:#515154;max-width:440px;letter-spacing:.01em}
 .cov-tags{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
-.cov-tags span{background:#fff;border:1px solid #D2D2D7;color:#1D1D1F;border-radius:999px;padding:8px 22px;font-weight:700;font-size:.85rem;letter-spacing:.08em;box-shadow:0 2px 8px rgba(29,29,31,.06)}
+.cov-tags span{background:#fff;border:1px solid #DCDCE2;color:#1D1D1F;border-radius:999px;padding:8px 22px;font-weight:700;font-size:.85rem;letter-spacing:.08em;box-shadow:0 2px 10px rgba(29,29,31,.07)}
 .cov-meta{margin-top:36px;font-size:.7rem;color:#86868B;letter-spacing:.06em;font-weight:600}
 .cov-phones{position:relative;height:min(66vh,580px)}
 .cov-phones .ph{position:absolute;height:100%;width:auto}
@@ -426,10 +426,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
   <div class="band rv">
     <div class="n"><div class="v">160<small>+</small></div><div class="t">问卷调研</div><div class="d">线上问卷覆盖不同年级、院系</div></div>
     <div class="n"><div class="v">10</div><div class="t">用户深度访谈</div><div class="d">围绕「最近一次交易」还原完整路径</div></div>
-    <div class="n"><div class="v">10</div><div class="t">用户测试</div><div class="d">真实上手反馈驱动迭代</div></div>
+    <div class="n"><div class="v">7</div><div class="t">用户测试</div><div class="d">真实上手反馈驱动迭代</div></div>
     <div class="n"><div class="v">56</div><div class="t">产品迭代</div><div class="d">从 1.0 到 3.0 持续打磨</div></div>
   </div>
-  <p class="foot-note">数据口径：项目组统计（问卷回收 160+ 份、用户测试 10 次、产品迭代 56 次）</p>
+  <p class="foot-note">数据口径：项目组统计（问卷回收 126 份、用户测试 7 次、产品迭代 56 次）</p>
 </div></section>
 
 <!-- 02 市场机会 -->
@@ -506,11 +506,11 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 <section id="research" class="slide" style="background:#fff"><div class="wrap">
   <div class="kick">04 · User Research</div>
   <h2>问卷找现象，<span class="g">访谈找原因</span></h2>
-  <p class="lede">160+ 份问卷画出痛点分布，10 个深度访谈解释痛点背后「为什么」。</p>
+  <p class="lede">126 份问卷画出痛点分布，7 个深度访谈解释痛点背后「为什么」。</p>
 
   <div class="duo2 rv">
     <div class="rcard">
-      <h3>表层现象<span class="k">SURVEY</span><span class="n">问卷 · 160+ 份</span></h3>
+      <h3>表层现象<span class="k">SURVEY</span><span class="n">问卷 · 126 份</span></h3>
       <ul>
         <li>帖子很快被刷下去，需要反复重发</li>
         <li>难查本校同类闲置参考价，定价困难</li>
@@ -521,7 +521,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
       </ul>
     </div>
     <div class="rcard deep">
-      <h3>深层需求<span class="k">INTERVIEW</span><span class="n">访谈 · 10 人</span></h3>
+      <h3>深层需求<span class="k">INTERVIEW</span><span class="n">访谈 · 7 人</span></h3>
       <ul>
         <li><q>「不怕功能少，最怕没人用」</q>——活跃度比功能更重要，工具其次、氛围优先</li>
         <li><q>「希望直接空投到我家，不要省去那三天」</q>——交付速度是核心体验</li>
@@ -666,7 +666,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
   <p class="lede">从调研洞察到最终产品，逻辑链条闭环——评审可以沿着链条核对每一个决策的证据。</p>
 
   <div class="chain rv">
-    <div class="cn">调研洞察<small>160+ 问卷 · 10 访谈</small></div>
+    <div class="cn">调研洞察<small>126 问卷 · 7 访谈</small></div>
     <div class="cn">问题总结<small>Problem Statement</small></div>
     <div class="cn">头脑风暴<small>4+2 条想法</small></div>
     <div class="cn">闲鹅 1.0<small>五大模块骨架上线</small></div>
@@ -678,7 +678,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 
   <div class="story rv">
     <div class="sc"><span class="vtag a">1.0 · 骨架</span><b>五个入口，一条顺路</b><p>首页小市集 / 广场 / 发布 / 消息 / 我的，覆盖「逛 → 搜 → 发 → 聊 → 管」全流程。</p></div>
-    <div class="sc"><span class="vtag b">用户测试 · 5 位</span><b>真实上手暴露问题</b><p>消息页没有退路、偏好设置太复杂、图片看不清就要下单……10 次用户测试中的核心轮次，沉淀出 8 处升级点。</p></div>
+    <div class="sc"><span class="vtag b">用户测试 · 5 位</span><b>真实上手暴露问题</b><p>消息页没有退路、偏好设置太复杂、图片看不清就要下单……7 次用户测试中的核心轮次，沉淀出 8 处升级点。</p></div>
     <div class="sc"><span class="vtag c">2.0 · 升级</span><b>AI 发布 30 秒，驿站自提</b><p>AI 拍照识别生成标签与描述；东门驿站自提 / 送到楼下；偏好档案匹配相似用户。</p></div>
   </div>
 </div></section>
