@@ -146,11 +146,11 @@ details[open] summary::before{transform:rotate(90deg)}
 details summary small{margin-left:auto;font-weight:500;font-size:.62rem;color:var(--mut)}
 details .dbody{padding:0 16px 16px;font-size:.78rem;color:#4A5063}
 /* 问题重述 */
-.ps{background:var(--ink);color:#fff;border-radius:20px;padding:34px 30px;margin-bottom:24px}
-.ps .k2{font-family:ui-monospace,monospace;font-size:.62rem;letter-spacing:.2em;color:var(--or);font-weight:800}
+.ps{background:linear-gradient(135deg,#FFF6EC,#FFEFD9);border:1px solid #F2DCBF;border-left:5px solid var(--or);color:var(--ink);border-radius:20px;padding:34px 30px;margin-bottom:24px;box-shadow:0 10px 28px rgba(233,129,47,.08)}
+.ps .k2{font-family:ui-monospace,monospace;font-size:.62rem;letter-spacing:.2em;color:#C9722B;font-weight:800}
 .ps h3{font-size:clamp(19px,2.8vw,26px);font-weight:900;line-height:1.5;margin-top:10px}
-.ps h3 em{font-style:normal;color:var(--or)}
-.ps p{font-size:.76rem;color:#B9BECB;margin-top:12px}
+.ps h3 em{font-style:normal;color:#D98A2B}
+.ps p{font-size:.76rem;color:#A08C74;margin-top:12px}
 .pov3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .pov3.two{grid-template-columns:1fr 1fr;margin-bottom:18px}
 .povimg{max-width:680px;margin:20px auto 0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:0 10px 28px rgba(21,23,28,.05)}
@@ -244,20 +244,6 @@ details .dbody{padding:0 16px 16px;font-size:.78rem;color:#4A5063}
 .pchg{margin-top:12px;font-size:.72rem;color:var(--mut);text-align:center}
 .pchg .cb{display:inline-block;background:#FFF1EB;border:1px solid #F8D8C4;color:#C4651F;border-radius:999px;padding:3px 11px;font-weight:700;font-size:.66rem;margin:2px 3px}
 /* 演示 */
-.demo{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:center;background:var(--ink);border-radius:22px;padding:34px;color:#fff}
-.demo h2,.demo .lede{color:#fff}
-.demo .lede{color:#B9BECB}
-.dphone{width:min(300px,80vw);margin:0 auto;background:#fff;border-radius:26px;overflow:hidden;box-shadow:0 30px 60px rgba(0,0,0,.4);font-size:.62rem;color:#15171C}
-.dsc{display:none;min-height:380px}
-.dsc.on{display:block}
-.dph-head{background:linear-gradient(135deg,#F6A05C,#EE8434);color:#fff;padding:12px 14px}
-.dph-title{font-weight:900;font-size:.78rem}
-.dbar{background:#fff;color:#B08968;border-radius:999px;padding:8px 12px;margin-top:10px;font-size:.6rem}
-.dph-body{padding:10px 12px}
-.dph-tabs{display:flex;border-top:1px solid #F2E8DC;background:#FFF9F2;padding:8px 4px 10px}
-.dph-tabs button{flex:1;background:none;border:none;font-size:.5rem;color:#B79A82;line-height:1.3;cursor:pointer;font-family:inherit}
-.dph-tabs button i{font-style:normal;font-size:.95rem;display:block}
-.dph-tabs button.on{color:#E9812F;font-weight:800}
 .sec-t{font-weight:900;font-size:.66rem;color:#5A4632;margin:8px 0 6px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .c-hot{background:#FFE9D2;color:#C46A1F;font-weight:700;border-radius:999px;padding:4px 10px;font-size:.56rem}
@@ -333,14 +319,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <div class="n"><div class="v">56</div><div class="t">产品迭代</div><div class="d">从 1.0 到 3.0 持续打磨</div></div>
   </div>
   <p class="foot-note">数据口径：项目组统计（问卷回收 120+ 份、用户测试 10 次、产品迭代 56 次）</p>
-
-  <h3 style="font-size:1.05rem;margin:44px 0 6px">闲鹅 3.0 · <span class="g">真实界面</span></h3>
-  <p class="foot-note" style="margin-bottom:22px">上线版本实际界面 —— 启动页 / 首页小市集 / 发布闲置</p>
-  <div class="shots rv">
-    <figure><img src="assets/app/screen-boot.png" alt="闲鹅启动页：让闲置在校园里流动起来"><figcaption><b>启动页</b>「让闲置在校园里流动起来」</figcaption></figure>
-    <figure><img src="assets/app/screen-home.png" alt="闲鹅首页·闲置小市集：推荐排序、分类筛选、商品卡片"><figcaption><b>首页 · 闲置小市集</b>推荐 / 最新 / 热门排序 + 分类筛选，商品卡片直接呈现</figcaption></figure>
-    <figure><img src="assets/app/screen-publish.png" alt="闲鹅发布闲置页：出闲置/收闲置、AI识别、库存管理、成色与议价设置"><figcaption><b>发布 · AI 识别</b>出/收闲置分类 + AI 识别 + 库存自动管理，30 秒发布</figcaption></figure>
-  </div>
 </div></section>
 
 <!-- 02 市场机会 -->
@@ -493,7 +471,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
   <h3 style="font-size:1.05rem;margin:30px 0 6px">头脑风暴 · 从洞察到产品的发散</h3>
   <p class="foot-note" style="margin-bottom:18px">真实头脑风暴记录：成员发散想法 + AI 补充方案（数字便签 + 现场白板 A/B 两组）</p>
   <div class="bs3 rv">
-    <figure><img src="assets/brain/bs-m1.png" alt="成员1头脑风暴数字便签"><figcaption><b>成员 1 · 数字便签</b>快捷沟通语导 / 匹配相似用户（秒回匹配秒回）/ 无人二手售卖柜 / 可视频交流买卖 / 校园地图二手漂流瓶 / 自选收货方式 / 360° 拍摄录入 3D 展示</figcaption></figure>
+    <figure><img src="assets/brain/bs-m1.png" alt="成员1与成员2头脑风暴数字便签"><figcaption><b>成员 1 & 2 · 数字便签</b>快捷沟通语导 / 匹配相似用户（秒回匹配秒回）/ 无人二手售卖柜 / 可视频交流买卖 / 校园地图二手漂流瓶 / 自选收货方式 / 360° 拍摄录入 3D 展示</figcaption></figure>
     <figure><img src="assets/brain/bs-wall.jpg" alt="现场白板头脑风暴便签墙"><figcaption><b>现场白板 · A/B 两组</b>小组发散讨论的原始便签墙——从痛点追问到方案假设</figcaption></figure>
     <figure><img src="assets/brain/bs-ai.png" alt="AI想法便签"><figcaption><b>AI 想法</b>校内闲置互助中转站：统一登记物品成色信息，交易完成前资金暂存平台，出现问题可在站点当场提交凭证快速处理</figcaption></figure>
   </div>
@@ -545,7 +523,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <div class="sc"><span class="vtag c">2.0 · 升级</span><b>AI 发布 30 秒，驿站自提</b><p>AI 拍照识别生成标签与描述；东门驿站自提 / 送到楼下；偏好档案匹配相似用户。</p></div>
   </div>
 
-  <h3 style="font-size:1.05rem;margin-bottom:6px">2.0 → 3.0 · 八处迭代对比 <span style="font-size:.66rem;color:var(--mut);font-weight:500">（左：修改前 2.0 ｜ 右：修改后 3.0 · 红框标注改动位置）</span></h3>
+  <h3 style="font-size:1.05rem;margin-bottom:6px">2.0 → 3.0 · 七处迭代对比 <span style="font-size:.66rem;color:var(--mut);font-weight:500">（左：修改前 2.0 ｜ 右：修改后 3.0 · 红框标注改动位置）</span></h3>
 
   <div class="pair rv">
     <div class="pair-h"><span class="idx">01</span><b>编辑资料上线</b></div>
@@ -565,11 +543,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <div class="pchg"><span class="cb">⑤ 优化内容：偏好档案等复杂设置收起，新增退出登录</span></div>
   </div>
 
-  <div class="pair rv">
-    <div class="pair-h"><span class="idx">04</span><b>广场更好逛</b></div>
-    <div class="pair2"><img src="assets/compare/cmp-4-l.jpg" alt="2.0旧版本：广场"><img src="assets/compare/cmp-4-r.jpg" alt="3.0新版本：图片与表情评论"></div>
-    <div class="pchg"><span class="cb">① 新增我的点赞 / 我的收藏</span><span class="cb">② 帖子支持图片</span><span class="cb">③ 表情评论</span></div>
-  </div>
 
   <div class="pair rv">
     <div class="pair-h"><span class="idx">05</span><b>分类移到首页</b></div>
@@ -600,12 +573,21 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 <section id="demo"><div class="wrap">
   <div class="kick" style="color:var(--or)">08 · Live Demo</div>
   <h2>上手试试最终版本</h2>
-  <p class="lede">闲鹅 3.0 完整操作演示视频——从发布闲置到交易完成的全流程实操，视频就位后自动在此播放。历史版本与录屏归档见下方入口。</p>
-  <div class="btns" style="margin-bottom:30px">
+  <p class="lede">闲鹅 3.0 真实界面 + 完整使用流程 + 操作演示视频。点击「在线体验」直接试用 App。</p>
+  <div class="btns" style="margin-bottom:26px">
+    <a class="btn p" href="https://quanbo1.github.io/campus-trade-ui-v529/" target="_blank">🎮 在线体验 App</a>
     <a class="btn s" href="https://quanbo1.github.io/campus-secondhand-research-v5/" target="_blank">📺 操作录屏 / 历史版本归档</a>
   </div>
 
-  <h3 style="font-size:1.05rem;margin-bottom:6px">谁在用 · 怎么用 <span style="font-size:.66rem;color:var(--mut);font-weight:500">游客 / 卖家 / 买家三类角色的完整使用流程</span></h3>
+  <h3 style="font-size:1.05rem;margin-bottom:6px">闲鹅 3.0 · <span class="g">真实界面</span></h3>
+  <p class="foot-note" style="margin-bottom:22px">上线版本实际界面 —— 启动页 / 首页小市集 / 发布闲置</p>
+  <div class="shots rv">
+    <figure><img src="assets/app/screen-boot.png" alt="闲鹅启动页：让闲置在校园里流动起来"><figcaption><b>启动页</b>「让闲置在校园里流动起来」</figcaption></figure>
+    <figure><img src="assets/app/screen-home.png" alt="闲鹅首页·闲置小市集：推荐排序、分类筛选、商品卡片"><figcaption><b>首页 · 闲置小市集</b>推荐 / 最新 / 热门排序 + 分类筛选，商品卡片直接呈现</figcaption></figure>
+    <figure><img src="assets/app/screen-publish.png" alt="闲鹅发布闲置页：出闲置/收闲置、AI识别、库存管理、成色与议价设置"><figcaption><b>发布 · AI 识别</b>出/收闲置分类 + AI 识别 + 库存自动管理，30 秒发布</figcaption></figure>
+  </div>
+
+  <h3 style="font-size:1.05rem;margin:44px 0 6px">谁在用 · 怎么用 <span style="font-size:.66rem;color:var(--mut);font-weight:500">游客 / 卖家 / 买家三类角色的完整使用流程</span></h3>
   <p class="foot-note" style="margin-bottom:16px">买卖前：浏览首页、分类查找、搜索商品 → 买卖中：卖家编辑商品（AI 识别 + 快捷语）、买家了解商品、双方议价并确认交易地点 → 买卖后：确认订单、确认交易完成、评价交易；游客可随时编辑资料</p>
   <div class="flowbox rv">
     <img src="assets/flow/user-flow.png" alt="闲鹅使用流程演示：游客、卖家、买家三类角色在买卖前/中/后的完整流程图">
@@ -638,7 +620,6 @@ if(!RM){
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
   document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 }else{document.querySelectorAll('.rv').forEach(el=>el.classList.add('in'))}
-/* 交互演示 */
 </script>
 </body>
 </html>
