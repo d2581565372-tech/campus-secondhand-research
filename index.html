@@ -299,6 +299,23 @@ nav{position:fixed;top:0;left:0;right:0}
 .slide.dark .ps .k2{color:rgba(255,255,255,.85)}
 .slide.dark .ps h3 em{color:#FFE7CF;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:3px}
 .slide.dark .ps p{color:rgba(255,255,255,.85)}
+/* 封面页 */
+.slide.cover{background:radial-gradient(900px 520px at 88% 112%,rgba(255,255,255,.18) 0%,transparent 55%),radial-gradient(700px 420px at -6% -18%,rgba(255,255,255,.14) 0%,transparent 55%),linear-gradient(135deg,#F7A661 0%,#EF8A38 52%,#E8762A 100%);color:#fff}
+.cover-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
+.cov-icon{width:94px;height:94px;object-fit:cover;border-radius:22px;box-shadow:0 18px 40px rgba(140,60,10,.35);border:3px solid rgba(255,255,255,.55)}
+.slide.cover h1{font-size:clamp(44px,6vw,76px);font-weight:900;letter-spacing:.05em;margin:22px 0 8px;line-height:1.1}
+.slide.cover h1 span{font-weight:300;opacity:.95;margin-left:12px;letter-spacing:.14em}
+.cov-tag{font-size:clamp(18px,2.2vw,26px);font-weight:800;letter-spacing:.16em;color:#FFF3E4}
+.cov-line{width:64px;height:4px;background:rgba(255,255,255,.85);border-radius:2px;margin:18px 0 16px}
+.cov-desc{font-size:.9rem;line-height:1.95;color:rgba(255,255,255,.94);max-width:440px}
+.cov-tags{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.cov-tags span{background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.5);border-radius:999px;padding:8px 22px;font-weight:700;font-size:.85rem;letter-spacing:.08em}
+.cov-meta{margin-top:36px;font-size:.7rem;color:rgba(255,255,255,.78);letter-spacing:.06em}
+.cov-phones{position:relative;height:min(62vh,540px)}
+.cov-phones .ph{position:absolute;border-radius:26px;box-shadow:0 30px 70px rgba(120,50,5,.45);border:5px solid rgba(255,255,255,.28)}
+.cov-phones .back{width:min(30vw,300px);right:4%;top:9%;transform:rotate(8deg);opacity:.94}
+.cov-phones .front{width:min(26vw,258px);left:14%;top:0;transform:rotate(-4deg)}
+@media(max-width:860px){.cover-grid{grid-template-columns:1fr}.cov-phones{height:380px}}
 /* 下一步 */
 .next3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .nc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
@@ -325,12 +342,29 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 
 <nav><div class="wrap">
   <span class="lg">🪿 闲鹅</span>
-  <a href="#" data-goto="0">封面</a><a href="#" data-goto="1">市场</a><a href="#" data-goto="2">竞品</a><a href="#" data-goto="3">调研</a><a href="#" data-goto="5">问题</a><a href="#" data-goto="7">设计</a><a href="#" data-goto="9">迭代</a><a href="#" data-goto="17">演示</a><a href="#" data-goto="19">展望</a>
+  <a href="#" data-goto="0">封面</a><a href="#" data-goto="1">痛点</a><a href="#" data-goto="2">市场</a><a href="#" data-goto="3">竞品</a><a href="#" data-goto="4">调研</a><a href="#" data-goto="6">问题</a><a href="#" data-goto="8">设计</a><a href="#" data-goto="10">迭代</a><a href="#" data-goto="18">演示</a><a href="#" data-goto="20">展望</a>
   <a class="cta" href="https://quanbo1.github.io/campus-trade-ui-v529/" target="_blank">在线体验 →</a>
 </div></nav>
 
+<!-- 00 封面 -->
+<section class="slide cover on"><div class="wrap cover-grid">
+  <div class="rv">
+    <img class="cov-icon" src="assets/design/app-icon.jpg" alt="闲鹅 APP 图标">
+    <h1>闲鹅<span>APP</span></h1>
+    <p class="cov-tag">让闲置在校园流转</p>
+    <div class="cov-line"></div>
+    <p class="cov-desc">为了让同学们积压的闲置物品能快速找到新主人，解决校内出物难、比价乱、交易没保障的问题——打造一个只面向本校学生、方便面交的校园专属二手交易平台。</p>
+    <div class="cov-tags"><span>校园二手</span><span>闲置流转</span><span>同校交易</span></div>
+    <p class="cov-meta">🪿 湖北美院联合创作营课程项目 · Pitch 演示 ｜ ← → 方向键翻页</p>
+  </div>
+  <div class="cov-phones rv">
+    <img class="ph back" src="assets/app/screen-home.png" alt="闲鹅首页界面">
+    <img class="ph front" src="assets/app/screen-boot.png" alt="闲鹅启动页界面">
+  </div>
+</div></section>
+
 <!-- 01 痛点 Hero -->
-<section id="pain" class="slide on"><div class="wrap">
+<section id="pain" class="slide"><div class="wrap">
   <div class="hero-text rv">
     <div class="kick">🪿 闲鹅 · 校园二手闲置平台 · 2026 · 已上线迭代中</div>
     <h1>一切从<span class="hl">卖不出去的闲置</span>开始</h1>
