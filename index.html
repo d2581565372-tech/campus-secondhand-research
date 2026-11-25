@@ -171,6 +171,9 @@ details .dbody{padding:0 16px 16px;font-size:.78rem;color:#4A5063}
 .pov{background:#FFF3B8;border-radius:12px;padding:14px;font-size:.72rem;line-height:1.65;color:#5C4A1E;box-shadow:2px 3px 0 rgba(21,23,28,.1)}
 .pov b{display:block;font-size:.76rem;margin-bottom:5px}
 .pov.hmw{background:#FFE3EE;color:#7E3A5C}
+/* 情绪折线图 */
+.emoline{background:#FFFDF9;border:1px solid var(--line);border-radius:16px;padding:16px 18px 10px;margin-top:16px;box-shadow:0 8px 22px rgba(21,23,28,.05)}
+.emoline svg{width:100%;max-width:900px;display:block;margin:0 auto}
 /* 头脑风暴 */
 .bs3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:10px}
 .bs3 figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;padding:12px;box-shadow:0 10px 28px rgba(21,23,28,.05)}
@@ -283,6 +286,19 @@ nav{position:fixed;top:0;left:0;right:0}
 .pptbar .dots i.on{background:var(--or);transform:scale(1.25)}
 .pptbar .hint{font-size:.62rem;color:#A2A8B5;margin-left:8px}
 .pptnav-title{position:fixed;top:0;right:0;height:52px;display:flex;align-items:center;padding:0 18px;z-index:60;font-size:.68rem;color:var(--mut);background:rgba(246,247,250,.92)}
+/* 深色强调页 */
+.slide.dark{background:radial-gradient(1200px 600px at 70% -10%,#2A2F3C 0%,transparent 60%),linear-gradient(135deg,#15171C,#1B1F28)}
+.slide.dark h2,.slide.dark .kick{color:#fff}
+.slide.dark h2 .g{color:var(--or)}
+.slide.dark .lede{color:#AEB4C0}
+.slide.dark .pov{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#E7EAF0;box-shadow:none}
+.slide.dark .pov b{color:var(--or)}
+.slide.dark .pov.hmw{background:rgba(255,227,238,.12);border-color:rgba(255,170,205,.35);color:#FFC9DE}
+.slide.dark .pov.hmw b{color:#FF9EC4}
+.slide.dark .ps{background:linear-gradient(135deg,#F6A05C,#EE8434);border:none;border-left:6px solid #FFC98A;color:#fff;box-shadow:0 18px 44px rgba(238,132,52,.35)}
+.slide.dark .ps .k2{color:rgba(255,255,255,.85)}
+.slide.dark .ps h3 em{color:#FFE7CF;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:3px}
+.slide.dark .ps p{color:rgba(255,255,255,.85)}
 /* 下一步 */
 .next3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .nc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
@@ -309,7 +325,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 
 <nav><div class="wrap">
   <span class="lg">🪿 闲鹅</span>
-  <a href="#" data-goto="0">封面</a><a href="#" data-goto="1">市场</a><a href="#" data-goto="2">竞品</a><a href="#" data-goto="3">调研</a><a href="#" data-goto="6">问题</a><a href="#" data-goto="8">设计</a><a href="#" data-goto="9">迭代</a><a href="#" data-goto="17">演示</a><a href="#" data-goto="20">展望</a>
+  <a href="#" data-goto="0">封面</a><a href="#" data-goto="1">市场</a><a href="#" data-goto="2">竞品</a><a href="#" data-goto="3">调研</a><a href="#" data-goto="5">问题</a><a href="#" data-goto="7">设计</a><a href="#" data-goto="9">迭代</a><a href="#" data-goto="17">演示</a><a href="#" data-goto="19">展望</a>
   <a class="cta" href="https://quanbo1.github.io/campus-trade-ui-v529/" target="_blank">在线体验 →</a>
 </div></nav>
 
@@ -330,12 +346,12 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
   </div>
 
   <div class="band rv">
-    <div class="n"><div class="v">120<small>+</small></div><div class="t">问卷调研</div><div class="d">线上问卷覆盖不同年级、院系</div></div>
-    <div class="n"><div class="v">8–10</div><div class="t">用户深度访谈</div><div class="d">围绕「最近一次交易」还原完整路径</div></div>
+    <div class="n"><div class="v">160<small>+</small></div><div class="t">问卷调研</div><div class="d">线上问卷覆盖不同年级、院系</div></div>
+    <div class="n"><div class="v">10</div><div class="t">用户深度访谈</div><div class="d">围绕「最近一次交易」还原完整路径</div></div>
     <div class="n"><div class="v">10</div><div class="t">用户测试</div><div class="d">真实上手反馈驱动迭代</div></div>
     <div class="n"><div class="v">56</div><div class="t">产品迭代</div><div class="d">从 1.0 到 3.0 持续打磨</div></div>
   </div>
-  <p class="foot-note">数据口径：项目组统计（问卷回收 120+ 份、用户测试 10 次、产品迭代 56 次）</p>
+  <p class="foot-note">数据口径：项目组统计（问卷回收 160+ 份、用户测试 10 次、产品迭代 56 次）</p>
 </div></section>
 
 <!-- 02 市场机会 -->
@@ -412,11 +428,11 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 <section id="research" class="slide" style="background:#fff"><div class="wrap">
   <div class="kick">04 · User Research</div>
   <h2>问卷找现象，<span class="g">访谈找原因</span></h2>
-  <p class="lede">120+ 份问卷画出痛点分布，8–10 个深度访谈解释痛点背后「为什么」。</p>
+  <p class="lede">160+ 份问卷画出痛点分布，10 个深度访谈解释痛点背后「为什么」。</p>
 
   <div class="duo2 rv">
     <div class="rcard">
-      <h3>表层现象<span class="k">SURVEY</span><span class="n">问卷 · 120+ 份</span></h3>
+      <h3>表层现象<span class="k">SURVEY</span><span class="n">问卷 · 160+ 份</span></h3>
       <ul>
         <li>帖子很快被刷下去，需要反复重发</li>
         <li>难查本校同类闲置参考价，定价困难</li>
@@ -427,7 +443,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
       </ul>
     </div>
     <div class="rcard deep">
-      <h3>深层需求<span class="k">INTERVIEW</span><span class="n">访谈 · 8–10 人</span></h3>
+      <h3>深层需求<span class="k">INTERVIEW</span><span class="n">访谈 · 10 人</span></h3>
       <ul>
         <li><q>「不怕功能少，最怕没人用」</q>——活跃度比功能更重要，工具其次、氛围优先</li>
         <li><q>「希望直接空投到我家，不要省去那三天」</q>——交付速度是核心体验</li>
@@ -449,12 +465,32 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <div class="jstep"><span class="je">😢</span><b>⑤ 等待物流</b><p>等待时间有点久<br>「不要省去那三天」</p></div>
     <div class="jstep"><span class="warn">⚠ 瓶颈 · 售后无门</span><span class="je">😫</span><b>⑥ 收货检查</b><p>运输破损 / 物品问题<br>售后没回复</p></div>
   </div>
-  <p class="foot-note" style="margin-bottom:26px">情绪曲线 😐→😟→😐→😠→😢→😫：三个瓶颈全部落在「平台管不到」的环节——这正是闲鹅要补的位置</p>
-</div></section>
+  <div class="emoline rv">
+    <svg viewBox="0 0 1000 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="用户旅程情绪曲线折线图">
+      <defs>
+        <linearGradient id="emoFill" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#F08C3D" stop-opacity=".22"/><stop offset="1" stop-color="#F08C3D" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <polygon points="90,86 254,124 418,98 582,140 746,156 910,132 910,176 90,176" fill="url(#emoFill)"/>
+      <polyline points="90,86 254,124 418,98 582,140 746,156 910,132" fill="none" stroke="#F08C3D" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <g fill="#fff" stroke="#F08C3D" stroke-width="4">
+        <circle cx="90" cy="86" r="8"/><circle cx="254" cy="124" r="8"/><circle cx="418" cy="98" r="8"/>
+        <circle cx="582" cy="140" r="8" stroke="#E8452C"/><circle cx="746" cy="156" r="8" stroke="#E8452C"/><circle cx="910" cy="132" r="8" stroke="#E8452C"/>
+      </g>
+      <g font-size="26" text-anchor="middle">
+        <text x="90" y="58">😐</text><text x="254" y="98">😟</text><text x="418" y="72">😐</text>
+        <text x="582" y="116">😠</text><text x="746" y="132">😢</text><text x="910" y="108">😫</text>
+      </g>
+      <g font-size="15" font-weight="700" fill="#6A7080" text-anchor="middle">
+        <text x="90" y="196">① 找东西</text><text x="254" y="196">② 联系对方</text><text x="418" y="196">③ 沟通价格</text>
+        <text x="582" y="196">④ 付款</text><text x="746" y="196">⑤ 等待物流</text><text x="910" y="196">⑥ 收货检查</text>
+      </g>
+    </svg>
+    <p class="foot-note" style="text-align:center;margin-top:2px">情绪曲线 😐→😟→😐→😠→😢→😫：三个瓶颈（🔴）全部落在「平台管不到」的环节——这正是闲鹅要补的位置</p>
+  </div>
 
-<section class="slide"><div class="wrap">
-  <div class="kick">04 · User Research</div>
-  <h2>亲和图收敛 · <span class="g">7 组主题结论</span> <span style="font-size:.66rem;color:var(--mut);font-weight:500">（25 条原话逐条编码，E01–E25）</span></h2>
+  <h3 style="font-size:1.05rem;margin:26px 0 12px">亲和图收敛 · <span class="g">7 组主题结论</span> <span style="font-size:.66rem;color:var(--mut);font-weight:500">（25 条原话逐条编码，E01–E25）</span></h3>
   <div class="aff7 rv">
     <div class="acard c1"><span class="no">01</span><b>沟通回复低效率</b><p>→ 即时反馈机制</p></div>
     <div class="acard c2"><span class="no">02</span><b>商品管理混乱，发帖麻烦</b><p>→ 集中货架统一管理</p></div>
@@ -475,10 +511,10 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 </div></section>
 
 <!-- 05 问题总结 + 头脑风暴 -->
-<section id="define" class="slide"><div class="wrap">
-  <div class="kick">05 · Problem Statement & Brainstorm</div>
-  <h2>重新定义问题，<span class="g">再发散答案</span></h2>
-  <p class="lede">调研结论收敛成一句问题定义，再打开头脑风暴——每一条功能都能追根到某条调研证据。</p>
+<section id="define" class="slide dark"><div class="wrap">
+  <div class="kick">05 · Problem Statement</div>
+  <h2>重新定义问题，<span class="g">再收敛成一句</span></h2>
+  <p class="lede">调研结论收敛成一句问题定义——即闲鹅要解决的核心问题，这一页是整条故事线的转折点。</p>
 
   <div class="pov3 two rv">
     <div class="pov"><b>POV · 用户视角</b>大学生想出售二手闲置物品的时候遇到定价难、关注市场难——二手消息容易被刷走，买卖家双方沟通困难。</div>
@@ -526,6 +562,15 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
   </div>
 </div></section>
 
+<section class="slide" style="background:#fff"><div class="wrap">
+  <div class="kick">07 · User Flow</div>
+  <h2>谁在用 · <span class="g">怎么用</span> <span style="font-size:.66rem;color:var(--mut);font-weight:500">游客 / 卖家 / 买家三类角色的完整使用流程</span></h2>
+  <p class="foot-note" style="margin-bottom:16px">买卖前：浏览首页、分类查找、搜索商品 → 买卖中：卖家编辑商品（AI 识别 + 快捷语）、买家了解商品、双方议价并确认交易地点 → 买卖后：确认订单、确认交易完成、评价交易；游客可随时编辑资料</p>
+  <div class="flowbox rv">
+    <img src="assets/flow/user-flow.png" alt="闲鹅使用流程演示：游客、卖家、买家三类角色在买卖前/中/后的完整流程图">
+  </div>
+</div></section>
+
 <!-- 07 迭代链路 -->
 <section id="iterate" class="slide" style="background:#fff"><div class="wrap">
   <div class="kick">07 · Product Evolution</div>
@@ -533,7 +578,7 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
   <p class="lede">从调研洞察到最终产品，逻辑链条闭环——评审可以沿着链条核对每一个决策的证据。</p>
 
   <div class="chain rv">
-    <div class="cn">调研洞察<small>120+ 问卷 · 8–10 访谈</small></div>
+    <div class="cn">调研洞察<small>160+ 问卷 · 10 访谈</small></div>
     <div class="cn">问题总结<small>Problem Statement</small></div>
     <div class="cn">头脑风暴<small>4+2 条想法</small></div>
     <div class="cn">闲鹅 1.0<small>五大模块骨架上线</small></div>
@@ -625,14 +670,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <figure><img src="assets/app/screen-boot.png" alt="闲鹅启动页：让闲置在校园里流动起来"><figcaption><b>启动页</b>「让闲置在校园里流动起来」</figcaption></figure>
     <figure><img src="assets/app/screen-home.png" alt="闲鹅首页·闲置小市集：推荐排序、分类筛选、商品卡片"><figcaption><b>首页 · 闲置小市集</b>推荐 / 最新 / 热门排序 + 分类筛选，商品卡片直接呈现</figcaption></figure>
     <figure><img src="assets/app/screen-publish.png" alt="闲鹅发布闲置页：出闲置/收闲置、AI识别、库存管理、成色与议价设置"><figcaption><b>发布 · AI 识别</b>出/收闲置分类 + AI 识别 + 库存自动管理，30 秒发布</figcaption></figure>
-  </div>
-</div></section>
-
-<section class="slide" style="background:#fff"><div class="wrap">
-  <h3 style="font-size:1.05rem;margin-bottom:6px">谁在用 · 怎么用 <span style="font-size:.66rem;color:var(--mut);font-weight:500">游客 / 卖家 / 买家三类角色的完整使用流程</span></h3>
-  <p class="foot-note" style="margin-bottom:16px">买卖前：浏览首页、分类查找、搜索商品 → 买卖中：卖家编辑商品（AI 识别 + 快捷语）、买家了解商品、双方议价并确认交易地点 → 买卖后：确认订单、确认交易完成、评价交易；游客可随时编辑资料</p>
-  <div class="flowbox rv">
-    <img src="assets/flow/user-flow.png" alt="闲鹅使用流程演示：游客、卖家、买家三类角色在买卖前/中/后的完整流程图">
   </div>
 </div></section>
 
