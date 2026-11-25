@@ -299,15 +299,15 @@ nav{position:fixed;top:0;left:0;right:0}
 .slide.dark .ps .k2{color:rgba(255,255,255,.85)}
 .slide.dark .ps h3 em{color:#FFE7CF;text-decoration:underline;text-underline-offset:6px;text-decoration-thickness:3px}
 .slide.dark .ps p{color:rgba(255,255,255,.85)}
-/* 封面页 */
-.slide.cover{background:radial-gradient(760px 460px at -4% -14%,rgba(255,255,255,.2) 0%,transparent 55%),linear-gradient(118deg,#F9B269 0%,#F29B4B 36%,#E97E2C 66%,#D96C1E 100%);color:#fff}
-.slide.cover::before{content:"";position:absolute;width:560px;height:560px;border:1.5px solid rgba(255,255,255,.28);border-radius:50%;right:-130px;top:-150px}
+/* 封面页 · 苹果式浅色 */
+.slide.cover{background:radial-gradient(1100px 600px at 80% -10%,#FFFFFF 0%,transparent 60%),linear-gradient(160deg,#FAFAFC 0%,#F2F2F6 60%,#EBEBF0 100%);color:#1D1D1F}
+.slide.cover::before{content:"";position:absolute;width:560px;height:560px;border:1.5px solid rgba(29,29,31,.09);border-radius:50%;right:-130px;top:-150px}
 .slide.cover .wrap{position:relative;z-index:2}
 /* 手机墙循环流动背景 */
 .slide.cover{overflow:hidden}
-.cov-wall{position:absolute;inset:-46% -22%;display:flex;gap:1.4vw;rotate:-12deg;z-index:0;pointer-events:none;opacity:.24}
-.cov-wall .cw{flex:1;display:flex;flex-direction:column;gap:1.4vw;animation:cwup 64s linear infinite}
-.cov-wall .cw img{width:100%;height:auto;filter:saturate(.6) contrast(.9)}
+.cov-wall{position:absolute;inset:-46% -22%;display:flex;gap:1vw;rotate:-12deg;z-index:0;pointer-events:none;opacity:.14}
+.cov-wall .cw{flex:1;display:flex;flex-direction:column;gap:0;animation:cwup 64s linear infinite}
+.cov-wall .cw img{width:100%;height:auto;filter:saturate(.55) contrast(.92)}
 .cw.c2{animation-duration:78s;animation-direction:reverse;margin-top:-9%}
 .cw.c3{animation-duration:56s;margin-top:-22%}
 .cw.c4{animation-duration:84s;animation-direction:reverse;margin-top:-4%}
@@ -316,25 +316,25 @@ nav{position:fixed;top:0;left:0;right:0}
 .cw.c7{animation-duration:90s;margin-top:-7%}
 .cw.c8{animation-duration:74s;animation-direction:reverse;margin-top:-20%}
 @keyframes cwup{from{transform:translateY(0)}to{transform:translateY(-50%)}}
-.cov-tint{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 40%,transparent 40%,rgba(197,92,18,.5) 100%),linear-gradient(118deg,rgba(249,178,105,.42) 0%,rgba(233,126,44,.5) 55%,rgba(217,108,30,.58) 100%);pointer-events:none;z-index:1}
+.cov-tint{position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 40%,transparent 35%,rgba(250,250,252,.8) 100%);pointer-events:none;z-index:1}
 @media(prefers-reduced-motion:reduce){.cov-wall .cw{animation:none}}
 .cover-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center}
-.cov-icon{width:94px;height:94px;object-fit:cover;border-radius:22px;box-shadow:0 18px 40px rgba(140,60,10,.35);border:3px solid rgba(255,255,255,.55)}
-.slide.cover h1{font-size:clamp(44px,6vw,76px);font-weight:900;letter-spacing:.02em;margin:22px 0 8px;line-height:1.1}
-.slide.cover h1 span{font-weight:300;opacity:.95;margin-left:12px;letter-spacing:.14em}
-.cov-tag{font-size:clamp(18px,2.2vw,26px);font-weight:900;letter-spacing:.2em;color:#6B3409}
-.cov-line{width:64px;height:4px;background:#6B3409;border-radius:2px;margin:18px 0 16px;opacity:.75}
-.cov-desc{font-size:.9rem;line-height:2.05;color:rgba(255,255,255,.94);max-width:440px;letter-spacing:.01em}
+.cov-icon{width:94px;height:94px;object-fit:cover;border-radius:22px;box-shadow:0 18px 40px rgba(29,29,31,.16);border:3px solid #fff}
+.slide.cover h1{font-size:clamp(44px,6vw,76px);font-weight:900;letter-spacing:.02em;margin:22px 0 8px;line-height:1.1;color:#1D1D1F}
+.slide.cover h1 span{font-weight:300;color:#86868B;margin-left:12px;letter-spacing:.14em}
+.cov-tag{font-size:clamp(18px,2.2vw,26px);font-weight:900;letter-spacing:.2em;color:#D96C1E}
+.cov-line{width:64px;height:4px;background:#D96C1E;border-radius:2px;margin:18px 0 16px}
+.cov-desc{font-size:.9rem;line-height:2.05;color:#424245;max-width:440px;letter-spacing:.01em}
 .cov-tags{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
-.cov-tags span{background:rgba(255,255,255,.2);border:1px solid rgba(107,52,9,.4);color:#5F2E08;border-radius:999px;padding:8px 22px;font-weight:800;font-size:.85rem;letter-spacing:.08em}
-.cov-meta{margin-top:36px;font-size:.7rem;color:rgba(95,46,8,.75);letter-spacing:.06em;font-weight:600}
+.cov-tags span{background:#fff;border:1px solid #D2D2D7;color:#1D1D1F;border-radius:999px;padding:8px 22px;font-weight:700;font-size:.85rem;letter-spacing:.08em;box-shadow:0 2px 8px rgba(29,29,31,.06)}
+.cov-meta{margin-top:36px;font-size:.7rem;color:#86868B;letter-spacing:.06em;font-weight:600}
 .cov-phones{position:relative;height:min(66vh,580px)}
 .cov-phones .ph{position:absolute;height:100%;width:auto}
-.cov-phones .front{right:0;top:0;filter:drop-shadow(0 34px 46px rgba(110,42,4,.42)) drop-shadow(0 8px 14px rgba(110,42,4,.22));animation:covfloat 7s ease-in-out infinite}
-.cov-phones .back{left:2%;top:12%;height:80%;filter:drop-shadow(0 26px 38px rgba(110,42,4,.36));opacity:.97;animation:covfloat 7s ease-in-out -2.6s infinite}
-@keyframes covfloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+.cov-phones .front{right:0;top:0;transform:rotate(6deg);filter:drop-shadow(0 34px 46px rgba(29,29,31,.28)) drop-shadow(0 8px 14px rgba(29,29,31,.14));animation:covfloat 7s ease-in-out infinite}
+.cov-phones .back{left:2%;top:12%;height:80%;transform:rotate(-5deg);filter:drop-shadow(0 26px 38px rgba(29,29,31,.22));opacity:.96;animation:covfloat 7s ease-in-out -2.6s infinite}
+@keyframes covfloat{0%,100%{translate:0 0}50%{translate:0 -14px}}
 @media(prefers-reduced-motion:reduce){.cov-phones .ph{animation:none}}
-@media(max-width:860px){.cover-grid{grid-template-columns:1fr}.cov-phones{height:380px}.slide.cover::after{font-size:180px;bottom:-60px}}
+@media(max-width:860px){.cover-grid{grid-template-columns:1fr}.cov-phones{height:380px}}
 /* 下一步 */
 .next3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .nc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
@@ -389,8 +389,8 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
     <p class="cov-meta">🪿 湖北美院联合创作营课程项目 · Pitch 演示 ｜ ← → 方向键翻页</p>
   </div>
   <div class="cov-phones rv">
-    <img class="ph back" src="assets/app/cov-boot.png" alt="闲鹅启动页真机">
-    <img class="ph front" src="assets/app/cov-home.png" alt="闲鹅首页真机">
+    <img class="ph back" src="assets/app/pm-4.png" alt="闲鹅发布页真机">
+    <img class="ph front" src="assets/app/pm-6.png" alt="闲鹅首页真机">
   </div>
 </div></section>
 
