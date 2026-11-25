@@ -763,8 +763,6 @@ footer{border-top:1px solid var(--line);padding:26px 0;font-size:.66rem;color:va
 </div></section>
 
 <div class="pptbar">
-  <button id="pp-prev" title="上一页">‹</button>
-  <button id="pp-next" title="下一页">›</button>
   <span class="pn" id="pp-num">1 / 20</span>
   <span class="dots" id="pp-dots"></span>
 </div>
@@ -795,8 +793,6 @@ function go(i){
   num.textContent=(cur+1)+' / '+slides.length;
   fit(slides[cur]);
 }
-document.getElementById('pp-prev').onclick=()=>go(cur-1);
-document.getElementById('pp-next').onclick=()=>go(cur+1);
 addEventListener('keydown',e=>{
   if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();go(cur+1)}
   else if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();go(cur-1)}
